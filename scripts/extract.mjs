@@ -1,0 +1,10 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+const raw=readFileSync('source/report_2026-10-28.md','utf8');
+const sections=[...raw.matchAll(/^## (.+)\n([\s\S]*?)(?=^## |$(?![\s\S]))/gm)].map((m,i)=>({id:`chapter-${i}`,title:m[1],body:m[2].trim()}));
+const sources=[...raw.matchAll(/^\| ([GC]\d{2}) \| \[(.+?)\]\((https?:\/\/[^\s]+)\) \|(?: (.*?) \|)?$/gm)].map(m=>({id:m[1],title:m[2],url:m[3],note:m[4]||'基礎仕様・編成の追跡用。古い資料は現行の最適性を保証しない。本文取得範囲は資料ごとに異なる。'}));
+const scores=new Map([...sections.find(s=>s.title.startsWith('付録A')).body.matchAll(/^\| ([^|]+) \| (主|派生) \| ([\d.]+) \| ([\d.]+) \| ([\d.]+) \| ([\d.]+) \| (SS|S|A|B|C|D) \| (高|中|低) \|$/gm)].map(m=>[m[1].trim(),{category:m[2],scores:m.slice(3,6).map(Number),code:Number(m[6]),tier:m[7],confidence:m[8]}]));
+const entries=[...raw.matchAll(/^#### (.+?) — (SS|S|A|B|C|D)（(.+?)、(.+?)、(.+?)、確度(高|中|低)）\n([\s\S]*?)(?=^### |^#### |^## )/gm)].map((m,i)=>{const field=label=>m[7].match(new RegExp(`\\*\\*${label}：\\*\\* (.+)`))?.[1]||'';return {id:`entry-${String(i+1).padStart(2,'0')}`,name:m[1],...scores.get(m[1]),detailTier:m[2],element:m[3],role:m[4],detailCategory:m[5],detailConfidence:m[6],judgment:field('判定'),constraint:field('制約・比較上の注意'),team:field('代表的な味方3枠'),detailScores:field('モード点（螺旋／幽境／シアター）').split('。')[0].split('／').map(Number),refs:[...m[7].matchAll(/\[([GC]\d{2})\]/g)].map(x=>x[1])};});
+const referenceIds=[...new Set(raw.match(/\b[GC]\d{2}\b/g))];
+writeFileSync('src/data.json',JSON.stringify({entries,sources,sections,referenceIds},null,2)+'\n');
+writeFileSync('public/report_2026-10-28.md',raw);
+console.log(`Extracted ${entries.length} entries, ${sources.length} sources, ${sections.length} sections.`);
