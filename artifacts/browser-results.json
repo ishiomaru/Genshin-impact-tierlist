@@ -1,0 +1,15 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "result": "passed",
+      "coverage": "search, filters, reset, empty results, max-3 comparison, remove, direct detail/reload, presets 0/10/14/28, references, unresolved source, original, download, focus outline, overflow"
+    },
+    {
+      "width": 390,
+      "result": "passed",
+      "coverage": "search, filters, reset, empty results, max-3 comparison, remove, direct detail/reload, presets 0/10/14/28, references, unresolved source, original, download, focus outline, overflow"
+    }
+  ],
+  "errors": []
+}
