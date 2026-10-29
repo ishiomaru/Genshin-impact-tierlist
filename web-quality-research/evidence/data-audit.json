@@ -1,0 +1,54 @@
+{
+  "source_sha256": "3f37fae6c5c1b1c358c1a277f1b42b99ce66255805305608dffd6de024433543",
+  "characters": 46799,
+  "lines": 1308,
+  "weights": {
+    "基準": [
+      "0.45",
+      "0.35",
+      "0.20"
+    ],
+    "螺旋重視": [
+      "0.60",
+      "0.30",
+      "0.10"
+    ],
+    "幽境重視": [
+      "0.30",
+      "0.60",
+      "0.10"
+    ],
+    "シアター重視": [
+      "0.30",
+      "0.20",
+      "0.50"
+    ]
+  },
+  "changed_counts": {
+    "基準": 0,
+    "螺旋重視": 10,
+    "幽境重視": 14,
+    "シアター重視": 28
+  },
+  "representative_rows_verified": 13,
+  "notice": "提供資料の表示検証。ゲーム内容の独立した再検証は行っていません。",
+  "record_count": 77,
+  "main_count": 53,
+  "derived_count": 24,
+  "score_cells_checked": 231,
+  "weighted_totals_checked": 77,
+  "detail_score_triples_checked": 77,
+  "confidence_counts": {
+    "高": 2,
+    "中": 57,
+    "低": 18
+  },
+  "tier_counts": {
+    "SS": 5,
+    "S": 12,
+    "A": 33,
+    "B": 20,
+    "C": 5,
+    "D": 2
+  }
+}

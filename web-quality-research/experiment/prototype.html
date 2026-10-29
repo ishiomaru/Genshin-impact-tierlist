@@ -1,0 +1,2286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原神・評価の読み方 — 比較試作</title>
+<style>
+:root{--bg:#f4f3ed;--paper:#fcfbf7;--ink:#172c2b;--muted:#52615d;--line:#c7d0c8;--green:#17624d;--soft:#e4ebe3;--accent:#a84c2d;--display:"Hiragino Mincho ProN","Yu Mincho",serif;--sans:"Hiragino Sans","Yu Gothic",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:2rem}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.8;font-size:16px}button,input,select{font:inherit;color:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}a{color:var(--green);text-underline-offset:.2em}button{cursor:pointer;border:1px solid var(--line);background:var(--paper);padding:.6rem 1rem;border-radius:4px;min-height:44px}button:hover{border-color:var(--green);background:var(--soft)}button[aria-pressed="true"]{color:white;background:var(--green);border-color:var(--green)}button:disabled{opacity:.5;cursor:default}:focus-visible{outline:3px solid var(--accent);outline-offset:4px}input,select{min-height:44px;padding:.55rem .7rem;background:var(--paper);border:1px solid var(--line);border-radius:4px;min-width:0}h1,h2,h3,p{margin-top:0}h1,h2{line-height:1.4;letter-spacing:.025em}h1{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4.4vw,4.2rem);margin-bottom:1rem}h2{font-size:1.5rem}h3{font-size:1.1rem}p{margin-bottom:1rem}small,.meta{font-size:.82rem;color:var(--muted)}.skip{position:absolute;top:-100px;padding:1rem;background:white;z-index:10}.skip:focus{top:0}.shell{max-width:1350px;margin:auto;padding:0 4vw}.topbar{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.1rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap}.wordmark{font-weight:800;letter-spacing:.05em}.topbar a{font-size:.85rem}.variants{display:flex;gap:.5rem;flex-wrap:wrap;padding:1.1rem 0}.variants a{display:block;text-decoration:none;color:var(--muted);padding:.45rem .8rem;border-bottom:2px solid transparent}.variants a[aria-current]{color:var(--ink);border-color:var(--green);font-weight:700}.research-note{font-size:.8rem;line-height:1.6;color:var(--muted);max-width:70rem;margin-bottom:1.7rem}.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.12em;color:var(--green);margin-bottom:1rem}.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:5vw;padding:1.4rem 0 3rem;align-items:center}.hero p{max-width:38em}.hero-note{border-left:3px solid var(--green);padding-left:1rem}.hero-visual{background:var(--ink);color:#f3f1e7;padding:2rem 2.3rem;min-height:245px;display:flex;flex-direction:column;justify-content:center}.hero-visual .meta{color:#c4d6cd}.visual-title{font-family:var(--display);font-size:1.5rem}.tier-line{display:grid;grid-template-columns:2.5rem 1fr;gap:.7rem;align-items:center;margin:.25rem 0}.tier-line strong{font-size:1.2rem}.tier-line i{display:block;background:#bad6b9;height:8px}.stamp{display:flex;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.8rem 0;margin-bottom:2rem;font-size:.8rem}.content{padding-bottom:4rem}.reader-layout{display:grid;grid-template-columns:215px minmax(0,1fr);gap:4vw}.toc{font-size:.82rem;align-self:start}.toc a{display:block;padding:.4rem 0;text-decoration:none}.original{max-width:850px}.original h1{font-family:var(--sans);font-size:2rem}.original h2{padding-top:2rem;margin-top:2rem;border-top:1px solid var(--line)}.original h3{margin-top:2rem}.original h4{margin-top:2.2rem;font-size:1.05rem}.original p,.original li{line-height:1.95}.table-scroll{overflow:auto;max-width:100%;margin:1.2rem 0}table{border-collapse:collapse;font-size:.88rem;width:100%;background:var(--paper)}th,td{border-bottom:1px solid var(--line);padding:.7rem .8rem;text-align:left;vertical-align:top}th{background:var(--soft);font-weight:650}thead th{white-space:nowrap}.original td{min-width:100px}.original td:first-child{min-width:130px}.toolbar{display:grid;grid-template-columns:minmax(200px,1.7fr) repeat(3,minmax(115px,1fr));gap:1rem;align-items:end;margin-bottom:1.5rem}.toolbar label{display:grid;gap:.35rem;font-size:.84rem}.toolbar input,.toolbar select{width:100%}.result-meta{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding-bottom:1rem}.record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}.record{background:var(--paper);padding:1.4rem;min-width:0}.record-top{display:flex;gap:.7rem;justify-content:space-between;align-items:start}.band{display:inline-flex;align-items:center;justify-content:center;min-width:37px;height:37px;background:var(--soft);color:var(--green);font-weight:800;font-size:1rem}.record h3{margin-bottom:.1rem;font-size:1.15rem}.record .meta{font-size:.77rem}.score-row{display:grid;grid-template-columns:4.5rem 1fr 1.7rem;gap:.6rem;align-items:center;font-size:.8rem;margin:.4rem 0}.score-rail{height:6px;background:#e3e7df;position:relative}.score-rail i{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--green);top:-1px;transform:translateX(-50%)}.record-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}.record-actions button{padding:.4rem .7rem;font-size:.82rem}.compare-panel{background:#e9eee7;border:1px solid var(--line);padding:1.4rem;margin:0 0 2rem}.compare-panel h2{margin-bottom:.4rem}.compare-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}.compare-item{background:var(--paper);padding:1rem}.compare-item p{font-size:.88rem}.compare-item h3{margin-bottom:.5rem}.compare-item button{font-size:.82rem}.empty{padding:2.5rem;border:1px dashed var(--line);text-align:center;grid-column:1/-1;background:var(--paper)}.notice{font-size:.88rem;background:var(--soft);padding:1rem 1.2rem;border-left:3px solid var(--green);margin:1.5rem 0}.source-toggle{margin-top:3rem;border-top:1px solid var(--line);padding-top:1.5rem}.source-toggle>summary{cursor:pointer;font-size:1.05rem;font-weight:700;padding:.6rem 0}.source-toggle .original{padding-top:1.8rem}.story-intro{max-width:44rem}.story-grid{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:4vw;align-items:start;margin:2rem 0 3rem}.step-number{font-family:var(--display);font-size:3.5rem;color:var(--green);line-height:1;margin-bottom:1.5rem}.story-controls{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.story-controls button{font-size:.85rem}.weight-strip{display:flex;height:12px;overflow:hidden;margin:.8rem 0}.weight-strip span:nth-child(1){background:#17624d}.weight-strip span:nth-child(2){background:#698065}.weight-strip span:nth-child(3){background:#b9c9a1}.change-figure{background:var(--paper);border:1px solid var(--line);padding:1.7rem}.shift-row{display:grid;grid-template-columns:minmax(85px,1.5fr) 1fr 24px 1fr;gap:.7rem;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.9rem}.shift-row .band{width:100%}.shift-row.changed .current-band{background:var(--green);color:white}.shift-head{font-size:.76rem;color:var(--muted);border:0}.story-end{border-top:1px solid var(--line);padding:2rem 0}.story-end p{max-width:44rem}.text-link-button{background:transparent;border:0;color:var(--green);text-decoration:underline;padding:.1rem;min-height:44px;text-align:left}dialog{max-width:800px;width:calc(100% - 2rem);max-height:88vh;border:1px solid var(--line);border-radius:6px;padding:2rem;color:var(--ink);background:var(--paper);box-shadow:0 20px 80px #10282333}dialog::backdrop{background:#13262488}.dialog-head{display:flex;justify-content:space-between;align-items:start;gap:1rem}dialog h2{font-family:var(--display);font-size:1.8rem}dialog .detail-body{line-height:1.9}.section-footer{padding:2rem 0;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:1000px){.record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{gap:2rem}.reader-layout{grid-template-columns:170px minmax(0,1fr)}.toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.compare-columns{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr;gap:1rem}}
+@media(max-width:650px){body{font-size:15px}.shell{padding:0 5vw}.hero{grid-template-columns:1fr;padding-bottom:1.8rem}.hero-visual{padding:1.5rem;min-height:0}.reader-layout{grid-template-columns:1fr}.toc{border-bottom:1px solid var(--line);padding-bottom:1rem}.original h1{font-size:1.5rem}.original h2{font-size:1.3rem}.record-grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr}.toolbar label:first-child{grid-column:1/-1}.result-meta{align-items:start;font-size:.85rem}.change-figure{padding:1rem}.shift-row{gap:.5rem;font-size:.83rem;grid-template-columns:minmax(90px,1.7fr) 1fr 16px 1fr}.compare-panel{padding:1rem}.topbar{gap:.3rem}.variants{gap:.25rem}.variants a{padding:.45rem .6rem}.stamp{gap:.7rem}.hero h1{font-size:2.35rem}dialog{padding:1.3rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.reader-layout>*{min-width:0}.original{min-width:0;width:100%;overflow-wrap:anywhere}
+.variant-explore .hero,.variant-story .hero{padding-top:.5rem;padding-bottom:1.5rem}.variant-explore .hero h1,.variant-story .hero h1{font-size:clamp(2rem,3.5vw,3.4rem)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">本文へ移動</a>
+<div class="shell">
+<header class="topbar"><span class="wordmark">原神 評価研究 / READING LAB</span><a href="#original">原文を確認する ↗</a></header>
+<nav class="variants" aria-label="比較試作"><a href="?view=read" data-view="read">A · 読む</a><a href="?view=explore" data-view="explore">B · 比べる</a><a href="?view=story" data-view="story">C · 条件を考える</a></nav>
+<p class="research-note">同じ提供資料を用いた表示・操作の試作です。ゲーム内容の独立した再検証、制作方式の比較実験、読者による評価は行っていません。</p>
+<main id="main" tabindex="-1">
+<section class="hero"><div><p class="eyebrow" id="hero-kicker">比較を、判断につなげる。</p><h1 id="hero-title">強さは、<br>条件と一緒に読む。</h1><p id="hero-copy">77の運用を横断し、評価の理由と制約をたどる。順位の先にある「なぜ」を読むための、原神メインDPS研究。</p><p class="hero-note meta">Tier・モード点は原著者の判断です。<br>実測DPS、攻略成功率、育成優先度を示しません。</p></div><aside class="hero-visual" aria-label="原文のTier別運用数"><p class="visual-title">同じTierにも、違う理由。</p><div id="tier-distribution"></div><p class="meta" style="margin:.9rem 0 0">53の主対象 ＋ 24の派生・ドライバー</p></aside></section>
+<div class="stamp"><span>提供資料：2026.10.28 / Ver.7.1</span><span>★5 無凸・★4 完凸を基本</span><span>基準の重み：螺旋45 / 幽境35 / シアター20%</span></div>
+<section id="explore-view" class="content" hidden aria-label="対象を比較する">
+<div class="toolbar"><label>名前から探す<input type="search" id="search" placeholder="例：ヌヴィレット" autocomplete="off"></label><label>基準Tier<select id="tier"><option value="">すべて</option><option>SS</option><option>S</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label><label>区分<select id="group"><option value="">すべて</option><option value="主">主対象</option><option value="派生">派生・ドライバー</option></select></label><label>評価の確度<select id="confidence"><option value="">すべて</option><option>高</option><option>中</option><option>低</option></select></label></div>
+<p class="meta">確度は原著者の自己評価で、統計的確率ではありません。表示順は付録Aの順序です。同Tier内の順位は付けません。</p>
+<div class="result-meta"><span id="result-count" role="status" aria-live="polite"></span><button id="reset">絞り込みを解除</button></div>
+<section id="compare-panel" class="compare-panel" hidden aria-labelledby="compare-title"><h2 id="compare-title">選んだ運用を比較</h2><p class="meta">モード点は0〜5の序数コードです。点差を火力差や倍率として解釈しません。</p><div id="compare-columns" class="compare-columns"></div><button id="clear-compare">比較をクリア</button></section>
+<p id="selection-status" role="status" aria-live="polite" class="meta">比較は3件まで選択できます。</p><div class="record-grid" id="records"></div>
+</section>
+<section id="story-view" class="content" hidden aria-label="評価条件の変化を考える">
+<div class="story-intro"><p class="eyebrow">原文 第7節を読み解く</p><h2>重く見るコンテンツを変えると、<br>評価帯も変わる。</h2><p>モード点を固定して、重みだけを入れ替えます。変わるのはこの採点モデルの結論で、ゲーム中の能力を測り直した結果ではありません。</p></div>
+<div class="story-grid"><div><div class="step-number" aria-hidden="true">01</div><h3>何を重く見ますか。</h3><div class="story-controls" id="profile-controls" aria-label="重みの設定"></div><div class="weight-strip" id="weights" aria-hidden="true"></div><p id="weights-text" class="meta"></p><p id="changed-count" role="status" aria-live="polite"></p><p class="notice">「シアター重視」では、専用支援が揃わない場合の戦力がより大きく反映されます。全支援が揃う公演では差が小さくなる可能性があります。</p><p class="meta">原文にある4設定のみ。装備・凸・所持キャラを変えた再計算には対応しません。</p></div><figure class="change-figure" style="margin:0"><figcaption><strong>原文が挙げた13運用</strong><p class="meta">基準から選択中の設定への変化。人物名から評価根拠を開けます。</p></figcaption><div class="shift-row shift-head"><span>運用</span><span>基準</span><span></span><span>選択中</span></div><div id="shifts"></div></figure></div>
+<div class="story-end"><div class="step-number" aria-hidden="true">02</div><h2>Tierの変化は、何を意味するか。</h2><p>ヌヴィレットは基準ではS、シアター重視ではSS。ネフェルはSSからAへ移ります。これは原文で設定されたモード点と重みによる変化であり、誰にでも同じ順位が当てはまるという主張ではありません。</p><p>点数自体を見直すと結論も変わり得ます。所持状況や複数チームでの支援役の重複も、単一のTierだけでは判断できません。</p><a href="?view=explore">77運用の根拠を比較する →</a></div>
+</section>
+<div id="original-container"><section id="original" class="reader-layout"><nav class="toc" aria-label="原文の目次"><strong>提供資料の全文</strong><a href="#src-1">原神 メインDPS総合Tier研究</a><a href="#src-2">Ver.7.1・2026年10月28日（日本時間）時点</a><a href="#src-3">1. 総合Tier表</a><a href="#src-4">2. 調査と情報の扱い</a><a href="#src-9">3. 評価条件と、その採用理由</a><a href="#src-13">4. 強さの評価体系</a><a href="#src-17">5. 再検証した重要な論点</a><a href="#src-26">6. 各キャラクターの評価根拠</a><a href="#src-110">7. 評価条件を変えるとどう動くか</a><a href="#src-114">8. 特に重要だった独自の考察</a><a href="#src-115">9. 不確実性・限界と今後の検証</a><a href="#src-118">付録A. 採点一覧</a><a href="#src-119">付録B. 全プレイアブルの役割確認と対象外の扱い</a><a href="#src-120">付録C. 個別資料の参照先</a></nav><article class="original"><h1 id="src-1">原神 メインDPS総合Tier研究</h1><h2 id="src-2">Ver.7.1・2026年10月28日（日本時間）時点</h2><p><strong>研究形式：公開資料の検証と独自比較による文献調査版。</strong> ゲーム内での一斉実測、全編成の再シミュレーション、統計的な勝率推定は実施していない。以下のTier、モード点、比較結論は筆者の判断であり、公式・攻略サイト・理論計算コミュニティの公認順位ではない。</p>
+<p>主対象53運用と、前衛ドライバー・短出場・外部付与などの派生24運用、計77運用を同じ総合基準で評価した。主人公は氷・炎・岩を別運用として扱う。入手・育成優先度ではなく、記載条件で編成を完成させた場合の攻略戦力を評価する。</p>
+<p><strong>最上位の採択：サンドローネ、ヴェスナ、フリンズ、ネフェル、兹白。</strong> SSとSの境界は確定的な性能差ではない。特にマーヴィカはSS/S境界、ヌヴィレットはシアターを重くすると最上位へ上がる。無凸・非モチーフ条件での同一基準の直接比較は不足しており、最上位内の1位から5位までの順番は付けない。</p>
+<h2 id="src-3">1. 総合Tier表</h2><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>意味</th>
+<th>主対象53運用（順不同）</th>
+<th>派生・ドライバー24運用（同じ評価基準）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>SS</strong></td>
+<td>完成編成で最上位候補</td>
+<td>サンドローネ、ヴェスナ、フリンズ、ネフェル、兹白</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>極めて強い総合戦力</td>
+<td>マーヴィカ、スカーク、ヌヴィレット、アルレッキーノ、ムアラニ、ヴァレサ、リオセスリ、夢見月瑞希、キィニチ、ナヴィア、クレー</td>
+<td>スクロース</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>高難度で十分強い</td>
+<td>ファルカ、コロンビーナ、ローエン、嘉明、アルハイゼン、クロリンデ、セノ、胡桃、魈、雷電将軍、レザー、ティナリ、チャスカ、リネ、神里綾華、神里綾人、タルタリヤ、ディルック、刻晴、荒瀧一斗、ウェンティ、放浪者、甘雨、宵宮、ノエル、主人公・氷</td>
+<td>ナヒーダ、珊瑚宮心海、イファ、八重神子、ドゥリン、ラウマ、リンネア</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>条件選択・運用上の工夫が増える</td>
+<td>セトス、煙緋、凝光、鹿野院平蔵、カーヴェ、フレミネ</td>
+<td>モナ、バーバラ、リサ、リネット、ドリー、主人公・炎、主人公・岩、キャンディス、ガイア、ロサリア、フィッシュル、鍾離、ベネット、閑雲</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>攻略余裕を作るうえで大きな代償</td>
+<td>エウルア、ディシア、アーロイ</td>
+<td>シロネン、重雲</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>標準条件では特殊運用向け</td>
+<td>辛炎、アンバー</td>
+<td>—</td>
+</tr>
+</tbody></table>
+</div><p>A以下でも、相性のよい敵に対して高難度を攻略できる。低Tierは「攻略不能」「支援役として弱い」を意味しない。例えばベネット、鍾離、シロネンを前衛として低く置くことは、通常の支援運用の価値を否定するものではない。</p>
+<p>主対象と派生を列で分けたのは役割を明示するためであり、別Tier表ではない。スクロースのSは、本人の直接攻撃だけでS相当のダメージを出すという意味ではなく、能動的な拡散・支援で編成全体を成立させる前衛としての評価である。カーヴェや平蔵など、通常から前衛役として扱われるドライバーは主対象側にも含む。</p>
+<h2 id="src-4">2. 調査と情報の扱い</h2><h3 id="src-5">調査した領域</h3><p>公式の実装・反応・敵・更新情報、英語圏のKQMとtalahの専門ガイド、日本語Wikiの仕様・取得制限、中国語のTapTapとBWIKIの回し・計算条件、公開gcsim設定、自己申告の木桩計測、使用率統計、一般攻略サイトを照合した。調査は2026年10月28日に行い、本文取得ができた範囲と検索要約のみの範囲を区別した。</p>
+<p>既存Tier表は結論の多数決には使っていない。仕様、操作列、編成制約、計算条件の違いから比較し、食い違いが生じた場合は元の条件を確認した。</p>
+<h3 id="src-6">証拠を使い分けた方法</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>情報</th>
+<th>主な用途</th>
+<th>その情報だけでは分からないこと</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>公式天賦・実装告知</td>
+<td>何が実装済みか、効果の成立条件</td>
+<td>実戦の最適編成や最速順位</td>
+</tr>
+<tr>
+<td>検証・理論ガイド</td>
+<td>付着、回し、エネルギー、支援との相互作用</td>
+<td>全コンテンツでの優劣</td>
+</tr>
+<tr>
+<td>仮定が見える計算・設定</td>
+<td>同じ条件内での武器・回し・編成差</td>
+<td>別の計算方式のDPSとの単純比較</td>
+</tr>
+<tr>
+<td>実戦計測</td>
+<td>操作・命中・ウェーブへの対応の補助</td>
+<td>装備・凸・試行選別が不明なままの一般化</td>
+</tr>
+<tr>
+<td>使用率・攻略報告</td>
+<td>現行ギミックと採用される組み合わせの探索</td>
+<td>強さの因果効果や全プレイヤーの成功率</td>
+</tr>
+<tr>
+<td>一般Tier表・短評</td>
+<td>見落とした論点や反対例の探索</td>
+<td>根拠を伴わない順位の採用</td>
+</tr>
+</tbody></table>
+</div><p>動画はBilibiliの412エラーやYouTube取得制限があり、一部は本文・全映像・装備を確認できなかった。タイトルや検索要約だけで「実戦検証済み」とは扱っていない。NGAの詳細スレッドも本調査では十分取得できていない。</p>
+<h3 id="src-7">残った情報源の偏り</h3><p>個別評価欄で参照したURLは93件。そのうちKQM本体・TCLが79件で、仕様参照は同コミュニティに大きく依存する。複数著者のガイドではあるが、完全に独立した79件の実験ではない。talah、BWIKI、日本語Wikiについても、元の仕様や検証が共有されている可能性を排除できない。</p>
+<p>この偏りを隠して「多言語で一致したから確定」とはしない。最新上位勢の反応・編成条件は複数系統で照合した一方、旧キャラの最新支援下の横断比較には不足が残る。個別Tierの確度を高としたのは2件、中57件、低18件。これらは統計的な確率ではなく、評価の安定性についての自己評価である。</p>
+<h3 id="src-8">主要資料</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>資料・発行者</th>
+<th>採用範囲・留保</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G01</td>
+<td><a href="https://prtimes.jp/main/html/rd/p/000000449.000096124.html">HoYoverse日本法人：Ver.7.1実装・新キャラ説明</a></td>
+<td>公式発表。実装日と役割・天賦概略に使用。火力順位の証拠ではない。</td>
+</tr>
+<tr>
+<td>G02</td>
+<td><a href="https://genshin.hoyoverse.com/m/ja/news/detail/166228">公式：Ver.7.1前半イベント祈願</a></td>
+<td>実装済みと将来予定の境界に使用。</td>
+</tr>
+<tr>
+<td>G03</td>
+<td><a href="https://prtimes.jp/main/html/rd/p/000000382.000096124.html">公式：兹白・イルーガの実装説明</a></td>
+<td>兹白の正式表記と月結晶の専任役を確認。</td>
+</tr>
+<tr>
+<td>G04</td>
+<td><a href="https://genshin.hoyoverse.com/news/detail/165478">公式：Stellar Swirl告知</a></td>
+<td>反応の追加時期を確認。本文は画像主体で取得制約あり。</td>
+</tr>
+<tr>
+<td>G05</td>
+<td><a href="https://github.com/KQM-git/GINews">KQM GINews：ゲーム内公式告知のアーカイブ</a></td>
+<td>公式文章の保存版。7.1の螺旋補正と不具合修正を参照。公式運営サイトそのものではない。</td>
+</tr>
+<tr>
+<td>G06</td>
+<td><a href="https://keqingmains.com/misc/stellar-reaction-guide/">KQM：Stellar Glimmer Reaction Guide</a></td>
+<td>7.0の意図された反応仕様、ダメージ分類・防御・耐性・バフ適用範囲。7.1新規キャラ一覧には未対応部分がある。</td>
+</tr>
+<tr>
+<td>G07</td>
+<td><a href="https://mobalytics.gg/genshin-impact/guides/stellar-conduct">talah：Stellar-Conduct Reaction Guide</a></td>
+<td>2026-09-22更新。星電導の専門的な編成比較。C0付近の比較見解として扱い、順位をそのまま転載しない。</td>
+</tr>
+<tr>
+<td>G08</td>
+<td><a href="https://mobalytics.gg/genshin-impact/guides/stellar-swirl">talah：Stellar Swirl Reaction Guide</a></td>
+<td>星拡散と付着、ヴォジャニーツァの水付着による機会損失を照合。</td>
+</tr>
+<tr>
+<td>G09</td>
+<td><a href="https://compendium.keqingmains.com/">KQM Calculation Standard</a></td>
+<td>聖遺物・育成の比較規範。反応率や範囲命中率を保証しないという限界も採用。</td>
+</tr>
+<tr>
+<td>G10</td>
+<td><a href="https://docs.gcsim.app/">gcsim開発者：Introduction</a></td>
+<td>シミュレーターの対象とモデル誤差の注意を確認。本研究で全キャラの再シミュレーションは実施していない。</td>
+</tr>
+<tr>
+<td>G11</td>
+<td><a href="https://lightkeepers.moe/teams">Lightkeepers：Team Simulationsの説明</a></td>
+<td>平均的プレイヤー向けの回しとKQM聖遺物基準を掲げる。最速コンボ型の資料との違いを確認。</td>
+</tr>
+<tr>
+<td>G12</td>
+<td><a href="https://lightkeepers.moe/teams/configs/Alhaitham~C0~IronSting~R5__Furina~C0~FavoniusSword~R5__KukiShinobu~C6~IronSting~R1__Lauma~C0~FavoniusCodex~R5">Lightkeepers：アルハイゼン・ラウマ型の設定例</a></td>
+<td>レベル・凸・装備・敵条件・回しのコードまで確認可能な例。掲載DPSを他方式の数値とは比較しない。</td>
+</tr>
+<tr>
+<td>G13</td>
+<td><a href="https://gwisted.com/games/genshin-impact/calculations/dd5a89b6-d3ac-4550-aaae-a1dd4e1911ba">Gwisted：ヴェスナ／ファルザン／ヴォジャニーツァ／オデット</a></td>
+<td>公開171.05K DPS、19秒。回し・装備は見えるが全計算仮定は十分でなく、順位の定量根拠には採用しない。</td>
+</tr>
+<tr>
+<td>G14</td>
+<td><a href="https://gwisted.com/games/genshin-impact/calculations/510c773f-db9e-4428-a4aa-0f93aa8cdf63">Gwisted：サンドローネ／八重1凸／オデット／七七2凸</a></td>
+<td>凸混在の検出例。無凸標準の値には変換しない。</td>
+</tr>
+<tr>
+<td>G15</td>
+<td><a href="https://genshin.im/measured-dps">genshin.im：Measured DPS Rankings</a></td>
+<td>59件・2026-10-27更新の自己申告計測表。装備・凸の統一や一部編成が確認できず、数値序列を不採用。</td>
+</tr>
+<tr>
+<td>G16</td>
+<td><a href="https://www.taptap.cn/moment/851859733571699624">中国語TapTap：V7.1ヴェスナ詳細検討</a></td>
+<td>操作時間・生成粒子・爆発頻度の仮定が明示される。外部バフを省いた個人計算なので実チーム比較には移植しない。</td>
+</tr>
+<tr>
+<td>G17</td>
+<td><a href="https://www.taptap.cn/moment/836558201024416220">中国語TapTap：V7.0オデット詳細検討</a></td>
+<td>星反応の式と仮定を照合。更新・転載の重複を独立した証拠数に数えない。</td>
+</tr>
+<tr>
+<td>G18</td>
+<td><a href="https://wikiwiki.jp/genshinwiki/%E5%B9%BB%E6%83%B3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BC">日本語原神Wiki：幻想シアター</a></td>
+<td>活力・元素制限・選択仕様。ゲーム内説明を含むコミュニティ資料。</td>
+</tr>
+<tr>
+<td>G19</td>
+<td><a href="https://wikiwiki.jp/genshinwiki/%E4%B8%BB%E4%BA%BA%E5%85%AC/%E6%B0%B7">日本語原神Wiki：氷主人公</a></td>
+<td>7.1現在4凸までという取得上限の記載。一次公式資料で上限の直接確認が残る。</td>
+</tr>
+<tr>
+<td>G20</td>
+<td><a href="https://wikiwiki.jp/genshinwiki/%E7%89%87%E6%89%8B%E5%89%A3/%E6%98%9F%E9%8B%92%E3%81%AE%E5%89%A3">日本語原神Wiki：星鋒の剣</a></td>
+<td>少なくとも7.0時点で90・R3が取得可能という記載を採用。将来のR5は不採用。</td>
+</tr>
+<tr>
+<td>G21</td>
+<td><a href="https://genshin.aza.gg/leyline?l=ja">AZA.GG：幽境の激戦統計</a></td>
+<td>使用率とUse/Ownの区別を確認。画像主体で対応名・母集団を十分監査できず、数値は採点に使わない。</td>
+</tr>
+<tr>
+<td>G22</td>
+<td><a href="https://genshin-build.com/tier-list">genshin-build：Tier表の出典説明</a></td>
+<td>Prydwenからの許諾転載である旨を明記。同じ元データを複数票に数えないための確認例。</td>
+</tr>
+<tr>
+<td>G23</td>
+<td><a href="https://gamewith.jp/genshin/article/show/501914">ゲームウィズ：7.1幽境の激戦</a></td>
+<td>現行ボスの攻略条件の補助確認。キャラ順位の根拠ではなく、公式の新ボス説明と照合。</td>
+</tr>
+<tr>
+<td>G24</td>
+<td><a href="https://keqingmains.com/changelog/">KQM：更新履歴</a></td>
+<td>サイト全体の新しさと個別ガイドの更新版が一致しないことを確認。</td>
+</tr>
+<tr>
+<td>G25</td>
+<td><a href="https://wiki.biligame.com/ys/%E6%A1%91%E5%A4%9A%E6%B6%85/%E6%94%BB%E7%95%A5">BWIKI：サンドローネ攻略</a></td>
+<td>中国語の具体的な配装・回しと控え爆発の省略を照合。掲載装備は本稿の武器上限と異なる。</td>
+</tr>
+<tr>
+<td>G26</td>
+<td><a href="https://wiki.biligame.com/ys/%E5%A5%88%E8%8A%99%E5%B0%94/%E6%94%BB%E7%95%A5">BWIKI：ネフェル攻略</a></td>
+<td>ラウマ・コロンビーナの役割、回復がラウマ1凸である点を照合。</td>
+</tr>
+<tr>
+<td>G27</td>
+<td><a href="https://wiki.biligame.com/ys/%E8%96%87%E6%96%AF%E7%BA%B3/%E6%94%BB%E7%95%A5">BWIKI：ヴェスナ攻略</a></td>
+<td>強化スタックと退場リセットを照合。画像・未記入箇所もあり、その部分を推測で埋めない。</td>
+</tr>
+<tr>
+<td>G28</td>
+<td><a href="https://dpsleaders.augmeneco.ru/?page=0">DPSLeaders：gcsimリンク集</a></td>
+<td>回し・凍結条件・初動例外の記載を確認。リンク先計算の本文取得に制約があり、横断順位の数値には不採用。</td>
+</tr>
+</tbody></table>
+</div><h2 id="src-9">3. 評価条件と、その採用理由</h2><h3 id="src-10">育成・凸・武器</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>項目</th>
+<th>採用条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>キャラ・武器レベル</td>
+<td>原則90。95・100への上限突破は基準外</td>
+</tr>
+<tr>
+<td>天賦</td>
+<td>基本9、凸由来の+3は反映。通常攻撃を使わない型へ不必要な通常火力を加算しない</td>
+</tr>
+<tr>
+<td>★5</td>
+<td>本人・味方とも無凸。恒常★5も無凸。周年配布や無料選択を理由に自動で1凸にしない</td>
+</tr>
+<tr>
+<td>★4</td>
+<td>本人・味方とも6凸。完成編成を比較するための統一条件であり、全プレイヤーが所持するとの仮定ではない</td>
+</tr>
+<tr>
+<td>主人公</td>
+<td>氷は4凸、炎・岩は6凸。任務由来の恒常強化は反映。氷6凸の味方バフは不採用</td>
+</tr>
+<tr>
+<td>武器上限</td>
+<td>鍛造・配布・★3はR5、通常祈願★4はR3、紀行はR1を基本。限定祈願★4の高精錬を標準にしない</td>
+</tr>
+<tr>
+<td>★5武器の例外</td>
+<td>配布「星鋒の剣」90・R3は使用可。全員が取得可能な恒常報酬であるため。未取得の将来R5は使わない</td>
+</tr>
+<tr>
+<td>聖遺物</td>
+<td>適正メイン・セット・チャージを優先。比較規範はKQMSの40サブステ配分。会心だけを同じ値に固定しない</td>
+</tr>
+<tr>
+<td>確率・維持条件</td>
+<td>流浪楽章の当たり効果だけ、黎明の神剣の常時HP90%以上、螭龍の剣の無損失維持などを無条件に保証しない</td>
+</tr>
+</tbody></table>
+</div><p>武器・聖遺物の条件は<strong>比較判断の基準</strong>である。全77運用について、この条件の完全な最適化ビルドとDPSを新規計算したわけではない。外部の計算がこの基準と違う場合、数値を補正式で機械的に換算せず、採用範囲を限定した。</p>
+<p>★4完凸は、低凸の限定★5と比較する際に結果を左右する。嘉明、レザー、ノエル、ファルザン、シュヴルーズ、イルーガ、プルーネなどは特に注意が必要。未完凸★4を多く使う条件への変更は、第7節に分けて扱う。</p>
+<p>レベル90は現在の育成上限という意味ではない。100への強化は現行でも存在するが、無凸・一般的な完成育成の比較を保つため除いた。直接星反応ダメージと、レベル補正を使う反応ダメージも同一扱いにはしていない。</p>
+<h3 id="src-11">編成と操作</h3><ul>
+<li>4人編成。★5の人数上限を設けず、全員無凸・非モチーフの範囲で、そのキャラに適した実用編成を認める。これは所持難度や獲得コストの比較ではないため。</li>
+<li>回復・盾・自己回復など、連戦を可能にする生存手段を含む型を基準にする。無回復の最大火力型は別条件とする。ネフェルはラウマ・コロンビーナにヨォーヨ／白朮等を組み合わせる型を含めた。</li>
+<li>同じ支援3人を全キャラに固定しない。キャラごとに反応とローテーションが違うので、固定すると特定系統を不当に有利にする。</li>
+<li>通常のキャンセル、付着管理、敵の攻撃回避は認める。フレーム単位の最速操作、特殊な衝突挙動、何十回ものリセットを成功前提にはしない。</li>
+<li>最初だけ満エネルギーの一巡で終わらず、次巡の回復と再始動を考慮。平均DPSを参照するときは90秒程度の連戦を比較規範とする。</li>
+<li>個別欄の「代表編成」は最強固定の断定ではない。敵・装備・操作によって入れ替えを認める。同じ評価帯の代替候補も併記する。</li>
+</ul>
+<h3 id="src-12">対象環境</h3><p>螺旋12層の星獲得、幽境の激戦エクストラの安定攻略と有利な相手でのアルティメット対応、幻想シアターの高難度公演・アルカナ挑戦を主対象とする。アルティメットの全期・全ボスを標準投資で必ずクリアできるという保証ではない。</p>
+<p>単体静止ボス、移動する単体、密集複数敵、分散複数敵、複数ウェーブ、短い攻撃可能時間、付着回数や元素を要求するギミックを確認項目とした。これらを同じ実測データセットで全員に実施したわけではなく、キットと資料を当てはめる比較場面である。</p>
+<p>通常の比較では、期間限定の地脈・淵月・開幕キャストの追加強化は外す。キャラと武器・聖遺物・恒常反応の効果は含む。キャラは相性のよい側に配置できるとし、水無効ボスへ水アタッカーを強制して点数をゼロにするような比較はしない。ただし、炎固定付着で反応を起こせない等の追加的な対応範囲の狭さは考慮する。</p>
+<p>Ver.7.1にはTPS形式の「絶境挑戦」もあるが、通常の4人キャラ編成の強さを測るのに適さないため、通常メインDPSの採点には含めない。</p>
+<h2 id="src-13">4. 強さの評価体系</h2><h3 id="src-14">評価対象は「その前衛を中心にした編成が、どの程度の余裕で攻略できるか」</h3><p>本人の最大ダメージとチーム全体のDPSを同じ点として二重加算しない。本人が敵に直接大ダメージを与える型に加え、付着・追撃起動・反応・支援によって編成火力を作る前衛も評価する。ただし、強い控え3人を置くだけで全ての前衛を同点にはしない。</p>
+<p>具体的には、その前衛を似た代替キャラへ替えた場合に、付着、支援、エネルギー、防御、攻撃時間がどう変わるかを確認する。これは差分DPSを新規実測したという意味ではなく、編成内での役割を確認する比較である。</p>
+<h3 id="src-15">各モードを採点するときの確認項目</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>確認項目</th>
+<th>攻略へ与える影響</th>
+<th>二重計上を避ける扱い</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>必要時間内に届く有効ダメージ</td>
+<td>瞬間火力、持続火力、初動、過剰ダメージ</td>
+<td>最終的な攻略余裕にまとめる</td>
+</tr>
+<tr>
+<td>命中・対象切替・範囲</td>
+<td>射程、追跡、分散、増援、設置の移動</td>
+<td>「範囲が広い」だけの独立加点にしない</td>
+</tr>
+<tr>
+<td>ローテーション継続</td>
+<td>粒子、爆発頻度、交代、強化状態の再始動</td>
+<td>理論DPSから既に引かれた待ち時間を再減点しない</td>
+</tr>
+<tr>
+<td>生存と中断</td>
+<td>回避による攻撃損失、盾・回復の枠、自己回復</td>
+<td>盾の有無だけで安全性を決めない</td>
+</tr>
+<tr>
+<td>成立条件と適応範囲</td>
+<td>必須元素、反応変換、固定付着、ドラフト制限</td>
+<td>所持コストを減点せず、編成不成立の性能損失を扱う</td>
+</tr>
+</tbody></table>
+</div><p>この5項目に別々の細かな点数を付けて合算する方法は採用しなかった。例えば範囲、命中率、操作容易性、安定性を別加点すると、同じ実戦上の利益を何度も数えやすいためである。</p>
+<h3 id="src-16">モード点と重み</h3><p>各モードで0〜5の序数コードを0.5刻みで付けた。5は現行の最上位候補、4は有力な攻略戦力、3は相性や運用条件を選ぶ競争力、2は大きな制約、1は標準条件では厳しい、0はその評価条件で機能しない、という目安である。</p>
+<p>総合コード = 0.45 × 螺旋点 + 0.35 × 幽境点 + 0.20 × シアター点</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>統合先</th>
+<th>総合コード</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SS</td>
+<td>4.4以上</td>
+</tr>
+<tr>
+<td>S</td>
+<td>3.8以上4.4未満</td>
+</tr>
+<tr>
+<td>A</td>
+<td>3.2以上3.8未満</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2.6以上3.2未満</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2.0以上2.6未満</td>
+</tr>
+<tr>
+<td>D</td>
+<td>2.0未満</td>
+</tr>
+</tbody></table>
+</div><p>螺旋45%は、多ウェーブと複数部屋を含む一般的な攻略性能を重くするため。幽境35%は、高HP単体と固有ギミックを強く反映するため。シアター20%は、不完全編成での能力を反映しつつ、育成人数・所持範囲という本来の入手育成評価が総合表を支配しないためである。</p>
+<p>この比率はプレイヤー人口から推定した値ではなく、依頼の目的に合わせた価値判断である。また序数を加重平均すること自体が近似であり、「4点は2点の2倍強い」「4.0と3.9に測定可能な差がある」とは解釈しない。小数は計算監査のために付録へ残すだけとする。</p>
+<p>シアターは、そのキャラが出場可能な期を条件に、専用支援を欠く場合や支援の活力を温存する場合の戦力を考える。出場不可の月を0点にして特定元素を罰することはしない。専用支援が完全に揃う公演なら、この点は上がる。</p>
+<h2 id="src-17">5. 再検証した重要な論点</h2><h3 id="src-18">5.1 今期の数字をそのまま長期評価にしない</h3><p>7.1の10月16日更新の公式告知保存版では、螺旋12層の前半は星反応ダメージ+75%、後半は氷元素ダメージ+75%。淵月の追加ダメージも氷・星反応に関連する［G05］。</p>
+<p>この環境で星・氷系の採用率やクリア速度が高いことは、本体性能の上昇と期間補正が重なった観測になる。本表では期間補正を外し、専用反応の恒常的な火力・操作・編成の性質を残した。それでも上位に残るという判断であり、+75%をそのまま能力として採点したのではない。</p>
+<h3 id="src-19">5.2 公開DPSを横に並べると、味方の凸で結論が変わる</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>公開例</th>
+<th align="right">記載DPS</th>
+<th>検出した比較上の問題</th>
+<th>採用判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gwistedのヴェスナ／ファルザン／ヴォジャニーツァ／オデット</td>
+<td align="right">171.05K</td>
+<td>19秒、編成と武器は見えるがチャージ・粒子・敵などの完全条件の監査は未完</td>
+<td>回しの比較材料。確定DPS序列には不採用</td>
+</tr>
+<tr>
+<td>Gwistedのサンドローネ／八重／オデット／七七</td>
+<td align="right">180.56K</td>
+<td>八重1凸・七七2凸で、本表の★5無凸と異なる</td>
+<td>無凸サンドローネの標準DPSとして不採用</td>
+</tr>
+<tr>
+<td>genshin.imのサンドローネ／ヴェスナ</td>
+<td align="right">247K／223K</td>
+<td>複数巡計測との説明はあるが、装備・凸の統一や一部編成の情報が不足。「Estimated」も混在</td>
+<td>採点数値に不採用</td>
+</tr>
+</tbody></table>
+</div><p>八重神子1凸には、現行の星電導編成で大きな意味を持つチーム支援がある。サンドローネだけ無凸でも、味方が1凸なら「全員無凸の比較」にはならない。無料の1凸選択が存在することは、それを全員の基準にしてよい根拠にはならない。</p>
+<p>参考の感度例として、公開例の3.25M程度のダメージを19秒で出すと約171Kだが、同じダメージのまま立て直しに2秒増えると約155Kになる。これは<strong>仮の算術例</strong>であり、ヴェスナが実際に必ず2秒遅れるという測定結果ではない。数秒の条件差で公表値の小さな差を超えることを示している。</p>
+<h3 id="src-20">5.3 ヴェスナとサンドローネは「新しい方が自動的に上」ではない</h3><p>採択した比較判断は、サンドローネは持続範囲火力と操作再現性、ヴェスナは星拡散の範囲火力と対応する支援の組み合わせに強みがある、というもの。総合では同じSSに置き、単純な新旧の上下関係は付けない。</p>
+<p>中国語TapTapでは、ヴェスナの操作時間と粒子を細かく仮定してサンドローネと比較している。ただし外部バフを外した個人計算で、ファルザンの供給や実チームの支援を含む場合と一致しない。talah側はファルザンを含む編成で爆発頻度が変わる点を述べる。この食い違いは多数決で解消せず、「本人だけの計算」と「チーム供給込み」の前提差として扱った［G16、個別ヴェスナ資料］。</p>
+<h3 id="src-21">5.4 リオセスリの耐久強化は、単純な回復追加ではない</h3><p>星電導型では、HP条件を満たして出す強化重撃が重要になる。過剰な外部回復は、その機会を減らす場合がある。従来型の「無凸は回復が必要」という一般説明を、星電導型にそのまま使うと誤る。</p>
+<p>したがってニコ等の盾を評価し、回復最大の編成を自動的な安定最適とはしない。一方で被弾が激しく自己回復だけでは足りない対面なら、火力を落として回復を入れる判断も合理的である。単体への強さは高いが、分散敵・中断・HP管理の条件からSに留めた。八重1凸込みの数値を使わないことも同じ評価条件に含む。</p>
+<h3 id="src-22">5.5 瑞希とセノは、昔の弱点をそのまま持ち越さない</h3><p>瑞希は星拡散に直接対応するようになり、回復と簡単な継続操作を両立する前衛としてSに評価した。セノもスキルから強化状態へ移る仕組みと星電導により、旧来の爆発だけに依存した評価が変わっている。</p>
+<p>ただし、変換役や付着・支援は必要。瑞希1〜2凸の計算を無凸に置き換えず、セノの旧4.2ガイドを現行の最適編成の証拠にはしなかった。セノは武器・タイミング・専用支援への制約を残すのでAという判断である。</p>
+<h3 id="src-23">5.6 凍結不可と、氷アタッカー不適性は同じではない</h3><p>スカークは水氷制約とエスコフィエへの依存が大きい。しかし通常の氷風セットだけに縛られるキャラではなく、凍結できないボスにも戦える。凍結不可という条件だけで大きく降格させない。</p>
+<p>綾華は主力爆発を当て切れるか、甘雨は重撃や爆発の設置を成立させられるかがより重要になる。同じ氷でもダメージの出し方が違うため、元素だけで横並びに評価しなかった。</p>
+<h3 id="src-24">5.7 ローエンとタルタリヤは、個人DPSだけだと誤評価しやすい</h3><p>ローエンは本人の氷攻撃だけでなく、控えのドゥリンに順溶解を起こさせる役割を持つ。タルタリヤも水付着で香菱の反応火力を作りつつ自分でも攻撃する。</p>
+<p>一方、控えの火力を全て前衛個人の功績にするのも不適切である。その前衛の付着・攻撃列が実際に必要か、他の前衛で代替すると何が失われるかを確認する。この考え方で両者を評価し、本人の大きな一撃だけで優劣を決めなかった。</p>
+<h3 id="src-25">5.8 同じ支援役でも、強化できるダメージの範囲が違う</h3><p>星反応扱いのダメージは、通常の元素ダメージバフ・共通ダメージバフと同じようには伸びない。敵防御を参照しない一方、元素耐性は参照する［G06］。</p>
+<p>このため、風キャラだから風杯、氷キャラだから氷杯、強いダメージバフ役だから誰にでも最適、という選び方はできない。攻撃力・熟知・会心・耐性低下・専用反応バフを、実際に作用するダメージ成分へ結び付けて評価した。ただし、防御を無視するから自動的に他の攻撃の2倍強い、とは結論していない。</p>
+<h2 id="src-26">6. 各キャラクターの評価根拠</h2><p>以下の「評価理由・留保・モード点」は筆者の比較判断。「仕様・回し」の参照先を末尾に付ける。代表編成の組み合わせには、別々の現行資料を接続した推論も含む。全てが同じ条件で実測された編成ではない。</p>
+<p>H = 本人の継続攻撃、Q = 短い出場を繰り返す攻撃、D = 反応・付着を動かす前衛。複合は兼任。主対象／派生の区別はTierの上下とは関係しない。</p>
+<h3 id="src-27">SS：完成編成で最上位候補</h3><h4 id="src-28">サンドローネ — SS（氷、H、主対象、確度中）</h4><p><strong>判定：</strong> 持続範囲火力と比較的単純な操作を両立。星電導を主軸とし、星拡散にも移行できる。</p>
+<p><strong>制約・比較上の注意：</strong> 八重1凸込みの公開値を無凸値として採用しない。敵の氷耐性と編成成立条件に注意。</p>
+<p><strong>代表的な味方3枠：</strong> 八重神子／オデット／エスコフィエ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 5／5／3。参照：[C01]、[C02]、[C03]。</p>
+<h4 id="src-29">ヴェスナ — SS（風、H、主対象、確度中）</h4><p><strong>判定：</strong> 星拡散の範囲火力が強く、支援込みで攻撃継続と生存をまとめられる。氷側の控え火力も有効。</p>
+<p><strong>制約・比較上の注意：</strong> 後半の強化攻撃まで通す必要がある。非モチーフ武器での爆発毎回使用はエネルギー条件を確認。</p>
+<p><strong>代表的な味方3枠：</strong> オデット／ヴォジャニーツァ／ファルザン。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 5／4.5／3.5。参照：[C04]、[C05]、[C06]、[C07]。</p>
+<h4 id="src-30">フリンズ — SS（雷、H、主対象、確度中）</h4><p><strong>判定：</strong> 短い爆発を軸に高い月感電火力を出し、イネファの防御と控え火力も活かす。範囲にも対応。</p>
+<p><strong>制約・比較上の注意：</strong> 月反応と月兆を成立させる味方の制約があり、自由枠だけで完全に代替できるわけではない。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／スクロース。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／5／3.5。参照：[C08]、[C09]。</p>
+<h4 id="src-31">ネフェル — SS（草、H、主対象、確度中）</h4><p><strong>判定：</strong> 月開花を専用の重撃火力へ変換し、完成編成での攻略余裕が大きい。短い移動を挟む攻撃も実用的。</p>
+<p><strong>制約・比較上の注意：</strong> ラウマ等を欠くと下落が大きい。無回復スクロース型は攻撃偏重の別条件。炎付着固定の敵も苦手。</p>
+<p><strong>代表的な味方3枠：</strong> ラウマ／コロンビーナ／ヨォーヨまたは白朮。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 5／5／2。参照：[C10]、[C11]、[C09]、[C12]。</p>
+<h4 id="src-32">兹白 — SS（岩、H、主対象、確度中）</h4><p><strong>判定：</strong> 月結晶の高い個人火力に、控えの月反応火力と支援を重ねられる。行動に調整余地がある。</p>
+<p><strong>制約・比較上の注意：</strong> 岩だから無条件に汎用的という評価はしない。水・月反応と専用支援が揃う条件での最上位。</p>
+<p><strong>代表的な味方3枠：</strong> イルーガ／リンネア／コロンビーナ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 5／5／2.5。参照：[C13]、[C14]。</p>
+<h3 id="src-33">S：極めて強い総合戦力</h3><h4 id="src-34">マーヴィカ — S（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 初撃の大火力とその後の持続範囲火力があり、爆発中の強い中断耐性が実戦の損失を抑える。</p>
+<p><strong>制約・比較上の注意：</strong> 戦意供給・反応・支援の時間管理が条件。最適化した特殊コンボの値は通常操作の値と分ける。</p>
+<p><strong>代表的な味方3枠：</strong> シロネン／シトラリ／ベネット。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／4.5／3.5。参照：[C15]、[C16]。</p>
+<h4 id="src-35">スカーク — S（氷、H/Q、主対象、確度中）</h4><p><strong>判定：</strong> 通常攻撃主体と短出場の爆発を使い分けられ、非凍結ボスでも戦える。自由な位置取りも長所。</p>
+<p><strong>制約・比較上の注意：</strong> 水氷制約とエスコフィエ依存がシアターの不完全編成で重い。凍結不可を一律の致命傷とはしない。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／エスコフィエ／ヴォジャニーツァまたは夜蘭。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／4.5／2.5。参照：[C17]、[C18]。</p>
+<h4 id="src-36">ヌヴィレット — S（水、H、主対象、確度高）</h4><p><strong>判定：</strong> 広い射程、移動しながらの範囲攻撃、自前回復、分割できる攻撃時間が複数ウェーブで強い。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸の中断リスクを計上。最高火力型と鍾離入り安定型を同じ火力として扱わない。高HP単体だけなら相対低下。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／シロネン／楓原万葉、または鍾離＋異元素2枠型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／3.5／5。参照：[C19]。</p>
+<h4 id="src-37">アルレッキーノ — S（炎、H、主対象、確度高）</h4><p><strong>判定：</strong> 高い炎火力と、交代・対象変更後も扱いやすい攻撃資源が実戦で有用。蒸発・溶解・過負荷も選べる。</p>
+<p><strong>制約・比較上の注意：</strong> 戦闘中の外部回復制限と無凸の被弾を考慮。回復目的の爆発使用には攻撃資源上の代償がある。</p>
+<p><strong>代表的な味方3枠：</strong> シトラリ／ベネット／楓原万葉またはシロネン。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／4／4。参照：[C20]。</p>
+<h4 id="src-38">ムアラニ — S（水、H、主対象、確度中）</h4><p><strong>判定：</strong> 蒸発を大きな一撃へ集中でき、短い攻撃可能時間や少ない手数で倒せるボスに強い。</p>
+<p><strong>制約・比較上の注意：</strong> 接触・マーク・反応の失敗が一撃分の大きな損失になる。多ウェーブでは過剰ダメージと準備時間を考慮。</p>
+<p><strong>代表的な味方3枠：</strong> マーヴィカ／シロネン／スクロース。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／5／3。参照：[C21]。</p>
+<h4 id="src-39">ヴァレサ — S（雷、H、主対象、確度中）</h4><p><strong>判定：</strong> 広い落下攻撃と柔軟な攻撃列が増援処理に強い。過負荷型などで高い火力を発揮する。</p>
+<p><strong>制約・比較上の注意：</strong> モチーフと代替武器の差が大きい。紀行R1・非モチーフ条件なので最高投資の値を移植しない。</p>
+<p><strong>代表的な味方3枠：</strong> ドゥリン／ニコ／イアンサ、またはシュヴルーズ・マーヴィカ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／4／3.5。参照：[C22]。</p>
+<h4 id="src-40">リオセスリ — S（氷、H、主対象、確度中）</h4><p><strong>判定：</strong> 強化後は星電導の有力アタッカー。爆発に偏らず、通常・重撃と自己回復で継続攻撃できる。</p>
+<p><strong>制約・比較上の注意：</strong> 主に単体向け。星電導型では過剰な回復が強化重撃を減らし得るため、防御は盾を中心に組む。</p>
+<p><strong>代表的な味方3枠：</strong> オデット／八重神子／ニコ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4.5／3。参照：[C23]、[C02]。</p>
+<h4 id="src-41">夢見月瑞希 — S（風、H、主対象、確度中）</h4><p><strong>判定：</strong> 星拡散対応後は単なる低火力の回復ドライバーではない。簡単な継続操作と自前回復が長所。</p>
+<p><strong>制約・比較上の注意：</strong> 星拡散変換役を本人だけでは代替できない。無凸評価に1～2凸の公開計算を混ぜない。</p>
+<p><strong>代表的な味方3枠：</strong> オデット／氷主人公／スクロースまたはファルザン。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4.5／4／3。参照：[C24]、[C25]。</p>
+<h4 id="src-42">キィニチ — S（草、H、主対象、確度中）</h4><p><strong>判定：</strong> 燃焼を維持しながら大砲を撃つ対単体戦力。ニコの全体支援と移動に追従する編成で実戦性が向上。</p>
+<p><strong>制約・比較上の注意：</strong> 大砲一発の欠落と操作・通信条件の影響が大きい。広く散った複数敵に一律に強いわけではない。</p>
+<p><strong>代表的な味方3枠：</strong> ドゥリン／ニコ／エミリエまたはイアンサ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4.5／3。参照：[C26]、[C27]。</p>
+<h4 id="src-43">ナヴィア — S（岩、H/Q、主対象、確度中）</h4><p><strong>判定：</strong> 短い時間にまとまったダメージを出し、交代を挟みやすい。月結晶型や従来型を使い分けられる。</p>
+<p><strong>制約・比較上の注意：</strong> 攻撃を外すと損失が集中。月結晶支援の利益と本人の岩直撃ダメージを混同しない。</p>
+<p><strong>代表的な味方3枠：</strong> リンネア／コロンビーナ／イネファ、またはシロネン軸。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／3.5／4。参照：[C28]。</p>
+<h4 id="src-44">クレー — S（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 魔導秘儀後は旧来の操作難と火力評価を引き継げない。多い炎付着で味方の反応火力も作る。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸の位置。無料選択があることを理由に1凸を自動付与しない。魔導相方・エネルギー・吹き飛ばしが制約。</p>
+<p><strong>代表的な味方3枠：</strong> ニコ／フリーナ／シロネン、または魔導過負荷型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4／3。参照：[C29]、[C27]。</p>
+<h4 id="src-45">スクロース — S（風、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 能動的な拡散・翠緑・熟知配布で高い控え火力を動かす。魔導相方と組む型も成立する。</p>
+<p><strong>制約・比較上の注意：</strong> これは本人の直接ダメージが専任上位並みという意味ではない。前衛変更時の反応・支援差を根拠に評価。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／フィッシュル。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4／3.5。参照：[C74]、[C09]。</p>
+<h3 id="src-46">A：高難度で十分強い</h3><h4 id="src-47">ファルカ — A（風、H、主対象、確度中）</h4><p><strong>判定：</strong> 風と味方に応じた元素で攻撃し、炎型と魔導支援の組み合わせで高い総火力を得る。</p>
+<p><strong>制約・比較上の注意：</strong> 編成条件と適正4★武器の少なさを反映。複数元素を使えることと各元素型が同じ強さであることは別。</p>
+<p><strong>代表的な味方3枠：</strong> プルーネ／ドゥリン／ニコ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4／2.5。参照：[C30]。</p>
+<h4 id="src-48">コロンビーナ — A（水、H、主対象、確度中）</h4><p><strong>判定：</strong> 無凸でも月開花の特殊重撃で前に出る運用が成立し、月反応の混合型も組める。</p>
+<p><strong>制約・比較上の注意：</strong> 支援役としての価値をこの位置に加算しない。月開花の専任アタッカーとしてはネフェルに優位がある。</p>
+<p><strong>代表的な味方3枠：</strong> ラウマ／イネファ／アイノ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4／2.5。参照：[C09]。</p>
+<h4 id="src-49">ローエン — A（氷、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 高頻度の氷付着により、本人の攻撃と控えのドゥリンの順溶解を両立する。単体で有力。</p>
+<p><strong>制約・比較上の注意：</strong> 総火力を本人の氷ダメージだけで判断しない。攻撃範囲、適正武器、ニコ等への依存を減点。</p>
+<p><strong>代表的な味方3枠：</strong> ドゥリン／ニコ／シトラリ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／4／2.5。参照：[C31]。</p>
+<h4 id="src-50">嘉明 — A（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 完凸と反応支援で大きな落下攻撃を反復できる。最新の氷付着・攻撃支援で選択肢も増えた。</p>
+<p><strong>制約・比較上の注意：</strong> 完凸前提。落下中の水付着や反応継続を確認し、見た目の水付着の多さだけで相方を選ばない。</p>
+<p><strong>代表的な味方3枠：</strong> シトラリ／閑雲／ベネット、またはオデット・ニコ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／4／2.5。参照：[C32]。</p>
+<h4 id="src-51">アルハイゼン — A（草、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 本人の草火力と反応の両方で戦い、分割ローテーションも選べる。旧来の超開花だけに限定しない。</p>
+<p><strong>制約・比較上の注意：</strong> 現行最高峰との火力差はある。鏡・出場時間・ナヒーダの再付着などの実行条件を考慮。</p>
+<p><strong>代表的な味方3枠：</strong> ラウマ／フリーナ／久岐忍、またはナヒーダ激化型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3.5。参照：[C33]、[C11]、[C34]。</p>
+<h4 id="src-52">クロリンデ — A（雷、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 移動・自己回復・通常攻撃連動を同時にこなし、反応と控え火力を引き出す。複数系統を選べる。</p>
+<p><strong>制約・比較上の注意：</strong> スキルの有効時間と待ち時間、中断、入力・遅延の影響を含める。理論最速の攻撃列を全員に要求しない。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／スクロース、または過負荷型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 4／3.5／3.5。参照：[C35]、[C09]。</p>
+<h4 id="src-53">セノ — A（雷、H、主対象、確度中）</h4><p><strong>判定：</strong> 星電導強化とスキルからの強化状態移行で、以前の爆発依存・長時間拘束の評価が変わった。</p>
+<p><strong>制約・比較上の注意：</strong> 古い4.2クイックガイドを現行結論の根拠にしない。特殊スキルのタイミングと非モチーフ武器の条件が残る。</p>
+<p><strong>代表的な味方3枠：</strong> オデット／八重神子／ニコ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／4／2.5。参照：[C36]、[C37]、[C02]。</p>
+<h4 id="src-54">胡桃 — A（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 蒸発重撃を軸に対単体で強く、落下型も選べる。適正反応を保てる編成で戦力になる。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸のスタミナとキャンセルの負担を計上。回復を一律に禁止せず、フリーナ・落下型は別の最適化として扱う。</p>
+<p><strong>代表的な味方3枠：</strong> 夜蘭／フリーナ／閑雲、または行秋・シロネン型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／4／3。参照：[C38]、[C39]。</p>
+<h4 id="src-55">魈 — A（風、H、主対象、確度中）</h4><p><strong>判定：</strong> 落下の範囲、移動、敵の怯ませを活かして複数敵を処理できる。専用支援で火力も十分。</p>
+<p><strong>制約・比較上の注意：</strong> 長い爆発出場とエネルギー、限られた支援枠が制約。吹き飛んだ小型敵への追跡も実戦に含む。</p>
+<p><strong>代表的な味方3枠：</strong> ファルザン／閑雲／フリーナ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／2.5。参照：[C40]。</p>
+<h4 id="src-56">雷電将軍 — A（雷、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 本人の爆発火力だけでなく、味方の要求チャージを下げる利益を持つ。月感電型でも意味のある前衛。</p>
+<p><strong>制約・比較上の注意：</strong> 2凸の印象を無凸に移さない。熟知スキル設置だけの超開花運用は、このメインDPS評価の対象外。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／スクロース、または過負荷型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3。参照：[C41]、[C09]。</p>
+<h4 id="src-57">レザー — A（雷、H、主対象、確度中）</h4><p><strong>判定：</strong> 完凸と魔導秘儀によって、旧来の物理専任という分類から外れる。炎付与を使う過負荷型も有力。</p>
+<p><strong>制約・比較上の注意：</strong> 本人・シュヴルーズ・ベネットの凸を明示。未完凸版を同じ位置に置かず、旧物理型への評価でもない。</p>
+<p><strong>代表的な味方3枠：</strong> ニコ／シュヴルーズ／ベネット。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／2.5。参照：[C27]、[C42]。</p>
+<h4 id="src-58">ティナリ — A（草、Q、主対象、確度中）</h4><p><strong>判定：</strong> 短い出場と追尾する重撃で、単体・移動する敵・細かな攻撃可能時間に対応しやすい。</p>
+<p><strong>制約・比較上の注意：</strong> 広い多ウェーブでは付着や対象の再設定が必要。激化型の長所を活かし、低相性の月開花型の数値で代表させない。</p>
+<p><strong>代表的な味方3枠：</strong> 八重神子／ナヒーダ／鍾離。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3。参照：[C43]、[C44]。</p>
+<h4 id="src-59">チャスカ — A（風、H、主対象、確度中）</h4><p><strong>判定：</strong> 射程と複数元素の攻撃で、接近しにくい敵や特定元素耐性に対応しやすい。味方の組み替えも可能。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸は主に単体向け。複数元素弾が複数敵へ分散しても範囲火力が増えるとは限らず、2凸の長所と区別する。</p>
+<p><strong>代表的な味方3枠：</strong> シトラリ／ベネット／フリーナ、またはニコ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／4／4。参照：[C45]。</p>
+<h4 id="src-60">リネ — A（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 重撃とスキル・爆発を短い強化時間へまとめやすく、単体火力を伸ばせる。魔導支援を受ける型も候補。</p>
+<p><strong>制約・比較上の注意：</strong> 本人は魔導キャラではない。狙い撃ち中断、炎付着条件、近距離スキルへの移行を考慮する。</p>
+<p><strong>代表的な味方3枠：</strong> ニコ／ドゥリン／シトラリ、またはベネット・楓原万葉型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／4／2.5。参照：[C46]、[C27]。</p>
+<h4 id="src-61">神里綾華 — A（氷、H/Q、主対象、確度中）</h4><p><strong>判定：</strong> 爆発を当て切れる相手には高いまとまり火力。強い氷水支援で非凍結戦も改善する。</p>
+<p><strong>制約・比較上の注意：</strong> 爆発の空振り・移動・ウェーブをまたぐ過剰ダメージが主要制約。非凍結と氷無効は別に扱う。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／エスコフィエ／ヴォジャニーツァ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／2.5。参照：[C47]、[C18]。</p>
+<h4 id="src-62">神里綾人 — A（水、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 扱いやすい範囲水付着と短いスキル出場が反応編成で有用。月感電や氷水型への適応もある。</p>
+<p><strong>制約・比較上の注意：</strong> 瞬間火力とローテーション同期、非モチーフ武器との差が制約。単体の平均DPSだけで汎用性を否定しない。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／スクロース、または凍結型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／4。参照：[C48]。</p>
+<h4 id="src-63">タルタリヤ — A（水、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 密集相手への断流と高速水付着で、自分と香菱の両方の火力を作る。蒸発爆発も初動に寄与。</p>
+<p><strong>制約・比較上の注意：</strong> 敵を集められること、出場時間とクールタイム管理が前提。凍結編成の低い単体値だけで代表させない。</p>
+<p><strong>代表的な味方3枠：</strong> 香菱／ベネット／楓原万葉。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／3。参照：[C49]。</p>
+<h4 id="src-64">ディルック — A（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 高い落下倍率を活かした溶解・蒸発型なら、古い通常連打型より大きく改善する。</p>
+<p><strong>制約・比較上の注意：</strong> 閑雲等を欠く場合は下がる。古い3.6ガイドだけでは落下型を説明できないため、閑雲側の資料と照合する。</p>
+<p><strong>代表的な味方3枠：</strong> 閑雲／シトラリ／ベネット。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／2.5。参照：[C50]、[C51]。</p>
+<h4 id="src-65">刻晴 — A（雷、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 短い攻撃・交代・爆発無敵で状況に適応しやすく、付着回数を要求する相手にも対応する。</p>
+<p><strong>制約・比較上の注意：</strong> 本人の火力は新しい上位勢より控えめ。味方の反応火力を含める一方、刻晴固有の利益も別途確認する。</p>
+<p><strong>代表的な味方3枠：</strong> フィッシュル／ナヒーダ／楓原万葉、または月感電型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／3.5。参照：[C52]。</p>
+<h4 id="src-66">荒瀧一斗 — A（岩、H、主対象、確度中）</h4><p><strong>判定：</strong> 重撃の範囲と中断耐性を活かす。現行では純岩だけでなく月結晶・複合型も検討対象。</p>
+<p><strong>制約・比較上の注意：</strong> 月結晶編成でも本人の攻撃がすべて直接月反応化するわけではない。エネルギーと出場制約が残る。</p>
+<p><strong>代表的な味方3枠：</strong> リンネア／コロンビーナ／イルーガ、またはシロネン型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／2.5。参照：[C53]、[C09]、[C14]。</p>
+<h4 id="src-67">ウェンティ — A（風、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 魔導強化による風付与の前衛運用を含める。吸引可能な敵では集敵そのものがチームの有効火力を増やす。</p>
+<p><strong>制約・比較上の注意：</strong> 吸引不能ボスと無凸・非モチーフ条件では評価を抑える。支援専任時の価値と混同しない。</p>
+<p><strong>代表的な味方3枠：</strong> ドゥリン／ニコ／ファルザン。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／4。参照：[C54]。</p>
+<h4 id="src-68">放浪者 — A（風、H、主対象、確度中）</h4><p><strong>判定：</strong> 射程と狙い先変更の容易さがあり、攻撃を分配しやすい。スキル主体で小戦闘にも入りやすい。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸の空中被弾と中断が重い。盾入りと火力最大型の性能を同一視しない。新支援の寄与は推論を含む。</p>
+<p><strong>代表的な味方3枠：</strong> ファルザン／ニコ／ベネット、またはフリーナ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／3.5。参照：[C55]、[C27]。</p>
+<h4 id="src-69">甘雨 — A（氷、H/Q、主対象、確度中）</h4><p><strong>判定：</strong> 溶解重撃と凍結・爆発型を選べ、射程と範囲が強み。攻撃可能時間を選んで撃てる。</p>
+<p><strong>制約・比較上の注意：</strong> 重撃中断と準備時間が制約。強い氷サポーターが増えた事実だけで専用星反応アタッカーと同じ扱いにはしない。</p>
+<p><strong>代表的な味方3枠：</strong> エミリエ／ドゥリン／ニコ、またはエスコフィエ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／3。参照：[C56]。</p>
+<h4 id="src-70">宵宮 — A（炎、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 遠距離の通常連打で攻撃・反応を成立させやすい。盾と組み合わせた安定性、動く単体への射程が長所。</p>
+<p><strong>制約・比較上の注意：</strong> 主に単体であり、攻撃列の中断は蒸発の対応にも影響。過負荷・控え範囲火力は検討するが本人の範囲とは分ける。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／ベネット、または過負荷型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3.5／3.5。参照：[C57]、[C09]。</p>
+<h4 id="src-71">ノエル — A（岩、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 完凸の範囲攻撃、盾、全体回復を兼任し、現行の控え火力・月結晶を動かす。編成の防御枠を節約できる。</p>
+<p><strong>制約・比較上の注意：</strong> 高HP単体を速く倒す能力とエネルギーは上位専任に劣る。旧来の岩単色だけで評価しない。</p>
+<p><strong>代表的な味方3枠：</strong> コロンビーナ／リンネア／フィッシュルまたはフリーナ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／4。参照：[C58]。</p>
+<h4 id="src-72">主人公・氷 — A（氷、H/Q、主対象、確度中）</h4><p><strong>判定：</strong> 星反応変換、特殊重撃、爆発に加え、専用配布武器と任務由来の能力強化を含めて評価する。</p>
+<p><strong>制約・比較上の注意：</strong> 現行取得範囲の4凸で判定し、6凸の味方バフは使わない。上限はWikiの記載を採用し一次資料確認が残る。</p>
+<p><strong>代表的な味方3枠：</strong> オデット／八重神子／ニコまたはアリョーシャ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／4／3。参照：[C60]、[C61]、[C62]。</p>
+<h4 id="src-73">ナヒーダ — A（草、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 能動的な草付着と追撃・熟知支援で反応を動かす。本人だけの通常攻撃倍率では測れない前衛。</p>
+<p><strong>制約・比較上の注意：</strong> 低耐久とウェーブごとの再マーキングに注意。控えでも発揮できる支援価値を前衛固有の加点として重複させない。</p>
+<p><strong>代表的な味方3枠：</strong> 行秋／久岐忍／ラウマ、またはニィロウ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／4。参照：[C73]、[C11]。</p>
+<h4 id="src-74">珊瑚宮心海 — A（水、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 前衛の水付着と全体回復を一人で担い、開花・水主体編成で生存しながら反応を継続できる。</p>
+<p><strong>制約・比較上の注意：</strong> 会心不能を月反応で自動解決できるわけではない。高HPボスの速度は専任火力型に劣る。</p>
+<p><strong>代表的な味方3枠：</strong> ニィロウ／ラウマ／ナヒーダ、またはフリーナ水主体型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3／4.5。参照：[C75]。</p>
+<h4 id="src-75">イファ — A（風、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 前衛拡散と全体回復をまとめ、月感電対応の支援もある。射程・移動で実戦の攻撃継続を助ける。</p>
+<p><strong>制約・比較上の注意：</strong> 星拡散の瑞希と同じ固有火力は持たない。夜魂や反応条件を満たした型で評価する。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／オロルンまたはフィッシュル。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／4。参照：[C76]、[C09]。</p>
+<h4 id="src-76">八重神子 — A（雷、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 強化後の星電導の高い控え火力を持ち、通常・重撃で前衛運用もできる。相方へ交代しやすい。</p>
+<p><strong>制約・比較上の注意：</strong> 主力は控えでも出せる。この位置は前衛型の攻略性能であり、サブDPSランキングではない。1凸は未採用。</p>
+<p><strong>代表的な味方3枠：</strong> オデット／ニコ／フィッシュル、または激化型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3.5。参照：[C80]。</p>
+<h4 id="src-77">ドゥリン — A（炎、H/Q、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 黒形態の反応火力を中心に、前衛に残って支援と炎付与通常・重撃を活かす運用が成立する。</p>
+<p><strong>制約・比較上の注意：</strong> 評価は前衛型。ローエンと組んで控えから溶解する場合の強さを、そのまま本人の前衛型の点数にはしない。</p>
+<p><strong>代表的な味方3枠：</strong> ベネット／ニコ／夜蘭、または氷付着型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3。参照：[C85]。</p>
+<h4 id="src-78">ラウマ — A（草、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 無凸でも草通常攻撃で開花を動かす前衛運用がある。控えでも使える支援に追加の付着を重ねる。</p>
+<p><strong>制約・比較上の注意：</strong> 主なダメージ所有者が水側になる編成もある。6凸の専用前衛火力を無凸に持ち込まない。</p>
+<p><strong>代表的な味方3枠：</strong> ニィロウ／行秋／白朮またはヨォーヨ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3。参照：[C11]。</p>
+<h4 id="src-79">リンネア — A（岩、Q/D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 月結晶の短時間大火力と、必要に応じた岩重撃付着を使う派生型。回復も兼ねる。</p>
+<p><strong>制約・比較上の注意：</strong> 主役割は控え支援。短出場型の本人火力と長く居座る利益を区別し、通常攻撃を主火力とは評価しない。</p>
+<p><strong>代表的な味方3枠：</strong> コロンビーナ／イルーガ／ゴロー。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3.5／3.5／3。参照：[C14]、[C09]。</p>
+<h3 id="src-80">B：条件選択・運用上の工夫が増える</h3><h4 id="src-81">セトス — B（雷、H/Q、主対象、確度中）</h4><p><strong>判定：</strong> 完凸で通常入力型と短時間の狙い撃ち型を選べる。熟知・反応を活かし、出場時間を調節できる。</p>
+<p><strong>制約・比較上の注意：</strong> 二つの型でエネルギー消費と持続火力が異なる。最新反応型の順位は直接比較資料が少ない。</p>
+<p><strong>代表的な味方3枠：</strong> フィッシュル／ナヒーダ／楓原万葉、または月感電型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3.5。参照：[C59]、[C09]。</p>
+<h4 id="src-82">煙緋 — B（炎、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 射程と通常・重撃の反復で反応を起こせ、完凸ならスタミナと盾も補える。扱える相方は多い。</p>
+<p><strong>制約・比較上の注意：</strong> 攻撃準備とスタミナ、爆発回転、本人火力の差が高HP相手で表面化する。盾サポート評価ではない。</p>
+<p><strong>代表的な味方3枠：</strong> 行秋／ニコ／ベネット、または過負荷型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3.5。参照：[C63]、[C27]。</p>
+<h4 id="src-83">凝光 — B（岩、H/Q、主対象、確度低）</h4><p><strong>判定：</strong> 短い交代と遠距離攻撃を活かし、月結晶支援を含む編成も選べる。単体に火力をまとめられる。</p>
+<p><strong>制約・比較上の注意：</strong> 狭い範囲と地形・遮蔽物の影響、現在の直接比較不足がある。月結晶型への再評価は推論の比率が高い。</p>
+<p><strong>代表的な味方3枠：</strong> リンネア／コロンビーナ／イルーガ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3。参照：[C64]、[C14]、[C09]。</p>
+<h4 id="src-84">鹿野院平蔵 — B（風、H/D、主対象、確度中）</h4><p><strong>判定：</strong> 短い高倍率スキルと能動的な拡散で、前衛兼反応役として戦える。交代も挟みやすい。</p>
+<p><strong>制約・比較上の注意：</strong> 純風の個人火力とドライバー型は別。スクロースの全体支援や瑞希の専用星拡散火力をそのまま代替しない。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／フィッシュル、または激化拡散型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3.5。参照：[C65]、[C09]。</p>
+<h4 id="src-85">カーヴェ — B（草、D、主対象、確度中）</h4><p><strong>判定：</strong> 草付与と自分の開花被ダメージ回復を活かす前衛。ラウマ等の支援も受けられる。</p>
+<p><strong>制約・比較上の注意：</strong> 本人の開花起爆が反応所有権を奪うわけではない。前衛を他の草キャラにした場合との差とエネルギーが制約。</p>
+<p><strong>代表的な味方3枠：</strong> ラウマ／コロンビーナ／久岐忍、またはニィロウ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3。参照：[C66]、[C11]。</p>
+<h4 id="src-86">フレミネ — B（氷／物理、H、主対象、確度中）</h4><p><strong>判定：</strong> 完凸で氷スキル型と物理型を選べ、新しい水氷支援も受けられる。小刻みなスキルを反復できる。</p>
+<p><strong>制約・比較上の注意：</strong> 氷砕きが成立しない相手、エネルギー、操作最適化で差が出る。従来の物理型だけには固定しない。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／エスコフィエ／ヴォジャニーツァ、または超電導型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／3／2.5。参照：[C68]。</p>
+<h4 id="src-87">モナ — B（水、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 魔導相方との水付着・デバフ維持により、控えの反応を動かす前衛型が成立する。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸なので2凸の熟知支援等は使わない。爆発一撃型、サポート専任、6凸重撃型を混ぜない。</p>
+<p><strong>代表的な味方3枠：</strong> ドゥリン／ニコ／アルベド、または月感電型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3。参照：[C77]、[C27]。</p>
+<h4 id="src-88">バーバラ — B（水、D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 能動的な水付着と回復で開花系を動かせる。個人会心火力を求めない型なら高難度でも役割を持つ。</p>
+<p><strong>制約・比較上の注意：</strong> スキルの自己水付着、射程と付着の管理が制約。会心蒸発型の最大値を標準運用にしない。</p>
+<p><strong>代表的な味方3枠：</strong> ニィロウ／ラウマ／ナヒーダ、または超開花型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3.5。参照：[C78]、[C11]。</p>
+<h4 id="src-89">リサ — B（雷、H/D、派生・ドライバー、確度中）</h4><p><strong>判定：</strong> 激化・燃焼混合や月感電で、元素付着と防御低下を活かす前衛。新しい控え火力との相性も検討。</p>
+<p><strong>制約・比較上の注意：</strong> 長押しスキルの隙と爆発回転が実戦上の制約。敵防御を参照しない反応部分へ防御低下の価値を過大に加算しない。</p>
+<p><strong>代表的な味方3枠：</strong> フィッシュル／ドゥリン／ナヒーダ、または月感電型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3。参照：[C79]。</p>
+<h4 id="src-90">リネット — B（風、D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 完凸の風付与で能動的な拡散・反応ドライバーになる。挑発と交代のしやすさもある。</p>
+<p><strong>制約・比較上の注意：</strong> 完凸未満では同じ前衛運用にならない。最新月反応型は旧ガイドと反応資料からの推論を含む。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／フィッシュル、または超開花型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3。参照：[C81]、[C09]。</p>
+<h4 id="src-91">ドリー — B（雷、D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 完凸の雷付与・回復と、雷怒等によるスキル反復で反応前衛を担う。</p>
+<p><strong>制約・比較上の注意：</strong> 短い付与時間と回転・範囲の管理が必要。最新編成の横断比較が乏しく、前衛としての評価確度は低め。</p>
+<p><strong>代表的な味方3枠：</strong> ナヒーダ／フリーナ／フィッシュル、または激化型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3。参照：[C82]。</p>
+<h4 id="src-92">主人公・炎 — B（炎、H、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 完凸の炎転換と現行の旅人用武器・能力強化を使う前衛型。</p>
+<p><strong>制約・比較上の注意：</strong> 本来の控え付着役からの派生。新武器込みの最新比較は不足し、古い5.5時点の火力評価を直接移植していない。</p>
+<p><strong>代表的な味方3枠：</strong> シトラリ／ニコ／ベネット、または蒸発型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3。参照：[C83]、[C62]。</p>
+<h4 id="src-93">主人公・岩 — B（岩、Q/D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 短いスキル・爆発を使い、月結晶編成で前衛の岩付着も提供する。旅人用配布武器も利用。</p>
+<p><strong>制約・比較上の注意：</strong> 岩創造物による動線・狙いへの干渉と本人火力が制約。現行月結晶型の評価は支援側資料からの推論を含む。</p>
+<p><strong>代表的な味方3枠：</strong> リンネア／コロンビーナ／イルーガ。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3。参照：[C84]、[C09]、[C62]。</p>
+<h4 id="src-94">キャンディス — B（水、D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 自分の水付与と追加スキルで前衛運用でき、水氷支援や開花の反応役を担える。</p>
+<p><strong>制約・比較上の注意：</strong> 自分では自身の6凸追撃を発動できない。前衛型の個人火力は低く、支援型の全価値を加算しない。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／エスコフィエ／ヴォジャニーツァ、または開花型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／3。参照：[C86]。</p>
+<h4 id="src-95">ガイア — B（氷、H/Q、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 完凸の高頻度氷付着と爆発を活かし、前衛に残る氷水型や外部付与型を選べる。</p>
+<p><strong>制約・比較上の注意：</strong> 主力は爆発なので居座る利益は限定的。低相性の重雲型だけで全運用を代表させないが、専任上位との差は残る。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／申鶴／エスコフィエ、または重雲型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／2.5／3。参照：[C88]。</p>
+<h4 id="src-96">ロサリア — B（氷／物理、H/Q、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 溶解爆発を軸に、外部氷付与や物理通常を補う派生も持つ。短い交代で動ける。</p>
+<p><strong>制約・比較上の注意：</strong> 設置範囲と、本人が前に出る場合の上積みが制約。控えの溶解サブDPSとしての評価とは分ける。</p>
+<p><strong>代表的な味方3枠：</strong> フリーナ／エスコフィエ／重雲、または溶解短出場型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／2.5。参照：[C89]。</p>
+<h4 id="src-97">フィッシュル — B（雷／物理、D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 前衛の通常攻撃とオズを両立する派生。魔導強化は使用可能な相方がいる型で適用する。</p>
+<p><strong>制約・比較上の注意：</strong> 控えでほぼ同じ主火力を出せるため、前衛としての固有利益は小さい。物理武器の旧評価だけで判定しない。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／スクロース、または物理型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／2.5／3。参照：[C91]、[C74]。</p>
+<h4 id="src-98">鍾離 — B（岩／物理、D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 強い盾と近距離の全耐性低下を維持し、通常攻撃で追撃・反応編成を動かす。</p>
+<p><strong>制約・比較上の注意：</strong> サポートとしての最上位評価ではない。本人の攻撃火力は低く、高HP戦は控え火力への依存が大きい。</p>
+<p><strong>代表的な味方3枠：</strong> イネファ／コロンビーナ／シロネン、または物理型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／2.5／3.5。参照：[C92]、[C09]。</p>
+<h4 id="src-99">ベネット — B（炎、H/D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 短いスキルを連発して反応とエネルギーを作る前衛型を評価する。</p>
+<p><strong>制約・比較上の注意：</strong> 基準は6凸。重雲の氷付与を使う5凸止めの順溶解型は別条件。支援役としての重要性は点数に入れない。</p>
+<p><strong>代表的な味方3枠：</strong> キャンディス／香菱／行秋、または炎落下型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／2.5／2.5。参照：[C93]、[C86]。</p>
+<h4 id="src-100">閑雲 — B（風、H/D、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 無凸にも自己落下型と回復を兼ねる風ドライバー型がある。前衛として継続生存を確保できる。</p>
+<p><strong>制約・比較上の注意：</strong> 6凸の連続スキル型は含めない。現行反応ドライバー型の判断は一般反応とキットからの推論が多い。</p>
+<p><strong>代表的な味方3枠：</strong> ファルザン／フリーナ／ベネット、または月感電ドライバー型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 3／3／3.5。参照：[C51]、[C09]。</p>
+<h3 id="src-101">C：攻略余裕を作るうえで大きな代償</h3><h4 id="src-102">エウルア — C（物理、H、主対象、確度中）</h4><p><strong>判定：</strong> 物理のまとまった爆発と範囲があり、現在の支援や星電導の物理耐性低下も利用できる。</p>
+<p><strong>制約・比較上の注意：</strong> 遅れて出る主砲、無敵移行・増援・エネルギーが同時に効く。大きな一発の画像を平均攻略性能にはしない。</p>
+<p><strong>代表的な味方3枠：</strong> 八重神子／オデット／ニコ、またはフリーナ・ミカ型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／2。参照：[C67]、[C02]。</p>
+<h4 id="src-103">ディシア — C（炎、H、主対象、確度中）</h4><p><strong>判定：</strong> 強化爆発中の中断への強さと耐久を活かす。支援の改善により前衛型を成立させる余地がある。</p>
+<p><strong>制約・比較上の注意：</strong> 無凸の火力とエネルギー、通常攻撃連動との相性が制約。控えの耐久・燃焼役としての価値はこのTierに含めない。</p>
+<p><strong>代表的な味方3枠：</strong> ニコ／フリーナ／ベネット、または過負荷型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2／2／2.5。参照：[C69]、[C27]。</p>
+<h4 id="src-104">アーロイ — C（氷、H/Q、主対象、確度低）</h4><p><strong>判定：</strong> スキル・爆発の短時間ダメージと、条件付きの氷付与で攻撃役を担える。</p>
+<p><strong>制約・比較上の注意：</strong> 通常攻撃型はコイル獲得・付与の再現性が課題。凸による改善も基準にできず、短出場型を含めても制約が大きい。</p>
+<p><strong>代表的な味方3枠：</strong> シトラリ／ニコ／ベネット、または氷水型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2／2／2。参照：[C72]。</p>
+<h4 id="src-105">シロネン — C（岩、H、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 無凸にも岩攻撃を続ける分岐はある。月結晶支援を使う派生を評価範囲に入れた。</p>
+<p><strong>制約・比較上の注意：</strong> 通常の支援型とは必要な元素構成が異なる。無凸の本人火力は低く、6凸の前衛性能は対象外。</p>
+<p><strong>代表的な味方3枠：</strong> リンネア／イルーガ／コロンビーナ等、岩を多めにした型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／2。参照：[C87]、[C14]。</p>
+<h4 id="src-106">重雲 — C（氷、H/Q、派生・ドライバー、確度低）</h4><p><strong>判定：</strong> 氷付与と短い爆発で、氷通常型・反応爆発型の攻撃役になれる。</p>
+<p><strong>制約・比較上の注意：</strong> 支援として付与を渡す価値と本人の前衛火力は別。低い通常火力、場の制約と現行比較不足がある。</p>
+<p><strong>代表的な味方3枠：</strong> 申鶴／エスコフィエ／フリーナ、または溶解型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 2.5／2.5／2.5。参照：[C90]。</p>
+<h3 id="src-107">D：標準条件では特殊運用向け</h3><h4 id="src-108">辛炎 — D（炎／物理、H/Q、主対象、確度低）</h4><p><strong>判定：</strong> 完凸の重撃・爆発型に加え、外部炎付与と落下を使う別型も検討できる。</p>
+<p><strong>制約・比較上の注意：</strong> 物理・炎・盾の要求が噛み合いにくい。最新支援下の比較が不足し、最下位近辺の並びは確定しない。</p>
+<p><strong>代表的な味方3枠：</strong> ベネット／閑雲／フリーナ、または物理型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 1.5／1.5／2。参照：[C70]、[C51]。</p>
+<h4 id="src-109">アンバー — D（炎、H/Q、主対象、確度低）</h4><p><strong>判定：</strong> 手動起爆や溶解重撃で狙った瞬間の火力は作れる。弱点狙撃が機能する相手にも長所がある。</p>
+<p><strong>制約・比較上の注意：</strong> 主力操作の条件と範囲・時間効率が現行の高HP戦で重い。希少な成功動画から一般化しない。</p>
+<p><strong>代表的な味方3枠：</strong> シトラリ／ニコ／ベネット、または重撃・人形型。</p>
+<p><strong>モード点（螺旋／幽境／シアター）：</strong> 1.5／2／2。参照：[C71]。</p>
+<h2 id="src-110">7. 評価条件を変えるとどう動くか</h2><h3 id="src-111">コンテンツの重みだけを変えた再集計</h3><p>同じモード点を固定し、重みを変更した算術上の感度分析である。そのコンテンツだけの実測Tier表ではない。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>設定</th>
+<th align="right">螺旋</th>
+<th align="right">幽境</th>
+<th align="right">シアター</th>
+<th align="right">基準からTierが変わる運用数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基準</td>
+<td align="right">45%</td>
+<td align="right">35%</td>
+<td align="right">20%</td>
+<td align="right">—</td>
+</tr>
+<tr>
+<td>螺旋重視</td>
+<td align="right">60%</td>
+<td align="right">30%</td>
+<td align="right">10%</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>幽境重視</td>
+<td align="right">30%</td>
+<td align="right">60%</td>
+<td align="right">10%</td>
+<td align="right">14</td>
+</tr>
+<tr>
+<td>シアター重視</td>
+<td align="right">30%</td>
+<td align="right">20%</td>
+<td align="right">50%</td>
+<td align="right">28</td>
+</tr>
+</tbody></table>
+</div><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>代表例</th>
+<th>基準</th>
+<th>螺旋重視</th>
+<th>幽境重視</th>
+<th>シアター重視</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>サンドローネ</td>
+<td>SS</td>
+<td>SS</td>
+<td>SS</td>
+<td>S</td>
+</tr>
+<tr>
+<td>ヴェスナ</td>
+<td>SS</td>
+<td>SS</td>
+<td>SS</td>
+<td>S</td>
+</tr>
+<tr>
+<td>フリンズ</td>
+<td>SS</td>
+<td>SS</td>
+<td>SS</td>
+<td>S</td>
+</tr>
+<tr>
+<td>ネフェル</td>
+<td>SS</td>
+<td>SS</td>
+<td>SS</td>
+<td>A</td>
+</tr>
+<tr>
+<td>兹白</td>
+<td>SS</td>
+<td>SS</td>
+<td>SS</td>
+<td>A</td>
+</tr>
+<tr>
+<td>マーヴィカ</td>
+<td>S</td>
+<td>SS</td>
+<td>SS</td>
+<td>S</td>
+</tr>
+<tr>
+<td>スカーク</td>
+<td>S</td>
+<td>S</td>
+<td>S</td>
+<td>A</td>
+</tr>
+<tr>
+<td>ヌヴィレット</td>
+<td>S</td>
+<td>S</td>
+<td>S</td>
+<td>SS</td>
+</tr>
+<tr>
+<td>ムアラニ</td>
+<td>S</td>
+<td>S</td>
+<td>SS</td>
+<td>A</td>
+</tr>
+<tr>
+<td>ファルカ</td>
+<td>A</td>
+<td>S</td>
+<td>S</td>
+<td>A</td>
+</tr>
+<tr>
+<td>嘉明</td>
+<td>A</td>
+<td>S</td>
+<td>S</td>
+<td>A</td>
+</tr>
+<tr>
+<td>チャスカ</td>
+<td>A</td>
+<td>A</td>
+<td>S</td>
+<td>S</td>
+</tr>
+<tr>
+<td>珊瑚宮心海</td>
+<td>A</td>
+<td>A</td>
+<td>A</td>
+<td>S</td>
+</tr>
+</tbody></table>
+</div><p>螺旋重視・幽境重視の再集計では、基準のSS5運用は全てSSに残る。ただし、モード点そのものを1軸0.5だけ見直せば、SS/S境界をまたぐ例がある。したがって「上位グループの候補は比較的安定」と「SS5運用の判定が測定で確定した」は別である。</p>
+<p>シアターを半分の重みにすると、ヌヴィレットが上がり、専用支援を要求するネフェル・兹白等は下がる。この結果はシアター点に置いた“不完全編成への耐性”を強く反映する。専用支援を2戦とも確保できる公演では、実際の差はこれより小さくなる。</p>
+<h3 id="src-112">敵・操作・投資条件の変更</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>条件</th>
+<th>上がりやすい候補</th>
+<th>下がりやすい候補・留保</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>高HPの単体・短い弱点時間</td>
+<td>ムアラニ、キィニチ、ローエン、リネ、ティナリ等</td>
+<td>範囲の利益は小さくなる。必要な反応や初動が通るかは別途確認</td>
+</tr>
+<tr>
+<td>分散増援と頻繁な対象変更</td>
+<td>ヌヴィレット、ナヴィア、チャスカ等</td>
+<td>特定の敵への準備・主砲の打ち切りに依存する型</td>
+</tr>
+<tr>
+<td>密集し集敵が有効</td>
+<td>タルタリヤ、ウェンティ、魈、開花系前衛等</td>
+<td>吸えない敵に対して同じ伸びは期待しない</td>
+</tr>
+<tr>
+<td>操作・通信遅延が大きい</td>
+<td>単純な継続操作、盾付き通常型、瑞希等</td>
+<td>最適入力のクロリンデ、キィニチ、キャンセル依存型は理論値との差が増え得る</td>
+</tr>
+<tr>
+<td>専用支援を1枠欠く</td>
+<td>ヌヴィレット等の代替編成が残る候補</td>
+<td>ネフェルのラウマ、スカークのエスコフィエ、星反応の変換役などは下落が大きい</td>
+</tr>
+<tr>
+<td>★4が0〜2凸中心</td>
+<td>無凸★5の自己完結した型が相対上昇</td>
+<td>嘉明・レザー・ノエル本人、ファルザン・シュヴルーズ・イルーガ等の支援に影響。全員同幅ではない</td>
+</tr>
+<tr>
+<td>1凸・モチーフを追加</td>
+<td>ヴェスナ、兹白、ヴァレサ、ファルカ、リオセスリ等に大きな変化の余地</td>
+<td>伸び方は異なる。無凸表から同じ倍率で外挿できない</td>
+</tr>
+<tr>
+<td>今期7.1の補正込み</td>
+<td>星反応と氷主体の編成</td>
+<td>補正がない時期の総合差とは区別</td>
+</tr>
+<tr>
+<td>全員6凸・高精錬</td>
+<td>多数のキャラで攻撃列・支援役・耐久が変わる</td>
+<td>本表の対象外。単に数段階ずつ上げて対応できない</td>
+</tr>
+</tbody></table>
+</div><p>1凸・モチーフ追加の行は方向の予測であり、全員を同じ追加ガチャ予算で再計算した結果ではない。特定キャラを必ず何Tier上げるとまでは断定しない。</p>
+<h3 id="src-113">複数編成では、最強チームをそのまま並べられない</h3><p>フリンズ、ネフェル、兹白はコロンビーナ等を共有しやすく、サンドローネ、リオセスリ、ヴェスナ、瑞希はオデット等を共有する。単体のTierが高いことと、螺旋2編成・幽境3編成の最適な組み合わせであることは異なる。</p>
+<p>例えば、サンドローネ／八重神子／オデット／七七、フリンズ／イネファ／コロンビーナ／スクロース、マーヴィカ／シロネン／シトラリ／ベネットなら、支援の重複を避けて3編成を作れる。これは分配の説明例であり、今期の3ボスをその並びで攻略できると実測した例ではない。実際には各ボスのギミックへ割り当て直す必要がある。</p>
+<p>このアカウント全体の最適化を、所持情報なしで各キャラの固定減点にしなかった。その代わり、本表が「同時に最高編成を組める保証」ではないことを明示する。</p>
+<h2 id="src-114">8. 特に重要だった独自の考察</h2><ol>
+<li><strong>最大DPSより、ダメージを配り直せることが効く場面がある。</strong> 高い一撃が敵の残りHPを大きく超えたり、次ウェーブに攻撃資源を持ち越せなければ、木桩DPSの差が攻略差にならない。ヌヴィレットやナヴィアを持続・短出場の性質込みで評価する理由になる。</li>
+<li><strong>耐久の価値は、攻撃継続との因果関係で測る。</strong> 盾は常に同じ加点ではない。中断で最後の主砲が失われる型ほど価値が高く、リオセスリのように回復が出力条件と競合する例もある。</li>
+<li><strong>新反応の強さは、従来の支援市場を変える。</strong> 会心・熟知・耐性・専用反応バフの適用先が変わるので、既存の「最強サポーター」を全キャラへ同じ価値で配れない。</li>
+<li><strong>旧キャラの評価更新は、本人の強化と新しい控え火力の追加を分ける必要がある。</strong> 瑞希・セノ・リオセスリ・クレー・レザー・ウェンティは、以前の運用と評価構造が変わっている。一方で、強い控え3人を借りているだけかも確認すべきである。</li>
+<li><strong>「最新」と「比較可能」は別。</strong> 最新の計算一覧に未実装キャラの事前計算が混ざることがある。更新日だけで正式環境の検証と判断せず、実装版・凸・回し・不具合修正前後を確認する方が重要だった。</li>
+<li><strong>シアターを重くするほど、Tierは火力表から編成成立性の表へ近づく。</strong> これは誤りではなく、目的が変わった結果である。ゆえに総合表にはコンテンツの重みを必ず添えるべきだと考える。</li>
+</ol>
+<h2 id="src-115">9. 不確実性・限界と今後の検証</h2><h3 id="src-116">確認済みの事実、他者の見解、本稿の推論</h3><ul>
+<li><strong>確認した事実：</strong> 公式の7.1実装、告知保存版の当期補正と修正、参照した天賦・装備・反応の仕様、公開計算に書かれた凸・装備・回し。</li>
+<li><strong>他者の見解：</strong> ガイドの最適編成・武器比較・相対評価。専門家の見解でも全条件へ一般化しない。</li>
+<li><strong>本稿の推論：</strong> 全Tier、モード点、コンテンツ比率、実戦上の長短を統合した位置付け、資料を組み合わせた一部の派生編成。</li>
+<li><strong>未確認・不足：</strong> 全編成を統一条件で再計算したDPS、公開動画の全装備と試行選別、ギミック別の成功率、未取得の計算シートの内部仮定。</li>
+</ul>
+<p>特に、得点を固定した重み変更だけでは、元の得点が正しいことは検証できない。採点モデルの内部整合性の点検にすぎず、外部妥当性はゲーム内実測や統一計算で別に確かめる必要がある。</p>
+<h3 id="src-117">優先して追加検証すべきこと</h3><div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>優先</th>
+<th>検証内容</th>
+<th>判定に必要なデータ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>SS5運用とマーヴィカ・スカーク・ヌヴィレットの統一比較</td>
+<td>同じ育成・武器上限、各人の適正編成、初動と90秒、単体・複数・増援のログ</td>
+</tr>
+<tr>
+<td>2</td>
+<td>無凸八重神子と1凸八重神子を分離した星電導比較</td>
+<td>他3人固定、チャージと回しを維持した差分。単純に表示バフを引くだけにしない</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ヴェスナの武器・粒子・爆発頻度</td>
+<td>敵粒子少なめ、ファルザン有無、毎巡／隔巡の長期エネルギーログ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>リオセスリの回復量と強化重撃回数</td>
+<td>被弾あり／なし、盾型／回復型、HP時系列と中断・失敗回数</td>
+</tr>
+<tr>
+<td>5</td>
+<td>最新支援下の旧キャラ・派生型</td>
+<td>C0ニコ・ドゥリン・ラウマ・リンネア等を用いた同条件比較</td>
+</tr>
+<tr>
+<td>6</td>
+<td>シアターの現実的な不完全編成</td>
+<td>反応役や支援役が欠ける場合の複数デッキ・複数試行。架空の出現確率を置かない</td>
+</tr>
+<tr>
+<td>7</td>
+<td>氷主人公の取得上限と恒常強化の一次確認</td>
+<td>7.1ゲーム内の実取得状態、任務・神像報酬、武器精錬の記録</td>
+</tr>
+</tbody></table>
+</div><p>ゲーム内試験を行うなら、条件を固定したうえで成功した1回だけを選ばず、同じ部屋で複数回のクリア時間、失敗、被弾、中断、エネルギー不足を記録する。中央値と悪い試行側の時間を分け、装備画面と回しを公開する。これは今後の検証設計であり、本稿で実施済みとの主張ではない。</p>
+<h2 id="src-118">付録A. 採点一覧</h2><p>小数点以下は加重平均の計算結果であり、実測精度を表していない。同Tier内の優劣や境界の僅差は確定しない。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>対象</th>
+<th>区分</th>
+<th align="right">螺旋</th>
+<th align="right">幽境</th>
+<th align="right">シアター</th>
+<th align="right">総合コード</th>
+<th>Tier</th>
+<th>確度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>サンドローネ</td>
+<td>主</td>
+<td align="right">5.0</td>
+<td align="right">5.0</td>
+<td align="right">3.0</td>
+<td align="right">4.600</td>
+<td>SS</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ヴェスナ</td>
+<td>主</td>
+<td align="right">5.0</td>
+<td align="right">4.5</td>
+<td align="right">3.5</td>
+<td align="right">4.525</td>
+<td>SS</td>
+<td>中</td>
+</tr>
+<tr>
+<td>フリンズ</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">5.0</td>
+<td align="right">3.5</td>
+<td align="right">4.475</td>
+<td>SS</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ネフェル</td>
+<td>主</td>
+<td align="right">5.0</td>
+<td align="right">5.0</td>
+<td align="right">2.0</td>
+<td align="right">4.400</td>
+<td>SS</td>
+<td>中</td>
+</tr>
+<tr>
+<td>兹白</td>
+<td>主</td>
+<td align="right">5.0</td>
+<td align="right">5.0</td>
+<td align="right">2.5</td>
+<td align="right">4.500</td>
+<td>SS</td>
+<td>中</td>
+</tr>
+<tr>
+<td>マーヴィカ</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">4.5</td>
+<td align="right">3.5</td>
+<td align="right">4.300</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>スカーク</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">4.5</td>
+<td align="right">2.5</td>
+<td align="right">4.100</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ヌヴィレット</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">3.5</td>
+<td align="right">5.0</td>
+<td align="right">4.250</td>
+<td>S</td>
+<td>高</td>
+</tr>
+<tr>
+<td>アルレッキーノ</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">4.225</td>
+<td>S</td>
+<td>高</td>
+</tr>
+<tr>
+<td>ムアラニ</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">5.0</td>
+<td align="right">3.0</td>
+<td align="right">4.150</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ヴァレサ</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">4.0</td>
+<td align="right">3.5</td>
+<td align="right">4.125</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>リオセスリ</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">4.5</td>
+<td align="right">3.0</td>
+<td align="right">3.975</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>夢見月瑞希</td>
+<td>主</td>
+<td align="right">4.5</td>
+<td align="right">4.0</td>
+<td align="right">3.0</td>
+<td align="right">4.025</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>キィニチ</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">4.5</td>
+<td align="right">3.0</td>
+<td align="right">3.975</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ナヴィア</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">3.825</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>クレー</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">3.0</td>
+<td align="right">3.800</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ファルカ</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">2.5</td>
+<td align="right">3.700</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>コロンビーナ</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">2.5</td>
+<td align="right">3.700</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ローエン</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">2.5</td>
+<td align="right">3.475</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>嘉明</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">2.5</td>
+<td align="right">3.700</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>アルハイゼン</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.500</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>クロリンデ</td>
+<td>主</td>
+<td align="right">4.0</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.725</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>セノ</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">2.5</td>
+<td align="right">3.475</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>胡桃</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">3.0</td>
+<td align="right">3.575</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>魈</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">2.5</td>
+<td align="right">3.300</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>雷電将軍</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.400</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>レザー</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">2.5</td>
+<td align="right">3.300</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ティナリ</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.400</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>チャスカ</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">3.775</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>リネ</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">2.5</td>
+<td align="right">3.475</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>神里綾華</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">2.5</td>
+<td align="right">3.300</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>神里綾人</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">4.0</td>
+<td align="right">3.425</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>タルタリヤ</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.225</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ディルック</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">2.5</td>
+<td align="right">3.300</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>刻晴</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.5</td>
+<td align="right">3.325</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>荒瀧一斗</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">2.5</td>
+<td align="right">3.300</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ウェンティ</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">4.0</td>
+<td align="right">3.425</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>放浪者</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.5</td>
+<td align="right">3.325</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>甘雨</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.225</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>宵宮</td>
+<td>主</td>
+<td align="right">3.0</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.275</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ノエル</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">4.0</td>
+<td align="right">3.425</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>セトス</td>
+<td>主</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.5</td>
+<td align="right">3.100</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>主人公・氷</td>
+<td>主</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">3.0</td>
+<td align="right">3.575</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>煙緋</td>
+<td>主</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.5</td>
+<td align="right">2.700</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>凝光</td>
+<td>主</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.000</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>鹿野院平蔵</td>
+<td>主</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.5</td>
+<td align="right">3.100</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>カーヴェ</td>
+<td>主</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.600</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>エウルア</td>
+<td>主</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">2.0</td>
+<td align="right">2.400</td>
+<td>C</td>
+<td>中</td>
+</tr>
+<tr>
+<td>フレミネ</td>
+<td>主</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.5</td>
+<td align="right">2.675</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ディシア</td>
+<td>主</td>
+<td align="right">2.0</td>
+<td align="right">2.0</td>
+<td align="right">2.5</td>
+<td align="right">2.100</td>
+<td>C</td>
+<td>中</td>
+</tr>
+<tr>
+<td>辛炎</td>
+<td>主</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">2.0</td>
+<td align="right">1.600</td>
+<td>D</td>
+<td>低</td>
+</tr>
+<tr>
+<td>アンバー</td>
+<td>主</td>
+<td align="right">1.5</td>
+<td align="right">2.0</td>
+<td align="right">2.0</td>
+<td align="right">1.775</td>
+<td>D</td>
+<td>低</td>
+</tr>
+<tr>
+<td>アーロイ</td>
+<td>主</td>
+<td align="right">2.0</td>
+<td align="right">2.0</td>
+<td align="right">2.0</td>
+<td align="right">2.000</td>
+<td>C</td>
+<td>低</td>
+</tr>
+<tr>
+<td>ナヒーダ</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">3.600</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>スクロース</td>
+<td>派生</td>
+<td align="right">4.0</td>
+<td align="right">4.0</td>
+<td align="right">3.5</td>
+<td align="right">3.900</td>
+<td>S</td>
+<td>中</td>
+</tr>
+<tr>
+<td>珊瑚宮心海</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">4.5</td>
+<td align="right">3.525</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>イファ</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">4.0</td>
+<td align="right">3.600</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>モナ</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.000</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>バーバラ</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.5</td>
+<td align="right">2.700</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>リサ</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.000</td>
+<td>B</td>
+<td>中</td>
+</tr>
+<tr>
+<td>八重神子</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.500</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>リネット</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.000</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>ドリー</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.600</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>主人公・炎</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.600</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>主人公・岩</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.600</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>ドゥリン</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.400</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>ラウマ</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.400</td>
+<td>A</td>
+<td>中</td>
+</tr>
+<tr>
+<td>リンネア</td>
+<td>派生</td>
+<td align="right">3.5</td>
+<td align="right">3.5</td>
+<td align="right">3.0</td>
+<td align="right">3.400</td>
+<td>A</td>
+<td>低</td>
+</tr>
+<tr>
+<td>キャンディス</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.600</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>シロネン</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">2.0</td>
+<td align="right">2.400</td>
+<td>C</td>
+<td>低</td>
+</tr>
+<tr>
+<td>ガイア</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.825</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>ロサリア</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">2.5</td>
+<td align="right">2.900</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>重雲</td>
+<td>派生</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">2.500</td>
+<td>C</td>
+<td>低</td>
+</tr>
+<tr>
+<td>フィッシュル</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">2.5</td>
+<td align="right">3.0</td>
+<td align="right">2.825</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>鍾離</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">2.5</td>
+<td align="right">3.5</td>
+<td align="right">2.925</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>ベネット</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">2.5</td>
+<td align="right">2.5</td>
+<td align="right">2.725</td>
+<td>B</td>
+<td>低</td>
+</tr>
+<tr>
+<td>閑雲</td>
+<td>派生</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">3.5</td>
+<td align="right">3.100</td>
+<td>B</td>
+<td>低</td>
+</tr>
+</tbody></table>
+</div><h2 id="src-119">付録B. 全プレイアブルの役割確認と対象外の扱い</h2><p>KQM TCLの実装済み一覧［下記URL］は主人公7元素を別項目とした127項目。本表はそのうち77運用を採点し、残り50項目（46キャラ＋主人公の他4元素）はNRとした。したがってキャラ一覧の見落としと、評価対象外の判断を区別している。</p>
+<p><a href="https://library.keqingmains.com/characters">KQM TCL Characters</a></p>
+<p>NRはDより下という意味ではない。主な役割が控え火力・支援・耐久である、基準の無凸では専用前衛モードが解放されない、または本調査で前衛として継続使用する利益の検証が不足する、という範囲上の判断である。全キャラへ外部付与・物理通常を持たせる全派生までは対象にしていない。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>主な役割で整理したNR対象</th>
+<th>この表での扱い</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>アルベド、北斗、エミリエ、エスコフィエ、オデット、オロルン、香菱、行秋、夜蘭、千織、イネファ</td>
+<td>主に控え火力。無凸前衛の個別評価はNR。千織等の高凸前衛化も基準外</td>
+</tr>
+<tr>
+<td>アイノ、アリョーシャ、シュヴルーズ、シトラリ、ファルザン、フリーナ、ゴロー、イアンサ、イルーガ、楓原万葉、九条裟羅、ニコ、ニィロウ、プルーネ、申鶴、雲菫</td>
+<td>主に付着・バフ・反応変換・条件成立。支援としての強さは味方の評価に反映し、前衛Tierを付けない</td>
+</tr>
+<tr>
+<td>白朮、シャルロット、ダリア、ディオナ、ジン、綺良々、久岐忍、藍硯、レイラ、ミカ、七七、早柚、シグウィン、ヴォジャニーツァ、ヨォーヨ、トーマ</td>
+<td>主に耐久・付着支援。前衛の特殊型を全部網羅したとはしない</td>
+</tr>
+<tr>
+<td>カチーナ、コレイ、ヤフォダ</td>
+<td>主に支援・控え。現在の前衛性能を採点する根拠を十分確保できずNR</td>
+</tr>
+<tr>
+<td>主人公・風／草／雷／水</td>
+<td>この研究では前衛としての採点をしない。控えの草付着等の価値を低評価と解釈しない</td>
+</tr>
+</tbody></table>
+</div><p>ニィロウはチームの主な反応ダメージを成立させる核心だが、通常の短いスキル使用だけでは本表の前衛枠を占めない。ニィロウ開花編成の強さは、心海・ナヒーダ・ラウマ・カーヴェ等を前衛に置いた評価に含める。氷主人公と異なり他の主人公をすべて一つの順位へ合算することもしない。</p>
+<h2 id="src-120">付録C. 個別資料の参照先</h2><p>本文のC番号は該当キャラの仕様・編成を追跡するためのもの。古いガイドは基礎キットや操作だけに使用し、現行の最適性は新しい支援側・反応側の資料と組み合わせて判断した。本文を取得できた範囲は資料によって異なる。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="原文の表"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>資料</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C01</td>
+<td><a href="https://keqingmains.com/q/sandrone-quickguide/">Sandrone Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C02</td>
+<td><a href="https://mobalytics.gg/genshin-impact/guides/stellar-conduct">Stellar Conduct Reaction Guide - Genshin Impact</a></td>
+</tr>
+<tr>
+<td>C03</td>
+<td><a href="https://wiki.biligame.com/ys/%E6%A1%91%E5%A4%9A%E6%B6%85/%E6%94%BB%E7%95%A5">桑多涅 / 攻略</a></td>
+</tr>
+<tr>
+<td>C04</td>
+<td><a href="https://mobalytics.gg/genshin-impact/characters/vesna-build-guide">Vesna Build Guide - Weapons, Artifacts, &amp; More - Genshin</a></td>
+</tr>
+<tr>
+<td>C05</td>
+<td><a href="https://www.taptap.cn/moment/851859733571699624">〖V7.1〗详谈薇斯纳的玩法、配队、抽取建议（平民玩家视角） - 原神7.1版本攻略征集 - TapTap 原神论坛</a></td>
+</tr>
+<tr>
+<td>C06</td>
+<td>[『原神』Ver.7.1アップデートを本日9月23日に実施。新★5「ヴェスナ」（CV:平野綾）、「ヴォジャニーツァ」（CV:伊藤かな恵）が登場！6周年記念の特典も盛りだくさん！</td>
+</tr>
+<tr>
+<td>C07</td>
+<td><a href="https://wiki.biligame.com/ys/%E8%96%87%E6%96%AF%E7%BA%B3/%E6%94%BB%E7%95%A5">薇斯纳 / 攻略</a></td>
+</tr>
+<tr>
+<td>C08</td>
+<td><a href="https://keqingmains.com/q/flins-quickguide/">Flins Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C09</td>
+<td><a href="https://keqingmains.com/q/columbina-quickguide/">Columbina Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C10</td>
+<td><a href="https://keqingmains.com/q/nefer-quickguide/">Nefer Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C11</td>
+<td><a href="https://keqingmains.com/q/lauma-quickguide/">Lauma Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C12</td>
+<td><a href="https://wiki.biligame.com/ys/%E5%A5%88%E8%8A%99%E5%B0%94/%E6%94%BB%E7%95%A5">奈芙尔 / 攻略</a></td>
+</tr>
+<tr>
+<td>C13</td>
+<td><a href="https://keqingmains.com/q/zibai-quickguide/">Zibai Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C14</td>
+<td><a href="https://keqingmains.com/q/linnea-quickguide/">Linnea Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C15</td>
+<td><a href="https://keqingmains.com/q/mavuika-quickguide/">Mavuika Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C16</td>
+<td><a href="https://dpsleaders.augmeneco.ru/?page=0">DPSLeaders</a></td>
+</tr>
+<tr>
+<td>C17</td>
+<td><a href="https://keqingmains.com/q/skirk-quickguide/">Skirk Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C18</td>
+<td><a href="https://keqingmains.com/q/vodyanitsa-quickguide/">Vodyanitsa Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C19</td>
+<td><a href="https://keqingmains.com/q/neuvillette-quickguide/">Neuvillette Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C20</td>
+<td><a href="https://keqingmains.com/q/arlecchino-quickguide/">Arlecchino Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C21</td>
+<td><a href="https://keqingmains.com/q/mualani-quickguide/">Mualani Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C22</td>
+<td><a href="https://keqingmains.com/q/varesa-quickguide/">Varesa Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C23</td>
+<td><a href="https://keqingmains.com/q/wriothesley-quickguide/">Wriothesley Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C24</td>
+<td><a href="https://keqingmains.com/q/mizuki-quickguide/">Mizuki Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C25</td>
+<td><a href="https://mobalytics.gg/genshin-impact/guides/stellar-swirl">Stellar Swirl Reaction Guide - Genshin Impact</a></td>
+</tr>
+<tr>
+<td>C26</td>
+<td><a href="https://keqingmains.com/q/kinich-quickguide/">Kinich Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C27</td>
+<td><a href="https://keqingmains.com/q/nicole-quickguide/">Nicole Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C28</td>
+<td><a href="https://keqingmains.com/navia/">Navia Guide: The Soaring Yellow Rose - KQM</a></td>
+</tr>
+<tr>
+<td>C29</td>
+<td><a href="https://keqingmains.com/q/klee-quickguide/">Klee Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C30</td>
+<td><a href="https://keqingmains.com/q/varka-quickguide/">Varka Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C31</td>
+<td><a href="https://keqingmains.com/q/lohen-quickguide/">Lohen Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C32</td>
+<td><a href="https://keqingmains.com/q/gaming-quickguide/">Gaming Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C33</td>
+<td><a href="https://keqingmains.com/q/alhaitham-quickguide/">Alhaitham Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C34</td>
+<td><a href="https://lightkeepers.moe/teams/configs/Alhaitham~C0~IronSting~R5__Furina~C0~FavoniusSword~R5__KukiShinobu~C6~IronSting~R1__Lauma~C0~FavoniusCodex~R5">Lightkeepers</a></td>
+</tr>
+<tr>
+<td>C35</td>
+<td><a href="https://keqingmains.com/q/clorinde-quickguide/">Clorinde Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C36</td>
+<td>[Cyno</td>
+</tr>
+<tr>
+<td>C37</td>
+<td><a href="https://mobalytics.gg/genshin-impact/characters/cyno-build-guide">Cyno Build Guide - Weapons, Artifacts, &amp; More - Genshin</a></td>
+</tr>
+<tr>
+<td>C38</td>
+<td><a href="https://keqingmains.com/hu-tao/">Hu Tao Guide: Butterfly&#39;s Embrace - KQM</a></td>
+</tr>
+<tr>
+<td>C39</td>
+<td><a href="https://keqingmains.com/q/hu-tao-quickguide/">Hu Tao Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C40</td>
+<td><a href="https://keqingmains.com/q/xiao-quickguide/">Xiao Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C41</td>
+<td><a href="https://keqingmains.com/q/raiden-quickguide/">Raiden Shogun Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C42</td>
+<td><a href="https://mobalytics.gg/genshin-impact/characters/razor-build-guide">Razor Build Guide - Weapons, Artifacts, &amp; More - Genshin</a></td>
+</tr>
+<tr>
+<td>C43</td>
+<td><a href="https://keqingmains.com/q/tighnari-quickguide/">Tighnari Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C44</td>
+<td><a href="https://keqingmains.com/tighnari/">Tighnari: Verdant Strider - KQM</a></td>
+</tr>
+<tr>
+<td>C45</td>
+<td><a href="https://keqingmains.com/q/chasca-quickguide/">Chasca Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C46</td>
+<td><a href="https://keqingmains.com/q/lyney-quickguide/">Lyney Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C47</td>
+<td><a href="https://keqingmains.com/q/ayaka-quickguide/">Ayaka Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C48</td>
+<td><a href="https://keqingmains.com/q/ayato-quickguide/">Ayato Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C49</td>
+<td><a href="https://keqingmains.com/q/tartaglia-quickguide/">Tartaglia Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C50</td>
+<td><a href="https://keqingmains.com/q/diluc-quickguide/">Diluc Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C51</td>
+<td><a href="https://keqingmains.com/q/xianyun-quickguide/">Xianyun Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C52</td>
+<td>[Keqing Guide</td>
+</tr>
+<tr>
+<td>C53</td>
+<td><a href="https://keqingmains.com/q/itto-quickguide/">Itto Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C54</td>
+<td><a href="https://keqingmains.com/q/venti-quickguide/">Venti Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C55</td>
+<td><a href="https://keqingmains.com/q/wanderer-quickguide/">Wanderer Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C56</td>
+<td><a href="https://keqingmains.com/q/ganyu-quickguide/">Ganyu Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C57</td>
+<td><a href="https://keqingmains.com/q/yoimiya-quickguide/">Yoimiya Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C58</td>
+<td><a href="https://keqingmains.com/q/noelle-quickguide/">Noelle Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C59</td>
+<td><a href="https://keqingmains.com/q/sethos-quickguide/">Sethos Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C60</td>
+<td>[Traveler (Cryo)</td>
+</tr>
+<tr>
+<td>C61</td>
+<td><a href="https://wikiwiki.jp/genshinwiki/%E4%B8%BB%E4%BA%BA%E5%85%AC/%E6%B0%B7">主人公/氷 - 原神 Wiki*</a></td>
+</tr>
+<tr>
+<td>C62</td>
+<td><a href="https://wikiwiki.jp/genshinwiki/%E7%89%87%E6%89%8B%E5%89%A3/%E6%98%9F%E9%8B%92%E3%81%AE%E5%89%A3">片手剣/星鋒の剣 - genshinwiki</a></td>
+</tr>
+<tr>
+<td>C63</td>
+<td><a href="https://keqingmains.com/q/yanfei-quickguide/">Yanfei Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C64</td>
+<td><a href="https://keqingmains.com/q/ningguang-quickguide/">Ningguang Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C65</td>
+<td><a href="https://keqingmains.com/q/heizou-quickguide/">Heizou Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C66</td>
+<td><a href="https://keqingmains.com/q/kaveh-quickguide/">Kaveh Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C67</td>
+<td><a href="https://keqingmains.com/q/eula-quickguide/">Eula Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C68</td>
+<td><a href="https://keqingmains.com/q/freminet-quickguide/">Freminet Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C69</td>
+<td><a href="https://keqingmains.com/q/dehya-quickguide/">Dehya Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C70</td>
+<td><a href="https://keqingmains.com/xinyan/">Xinyan Guide: Save Rock &#39;n&#39; Roll - KQM</a></td>
+</tr>
+<tr>
+<td>C71</td>
+<td><a href="https://keqingmains.com/q/amber-quickguide/">Amber Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C72</td>
+<td><a href="https://keqingmains.com/q/aloy-quickguide/">Aloy Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C73</td>
+<td><a href="https://keqingmains.com/q/nahida-quickguide/">Nahida Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C74</td>
+<td><a href="https://keqingmains.com/q/sucrose-quickguide/">Sucrose Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C75</td>
+<td><a href="https://keqingmains.com/q/kokomi-quickguide/">Kokomi Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C76</td>
+<td><a href="https://keqingmains.com/q/ifa-quickguide/">Ifa Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C77</td>
+<td><a href="https://keqingmains.com/q/mona-quickguide/">Mona Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C78</td>
+<td><a href="https://keqingmains.com/q/barbara-quickguide/">Barbara Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C79</td>
+<td><a href="https://keqingmains.com/q/lisa-quickguide/">Lisa Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C80</td>
+<td><a href="https://keqingmains.com/q/yae-quickguide/">Yae Miko Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C81</td>
+<td><a href="https://keqingmains.com/q/lynette-quickguide/">Lynette Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C82</td>
+<td><a href="https://keqingmains.com/q/dori-quickguide/">Dori Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C83</td>
+<td><a href="https://keqingmains.com/q/pyro-traveler-quickguide/">Pyro Traveler Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C84</td>
+<td><a href="https://keqingmains.com/geo-traveler/">Geo Traveler Guide: Meteorite Impact - KQM</a></td>
+</tr>
+<tr>
+<td>C85</td>
+<td><a href="https://keqingmains.com/q/durin-quickguide/">Durin Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C86</td>
+<td><a href="https://keqingmains.com/q/candace-quickguide/">Candace Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C87</td>
+<td><a href="https://keqingmains.com/q/xilonen-quickguide/">Xilonen Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C88</td>
+<td><a href="https://keqingmains.com/q/kaeya-quickguide/">Kaeya Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C89</td>
+<td><a href="https://keqingmains.com/q/rosaria-quickguide/">Rosaria Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C90</td>
+<td><a href="https://keqingmains.com/q/chongyun-quickguide/">Chongyun Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C91</td>
+<td><a href="https://keqingmains.com/q/fischl-quickguide/">Fischl Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C92</td>
+<td><a href="https://keqingmains.com/q/zhongli-quickguide/">Zhongli Quick Guide - KQM</a></td>
+</tr>
+<tr>
+<td>C93</td>
+<td><a href="https://keqingmains.com/q/bennett-quickguide/">Bennett Quick Guide - KQM</a></td>
+</tr>
+</tbody></table>
+</div><hr>
+<p>本稿の結論は、期間補正を除き、育成・凸・編成を明示した場合の独自総合評価である。更新時には、上位の評判だけを差し替えるのではなく、反応仕様・支援の凸・実行可能な回し・敵条件から再点検する。</p>
+</article></section></div>
+<noscript><p class="notice">比較・条件切替にはJavaScriptを使います。提供資料の全文は、このまま読めます。</p></noscript>
+</main><footer class="section-footer">表示検証用の試作。提供資料の主張と、検証済みのゲーム事実を同一視しません。原文は全案に保持しています。</footer>
+</div>
+<dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-head"><div><p class="eyebrow">原文 第6節</p><h2 id="detail-title"></h2></div><button id="close-detail" aria-label="詳細を閉じる">閉じる ×</button></div><p id="detail-meta" class="meta"></p><p class="notice">以下は提供資料の記述です。Tier・モード点は原著者の判断で、実測DPSではありません。</p><div id="detail-body" class="detail-body"></div><a href="#original" id="detail-source">原文全文・出典一覧へ →</a></dialog>
+<script id="report-data" type="application/json">{"source_sha256":"3f37fae6c5c1b1c358c1a277f1b42b99ce66255805305608dffd6de024433543","characters":46799,"lines":1308,"records":[{"id":"c-97b02d02aa","name":"サンドローネ","group":"主","scores":[5,5,3],"score_strings":["5.0","5.0","3.0"],"total":"4.600","tier":"SS","confidence":"中","profiles":{"基準":"SS","螺旋重視":"SS","幽境重視":"SS","シアター重視":"S"},"source_line":1109,"element":"氷","raw":"**判定：** 持続範囲火力と比較的単純な操作を両立。星電導を主軸とし、星拡散にも移行できる。\n\n**制約・比較上の注意：** 八重1凸込みの公開値を無凸値として採用しない。敵の氷耐性と編成成立条件に注意。\n\n**代表的な味方3枠：** 八重神子／オデット／エスコフィエ。\n\n**モード点（螺旋／幽境／シアター）：** 5／5／3。参照：[C01]、[C02]、[C03]。","detail_line":232,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 持続範囲火力と比較的単純な操作を両立。星電導を主軸とし、星拡散にも移行できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 八重1凸込みの公開値を無凸値として採用しない。敵の氷耐性と編成成立条件に注意。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 八重神子／オデット／エスコフィエ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 5／5／3。参照：[C01]、[C02]、[C03]。\u003c/p>\n"},{"id":"c-bf69fc78da","name":"ヴェスナ","group":"主","scores":[5,4.5,3.5],"score_strings":["5.0","4.5","3.5"],"total":"4.525","tier":"SS","confidence":"中","profiles":{"基準":"SS","螺旋重視":"SS","幽境重視":"SS","シアター重視":"S"},"source_line":1110,"element":"風","raw":"**判定：** 星拡散の範囲火力が強く、支援込みで攻撃継続と生存をまとめられる。氷側の控え火力も有効。\n\n**制約・比較上の注意：** 後半の強化攻撃まで通す必要がある。非モチーフ武器での爆発毎回使用はエネルギー条件を確認。\n\n**代表的な味方3枠：** オデット／ヴォジャニーツァ／ファルザン。\n\n**モード点（螺旋／幽境／シアター）：** 5／4.5／3.5。参照：[C04]、[C05]、[C06]、[C07]。","detail_line":242,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 星拡散の範囲火力が強く、支援込みで攻撃継続と生存をまとめられる。氷側の控え火力も有効。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 後半の強化攻撃まで通す必要がある。非モチーフ武器での爆発毎回使用はエネルギー条件を確認。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> オデット／ヴォジャニーツァ／ファルザン。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 5／4.5／3.5。参照：[C04]、[C05]、[C06]、[C07]。\u003c/p>\n"},{"id":"c-0fa4f81de9","name":"フリンズ","group":"主","scores":[4.5,5,3.5],"score_strings":["4.5","5.0","3.5"],"total":"4.475","tier":"SS","confidence":"中","profiles":{"基準":"SS","螺旋重視":"SS","幽境重視":"SS","シアター重視":"S"},"source_line":1111,"element":"雷","raw":"**判定：** 短い爆発を軸に高い月感電火力を出し、イネファの防御と控え火力も活かす。範囲にも対応。\n\n**制約・比較上の注意：** 月反応と月兆を成立させる味方の制約があり、自由枠だけで完全に代替できるわけではない。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／スクロース。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／5／3.5。参照：[C08]、[C09]。","detail_line":252,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短い爆発を軸に高い月感電火力を出し、イネファの防御と控え火力も活かす。範囲にも対応。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 月反応と月兆を成立させる味方の制約があり、自由枠だけで完全に代替できるわけではない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／スクロース。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／5／3.5。参照：[C08]、[C09]。\u003c/p>\n"},{"id":"c-e5687e2d9c","name":"ネフェル","group":"主","scores":[5,5,2],"score_strings":["5.0","5.0","2.0"],"total":"4.400","tier":"SS","confidence":"中","profiles":{"基準":"SS","螺旋重視":"SS","幽境重視":"SS","シアター重視":"A"},"source_line":1112,"element":"草","raw":"**判定：** 月開花を専用の重撃火力へ変換し、完成編成での攻略余裕が大きい。短い移動を挟む攻撃も実用的。\n\n**制約・比較上の注意：** ラウマ等を欠くと下落が大きい。無回復スクロース型は攻撃偏重の別条件。炎付着固定の敵も苦手。\n\n**代表的な味方3枠：** ラウマ／コロンビーナ／ヨォーヨまたは白朮。\n\n**モード点（螺旋／幽境／シアター）：** 5／5／2。参照：[C10]、[C11]、[C09]、[C12]。","detail_line":262,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 月開花を専用の重撃火力へ変換し、完成編成での攻略余裕が大きい。短い移動を挟む攻撃も実用的。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> ラウマ等を欠くと下落が大きい。無回復スクロース型は攻撃偏重の別条件。炎付着固定の敵も苦手。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ラウマ／コロンビーナ／ヨォーヨまたは白朮。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 5／5／2。参照：[C10]、[C11]、[C09]、[C12]。\u003c/p>\n"},{"id":"c-c9c729ede4","name":"兹白","group":"主","scores":[5,5,2.5],"score_strings":["5.0","5.0","2.5"],"total":"4.500","tier":"SS","confidence":"中","profiles":{"基準":"SS","螺旋重視":"SS","幽境重視":"SS","シアター重視":"A"},"source_line":1113,"element":"岩","raw":"**判定：** 月結晶の高い個人火力に、控えの月反応火力と支援を重ねられる。行動に調整余地がある。\n\n**制約・比較上の注意：** 岩だから無条件に汎用的という評価はしない。水・月反応と専用支援が揃う条件での最上位。\n\n**代表的な味方3枠：** イルーガ／リンネア／コロンビーナ。\n\n**モード点（螺旋／幽境／シアター）：** 5／5／2.5。参照：[C13]、[C14]。","detail_line":272,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 月結晶の高い個人火力に、控えの月反応火力と支援を重ねられる。行動に調整余地がある。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 岩だから無条件に汎用的という評価はしない。水・月反応と専用支援が揃う条件での最上位。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イルーガ／リンネア／コロンビーナ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 5／5／2.5。参照：[C13]、[C14]。\u003c/p>\n"},{"id":"c-cb6622b90f","name":"マーヴィカ","group":"主","scores":[4.5,4.5,3.5],"score_strings":["4.5","4.5","3.5"],"total":"4.300","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"SS","幽境重視":"SS","シアター重視":"S"},"source_line":1114,"element":"炎","raw":"**判定：** 初撃の大火力とその後の持続範囲火力があり、爆発中の強い中断耐性が実戦の損失を抑える。\n\n**制約・比較上の注意：** 戦意供給・反応・支援の時間管理が条件。最適化した特殊コンボの値は通常操作の値と分ける。\n\n**代表的な味方3枠：** シロネン／シトラリ／ベネット。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／4.5／3.5。参照：[C15]、[C16]。","detail_line":284,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 初撃の大火力とその後の持続範囲火力があり、爆発中の強い中断耐性が実戦の損失を抑える。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 戦意供給・反応・支援の時間管理が条件。最適化した特殊コンボの値は通常操作の値と分ける。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シロネン／シトラリ／ベネット。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／4.5／3.5。参照：[C15]、[C16]。\u003c/p>\n"},{"id":"c-2c8f4a8879","name":"スカーク","group":"主","scores":[4.5,4.5,2.5],"score_strings":["4.5","4.5","2.5"],"total":"4.100","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1115,"element":"氷","raw":"**判定：** 通常攻撃主体と短出場の爆発を使い分けられ、非凍結ボスでも戦える。自由な位置取りも長所。\n\n**制約・比較上の注意：** 水氷制約とエスコフィエ依存がシアターの不完全編成で重い。凍結不可を一律の致命傷とはしない。\n\n**代表的な味方3枠：** フリーナ／エスコフィエ／ヴォジャニーツァまたは夜蘭。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／4.5／2.5。参照：[C17]、[C18]。","detail_line":294,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 通常攻撃主体と短出場の爆発を使い分けられ、非凍結ボスでも戦える。自由な位置取りも長所。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 水氷制約とエスコフィエ依存がシアターの不完全編成で重い。凍結不可を一律の致命傷とはしない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／エスコフィエ／ヴォジャニーツァまたは夜蘭。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／4.5／2.5。参照：[C17]、[C18]。\u003c/p>\n"},{"id":"c-f5bf6ebbbf","name":"ヌヴィレット","group":"主","scores":[4.5,3.5,5],"score_strings":["4.5","3.5","5.0"],"total":"4.250","tier":"S","confidence":"高","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"SS"},"source_line":1116,"element":"水","raw":"**判定：** 広い射程、移動しながらの範囲攻撃、自前回復、分割できる攻撃時間が複数ウェーブで強い。\n\n**制約・比較上の注意：** 無凸の中断リスクを計上。最高火力型と鍾離入り安定型を同じ火力として扱わない。高HP単体だけなら相対低下。\n\n**代表的な味方3枠：** フリーナ／シロネン／楓原万葉、または鍾離＋異元素2枠型。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／3.5／5。参照：[C19]。","detail_line":304,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 広い射程、移動しながらの範囲攻撃、自前回復、分割できる攻撃時間が複数ウェーブで強い。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸の中断リスクを計上。最高火力型と鍾離入り安定型を同じ火力として扱わない。高HP単体だけなら相対低下。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／シロネン／楓原万葉、または鍾離＋異元素2枠型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／3.5／5。参照：[C19]。\u003c/p>\n"},{"id":"c-044720f349","name":"アルレッキーノ","group":"主","scores":[4.5,4,4],"score_strings":["4.5","4.0","4.0"],"total":"4.225","tier":"S","confidence":"高","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"S"},"source_line":1117,"element":"炎","raw":"**判定：** 高い炎火力と、交代・対象変更後も扱いやすい攻撃資源が実戦で有用。蒸発・溶解・過負荷も選べる。\n\n**制約・比較上の注意：** 戦闘中の外部回復制限と無凸の被弾を考慮。回復目的の爆発使用には攻撃資源上の代償がある。\n\n**代表的な味方3枠：** シトラリ／ベネット／楓原万葉またはシロネン。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／4／4。参照：[C20]。","detail_line":314,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 高い炎火力と、交代・対象変更後も扱いやすい攻撃資源が実戦で有用。蒸発・溶解・過負荷も選べる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 戦闘中の外部回復制限と無凸の被弾を考慮。回復目的の爆発使用には攻撃資源上の代償がある。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シトラリ／ベネット／楓原万葉またはシロネン。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／4／4。参照：[C20]。\u003c/p>\n"},{"id":"c-f2ee2dcedc","name":"ムアラニ","group":"主","scores":[4,5,3],"score_strings":["4.0","5.0","3.0"],"total":"4.150","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"SS","シアター重視":"A"},"source_line":1118,"element":"水","raw":"**判定：** 蒸発を大きな一撃へ集中でき、短い攻撃可能時間や少ない手数で倒せるボスに強い。\n\n**制約・比較上の注意：** 接触・マーク・反応の失敗が一撃分の大きな損失になる。多ウェーブでは過剰ダメージと準備時間を考慮。\n\n**代表的な味方3枠：** マーヴィカ／シロネン／スクロース。\n\n**モード点（螺旋／幽境／シアター）：** 4／5／3。参照：[C21]。","detail_line":324,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 蒸発を大きな一撃へ集中でき、短い攻撃可能時間や少ない手数で倒せるボスに強い。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 接触・マーク・反応の失敗が一撃分の大きな損失になる。多ウェーブでは過剰ダメージと準備時間を考慮。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> マーヴィカ／シロネン／スクロース。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／5／3。参照：[C21]。\u003c/p>\n"},{"id":"c-bfe03a0314","name":"ヴァレサ","group":"主","scores":[4.5,4,3.5],"score_strings":["4.5","4.0","3.5"],"total":"4.125","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"S"},"source_line":1119,"element":"雷","raw":"**判定：** 広い落下攻撃と柔軟な攻撃列が増援処理に強い。過負荷型などで高い火力を発揮する。\n\n**制約・比較上の注意：** モチーフと代替武器の差が大きい。紀行R1・非モチーフ条件なので最高投資の値を移植しない。\n\n**代表的な味方3枠：** ドゥリン／ニコ／イアンサ、またはシュヴルーズ・マーヴィカ型。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／4／3.5。参照：[C22]。","detail_line":334,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 広い落下攻撃と柔軟な攻撃列が増援処理に強い。過負荷型などで高い火力を発揮する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> モチーフと代替武器の差が大きい。紀行R1・非モチーフ条件なので最高投資の値を移植しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ドゥリン／ニコ／イアンサ、またはシュヴルーズ・マーヴィカ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／4／3.5。参照：[C22]。\u003c/p>\n"},{"id":"c-e09cdb6d3c","name":"リオセスリ","group":"主","scores":[4,4.5,3],"score_strings":["4.0","4.5","3.0"],"total":"3.975","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1120,"element":"氷","raw":"**判定：** 強化後は星電導の有力アタッカー。爆発に偏らず、通常・重撃と自己回復で継続攻撃できる。\n\n**制約・比較上の注意：** 主に単体向け。星電導型では過剰な回復が強化重撃を減らし得るため、防御は盾を中心に組む。\n\n**代表的な味方3枠：** オデット／八重神子／ニコ。\n\n**モード点（螺旋／幽境／シアター）：** 4／4.5／3。参照：[C23]、[C02]。","detail_line":344,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 強化後は星電導の有力アタッカー。爆発に偏らず、通常・重撃と自己回復で継続攻撃できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主に単体向け。星電導型では過剰な回復が強化重撃を減らし得るため、防御は盾を中心に組む。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> オデット／八重神子／ニコ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4.5／3。参照：[C23]、[C02]。\u003c/p>\n"},{"id":"c-783688d044","name":"夢見月瑞希","group":"主","scores":[4.5,4,3],"score_strings":["4.5","4.0","3.0"],"total":"4.025","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1121,"element":"風","raw":"**判定：** 星拡散対応後は単なる低火力の回復ドライバーではない。簡単な継続操作と自前回復が長所。\n\n**制約・比較上の注意：** 星拡散変換役を本人だけでは代替できない。無凸評価に1～2凸の公開計算を混ぜない。\n\n**代表的な味方3枠：** オデット／氷主人公／スクロースまたはファルザン。\n\n**モード点（螺旋／幽境／シアター）：** 4.5／4／3。参照：[C24]、[C25]。","detail_line":354,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 星拡散対応後は単なる低火力の回復ドライバーではない。簡単な継続操作と自前回復が長所。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 星拡散変換役を本人だけでは代替できない。無凸評価に1～2凸の公開計算を混ぜない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> オデット／氷主人公／スクロースまたはファルザン。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4.5／4／3。参照：[C24]、[C25]。\u003c/p>\n"},{"id":"c-431861e2bb","name":"キィニチ","group":"主","scores":[4,4.5,3],"score_strings":["4.0","4.5","3.0"],"total":"3.975","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1122,"element":"草","raw":"**判定：** 燃焼を維持しながら大砲を撃つ対単体戦力。ニコの全体支援と移動に追従する編成で実戦性が向上。\n\n**制約・比較上の注意：** 大砲一発の欠落と操作・通信条件の影響が大きい。広く散った複数敵に一律に強いわけではない。\n\n**代表的な味方3枠：** ドゥリン／ニコ／エミリエまたはイアンサ。\n\n**モード点（螺旋／幽境／シアター）：** 4／4.5／3。参照：[C26]、[C27]。","detail_line":364,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 燃焼を維持しながら大砲を撃つ対単体戦力。ニコの全体支援と移動に追従する編成で実戦性が向上。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 大砲一発の欠落と操作・通信条件の影響が大きい。広く散った複数敵に一律に強いわけではない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ドゥリン／ニコ／エミリエまたはイアンサ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4.5／3。参照：[C26]、[C27]。\u003c/p>\n"},{"id":"c-d6eb039de3","name":"ナヴィア","group":"主","scores":[4,3.5,4],"score_strings":["4.0","3.5","4.0"],"total":"3.825","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"A","シアター重視":"S"},"source_line":1123,"element":"岩","raw":"**判定：** 短い時間にまとまったダメージを出し、交代を挟みやすい。月結晶型や従来型を使い分けられる。\n\n**制約・比較上の注意：** 攻撃を外すと損失が集中。月結晶支援の利益と本人の岩直撃ダメージを混同しない。\n\n**代表的な味方3枠：** リンネア／コロンビーナ／イネファ、またはシロネン軸。\n\n**モード点（螺旋／幽境／シアター）：** 4／3.5／4。参照：[C28]。","detail_line":374,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短い時間にまとまったダメージを出し、交代を挟みやすい。月結晶型や従来型を使い分けられる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 攻撃を外すと損失が集中。月結晶支援の利益と本人の岩直撃ダメージを混同しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> リンネア／コロンビーナ／イネファ、またはシロネン軸。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／3.5／4。参照：[C28]。\u003c/p>\n"},{"id":"c-ca94aa5f23","name":"クレー","group":"主","scores":[4,4,3],"score_strings":["4.0","4.0","3.0"],"total":"3.800","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1124,"element":"炎","raw":"**判定：** 魔導秘儀後は旧来の操作難と火力評価を引き継げない。多い炎付着で味方の反応火力も作る。\n\n**制約・比較上の注意：** 無凸の位置。無料選択があることを理由に1凸を自動付与しない。魔導相方・エネルギー・吹き飛ばしが制約。\n\n**代表的な味方3枠：** ニコ／フリーナ／シロネン、または魔導過負荷型。\n\n**モード点（螺旋／幽境／シアター）：** 4／4／3。参照：[C29]、[C27]。","detail_line":384,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 魔導秘儀後は旧来の操作難と火力評価を引き継げない。多い炎付着で味方の反応火力も作る。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸の位置。無料選択があることを理由に1凸を自動付与しない。魔導相方・エネルギー・吹き飛ばしが制約。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニコ／フリーナ／シロネン、または魔導過負荷型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4／3。参照：[C29]、[C27]。\u003c/p>\n"},{"id":"c-4f2e989e60","name":"ファルカ","group":"主","scores":[4,4,2.5],"score_strings":["4.0","4.0","2.5"],"total":"3.700","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1125,"element":"風","raw":"**判定：** 風と味方に応じた元素で攻撃し、炎型と魔導支援の組み合わせで高い総火力を得る。\n\n**制約・比較上の注意：** 編成条件と適正4★武器の少なさを反映。複数元素を使えることと各元素型が同じ強さであることは別。\n\n**代表的な味方3枠：** プルーネ／ドゥリン／ニコ。\n\n**モード点（螺旋／幽境／シアター）：** 4／4／2.5。参照：[C30]。","detail_line":406,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 風と味方に応じた元素で攻撃し、炎型と魔導支援の組み合わせで高い総火力を得る。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 編成条件と適正4★武器の少なさを反映。複数元素を使えることと各元素型が同じ強さであることは別。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> プルーネ／ドゥリン／ニコ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4／2.5。参照：[C30]。\u003c/p>\n"},{"id":"c-0cd0f79b89","name":"コロンビーナ","group":"主","scores":[4,4,2.5],"score_strings":["4.0","4.0","2.5"],"total":"3.700","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1126,"element":"水","raw":"**判定：** 無凸でも月開花の特殊重撃で前に出る運用が成立し、月反応の混合型も組める。\n\n**制約・比較上の注意：** 支援役としての価値をこの位置に加算しない。月開花の専任アタッカーとしてはネフェルに優位がある。\n\n**代表的な味方3枠：** ラウマ／イネファ／アイノ。\n\n**モード点（螺旋／幽境／シアター）：** 4／4／2.5。参照：[C09]。","detail_line":416,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 無凸でも月開花の特殊重撃で前に出る運用が成立し、月反応の混合型も組める。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 支援役としての価値をこの位置に加算しない。月開花の専任アタッカーとしてはネフェルに優位がある。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ラウマ／イネファ／アイノ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4／2.5。参照：[C09]。\u003c/p>\n"},{"id":"c-087d24b550","name":"ローエン","group":"主","scores":[3.5,4,2.5],"score_strings":["3.5","4.0","2.5"],"total":"3.475","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1127,"element":"氷","raw":"**判定：** 高頻度の氷付着により、本人の攻撃と控えのドゥリンの順溶解を両立する。単体で有力。\n\n**制約・比較上の注意：** 総火力を本人の氷ダメージだけで判断しない。攻撃範囲、適正武器、ニコ等への依存を減点。\n\n**代表的な味方3枠：** ドゥリン／ニコ／シトラリ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／4／2.5。参照：[C31]。","detail_line":426,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 高頻度の氷付着により、本人の攻撃と控えのドゥリンの順溶解を両立する。単体で有力。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 総火力を本人の氷ダメージだけで判断しない。攻撃範囲、適正武器、ニコ等への依存を減点。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ドゥリン／ニコ／シトラリ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／4／2.5。参照：[C31]。\u003c/p>\n"},{"id":"c-0b41cbc594","name":"嘉明","group":"主","scores":[4,4,2.5],"score_strings":["4.0","4.0","2.5"],"total":"3.700","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1128,"element":"炎","raw":"**判定：** 完凸と反応支援で大きな落下攻撃を反復できる。最新の氷付着・攻撃支援で選択肢も増えた。\n\n**制約・比較上の注意：** 完凸前提。落下中の水付着や反応継続を確認し、見た目の水付着の多さだけで相方を選ばない。\n\n**代表的な味方3枠：** シトラリ／閑雲／ベネット、またはオデット・ニコ型。\n\n**モード点（螺旋／幽境／シアター）：** 4／4／2.5。参照：[C32]。","detail_line":436,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸と反応支援で大きな落下攻撃を反復できる。最新の氷付着・攻撃支援で選択肢も増えた。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 完凸前提。落下中の水付着や反応継続を確認し、見た目の水付着の多さだけで相方を選ばない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シトラリ／閑雲／ベネット、またはオデット・ニコ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4／2.5。参照：[C32]。\u003c/p>\n"},{"id":"c-5de6caeb8d","name":"アルハイゼン","group":"主","scores":[3.5,3.5,3.5],"score_strings":["3.5","3.5","3.5"],"total":"3.500","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1129,"element":"草","raw":"**判定：** 本人の草火力と反応の両方で戦い、分割ローテーションも選べる。旧来の超開花だけに限定しない。\n\n**制約・比較上の注意：** 現行最高峰との火力差はある。鏡・出場時間・ナヒーダの再付着などの実行条件を考慮。\n\n**代表的な味方3枠：** ラウマ／フリーナ／久岐忍、またはナヒーダ激化型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3.5。参照：[C33]、[C11]、[C34]。","detail_line":446,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 本人の草火力と反応の両方で戦い、分割ローテーションも選べる。旧来の超開花だけに限定しない。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 現行最高峰との火力差はある。鏡・出場時間・ナヒーダの再付着などの実行条件を考慮。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ラウマ／フリーナ／久岐忍、またはナヒーダ激化型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3.5。参照：[C33]、[C11]、[C34]。\u003c/p>\n"},{"id":"c-38709e79a4","name":"クロリンデ","group":"主","scores":[4,3.5,3.5],"score_strings":["4.0","3.5","3.5"],"total":"3.725","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"S","幽境重視":"A","シアター重視":"A"},"source_line":1130,"element":"雷","raw":"**判定：** 移動・自己回復・通常攻撃連動を同時にこなし、反応と控え火力を引き出す。複数系統を選べる。\n\n**制約・比較上の注意：** スキルの有効時間と待ち時間、中断、入力・遅延の影響を含める。理論最速の攻撃列を全員に要求しない。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／スクロース、または過負荷型。\n\n**モード点（螺旋／幽境／シアター）：** 4／3.5／3.5。参照：[C35]、[C09]。","detail_line":456,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 移動・自己回復・通常攻撃連動を同時にこなし、反応と控え火力を引き出す。複数系統を選べる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> スキルの有効時間と待ち時間、中断、入力・遅延の影響を含める。理論最速の攻撃列を全員に要求しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／スクロース、または過負荷型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／3.5／3.5。参照：[C35]、[C09]。\u003c/p>\n"},{"id":"c-dd51f3f07b","name":"セノ","group":"主","scores":[3.5,4,2.5],"score_strings":["3.5","4.0","2.5"],"total":"3.475","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1131,"element":"雷","raw":"**判定：** 星電導強化とスキルからの強化状態移行で、以前の爆発依存・長時間拘束の評価が変わった。\n\n**制約・比較上の注意：** 古い4.2クイックガイドを現行結論の根拠にしない。特殊スキルのタイミングと非モチーフ武器の条件が残る。\n\n**代表的な味方3枠：** オデット／八重神子／ニコ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／4／2.5。参照：[C36]、[C37]、[C02]。","detail_line":466,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 星電導強化とスキルからの強化状態移行で、以前の爆発依存・長時間拘束の評価が変わった。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 古い4.2クイックガイドを現行結論の根拠にしない。特殊スキルのタイミングと非モチーフ武器の条件が残る。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> オデット／八重神子／ニコ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／4／2.5。参照：[C36]、[C37]、[C02]。\u003c/p>\n"},{"id":"c-289bd629bd","name":"胡桃","group":"主","scores":[3.5,4,3],"score_strings":["3.5","4.0","3.0"],"total":"3.575","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1132,"element":"炎","raw":"**判定：** 蒸発重撃を軸に対単体で強く、落下型も選べる。適正反応を保てる編成で戦力になる。\n\n**制約・比較上の注意：** 無凸のスタミナとキャンセルの負担を計上。回復を一律に禁止せず、フリーナ・落下型は別の最適化として扱う。\n\n**代表的な味方3枠：** 夜蘭／フリーナ／閑雲、または行秋・シロネン型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／4／3。参照：[C38]、[C39]。","detail_line":476,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 蒸発重撃を軸に対単体で強く、落下型も選べる。適正反応を保てる編成で戦力になる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸のスタミナとキャンセルの負担を計上。回復を一律に禁止せず、フリーナ・落下型は別の最適化として扱う。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 夜蘭／フリーナ／閑雲、または行秋・シロネン型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／4／3。参照：[C38]、[C39]。\u003c/p>\n"},{"id":"c-5df101993f","name":"魈","group":"主","scores":[3.5,3.5,2.5],"score_strings":["3.5","3.5","2.5"],"total":"3.300","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1133,"element":"風","raw":"**判定：** 落下の範囲、移動、敵の怯ませを活かして複数敵を処理できる。専用支援で火力も十分。\n\n**制約・比較上の注意：** 長い爆発出場とエネルギー、限られた支援枠が制約。吹き飛んだ小型敵への追跡も実戦に含む。\n\n**代表的な味方3枠：** ファルザン／閑雲／フリーナ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／2.5。参照：[C40]。","detail_line":486,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 落下の範囲、移動、敵の怯ませを活かして複数敵を処理できる。専用支援で火力も十分。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 長い爆発出場とエネルギー、限られた支援枠が制約。吹き飛んだ小型敵への追跡も実戦に含む。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ファルザン／閑雲／フリーナ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／2.5。参照：[C40]。\u003c/p>\n"},{"id":"c-97c1c9b077","name":"雷電将軍","group":"主","scores":[3.5,3.5,3],"score_strings":["3.5","3.5","3.0"],"total":"3.400","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1134,"element":"雷","raw":"**判定：** 本人の爆発火力だけでなく、味方の要求チャージを下げる利益を持つ。月感電型でも意味のある前衛。\n\n**制約・比較上の注意：** 2凸の印象を無凸に移さない。熟知スキル設置だけの超開花運用は、このメインDPS評価の対象外。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／スクロース、または過負荷型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3。参照：[C41]、[C09]。","detail_line":496,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 本人の爆発火力だけでなく、味方の要求チャージを下げる利益を持つ。月感電型でも意味のある前衛。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 2凸の印象を無凸に移さない。熟知スキル設置だけの超開花運用は、このメインDPS評価の対象外。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／スクロース、または過負荷型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3。参照：[C41]、[C09]。\u003c/p>\n"},{"id":"c-284bffe729","name":"レザー","group":"主","scores":[3.5,3.5,2.5],"score_strings":["3.5","3.5","2.5"],"total":"3.300","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1135,"element":"雷","raw":"**判定：** 完凸と魔導秘儀によって、旧来の物理専任という分類から外れる。炎付与を使う過負荷型も有力。\n\n**制約・比較上の注意：** 本人・シュヴルーズ・ベネットの凸を明示。未完凸版を同じ位置に置かず、旧物理型への評価でもない。\n\n**代表的な味方3枠：** ニコ／シュヴルーズ／ベネット。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／2.5。参照：[C27]、[C42]。","detail_line":506,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸と魔導秘儀によって、旧来の物理専任という分類から外れる。炎付与を使う過負荷型も有力。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 本人・シュヴルーズ・ベネットの凸を明示。未完凸版を同じ位置に置かず、旧物理型への評価でもない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニコ／シュヴルーズ／ベネット。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／2.5。参照：[C27]、[C42]。\u003c/p>\n"},{"id":"c-63e4487b27","name":"ティナリ","group":"主","scores":[3.5,3.5,3],"score_strings":["3.5","3.5","3.0"],"total":"3.400","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1136,"element":"草","raw":"**判定：** 短い出場と追尾する重撃で、単体・移動する敵・細かな攻撃可能時間に対応しやすい。\n\n**制約・比較上の注意：** 広い多ウェーブでは付着や対象の再設定が必要。激化型の長所を活かし、低相性の月開花型の数値で代表させない。\n\n**代表的な味方3枠：** 八重神子／ナヒーダ／鍾離。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3。参照：[C43]、[C44]。","detail_line":516,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短い出場と追尾する重撃で、単体・移動する敵・細かな攻撃可能時間に対応しやすい。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 広い多ウェーブでは付着や対象の再設定が必要。激化型の長所を活かし、低相性の月開花型の数値で代表させない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 八重神子／ナヒーダ／鍾離。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3。参照：[C43]、[C44]。\u003c/p>\n"},{"id":"c-da6becedeb","name":"チャスカ","group":"主","scores":[3.5,4,4],"score_strings":["3.5","4.0","4.0"],"total":"3.775","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"S","シアター重視":"S"},"source_line":1137,"element":"風","raw":"**判定：** 射程と複数元素の攻撃で、接近しにくい敵や特定元素耐性に対応しやすい。味方の組み替えも可能。\n\n**制約・比較上の注意：** 無凸は主に単体向け。複数元素弾が複数敵へ分散しても範囲火力が増えるとは限らず、2凸の長所と区別する。\n\n**代表的な味方3枠：** シトラリ／ベネット／フリーナ、またはニコ型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／4／4。参照：[C45]。","detail_line":526,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 射程と複数元素の攻撃で、接近しにくい敵や特定元素耐性に対応しやすい。味方の組み替えも可能。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸は主に単体向け。複数元素弾が複数敵へ分散しても範囲火力が増えるとは限らず、2凸の長所と区別する。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シトラリ／ベネット／フリーナ、またはニコ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／4／4。参照：[C45]。\u003c/p>\n"},{"id":"c-31244b5f59","name":"リネ","group":"主","scores":[3.5,4,2.5],"score_strings":["3.5","4.0","2.5"],"total":"3.475","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1138,"element":"炎","raw":"**判定：** 重撃とスキル・爆発を短い強化時間へまとめやすく、単体火力を伸ばせる。魔導支援を受ける型も候補。\n\n**制約・比較上の注意：** 本人は魔導キャラではない。狙い撃ち中断、炎付着条件、近距離スキルへの移行を考慮する。\n\n**代表的な味方3枠：** ニコ／ドゥリン／シトラリ、またはベネット・楓原万葉型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／4／2.5。参照：[C46]、[C27]。","detail_line":536,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 重撃とスキル・爆発を短い強化時間へまとめやすく、単体火力を伸ばせる。魔導支援を受ける型も候補。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 本人は魔導キャラではない。狙い撃ち中断、炎付着条件、近距離スキルへの移行を考慮する。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニコ／ドゥリン／シトラリ、またはベネット・楓原万葉型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／4／2.5。参照：[C46]、[C27]。\u003c/p>\n"},{"id":"c-97b9130148","name":"神里綾華","group":"主","scores":[3.5,3.5,2.5],"score_strings":["3.5","3.5","2.5"],"total":"3.300","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1139,"element":"氷","raw":"**判定：** 爆発を当て切れる相手には高いまとまり火力。強い氷水支援で非凍結戦も改善する。\n\n**制約・比較上の注意：** 爆発の空振り・移動・ウェーブをまたぐ過剰ダメージが主要制約。非凍結と氷無効は別に扱う。\n\n**代表的な味方3枠：** フリーナ／エスコフィエ／ヴォジャニーツァ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／2.5。参照：[C47]、[C18]。","detail_line":546,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 爆発を当て切れる相手には高いまとまり火力。強い氷水支援で非凍結戦も改善する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 爆発の空振り・移動・ウェーブをまたぐ過剰ダメージが主要制約。非凍結と氷無効は別に扱う。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／エスコフィエ／ヴォジャニーツァ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／2.5。参照：[C47]、[C18]。\u003c/p>\n"},{"id":"c-8e014956db","name":"神里綾人","group":"主","scores":[3.5,3,4],"score_strings":["3.5","3.0","4.0"],"total":"3.425","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1140,"element":"水","raw":"**判定：** 扱いやすい範囲水付着と短いスキル出場が反応編成で有用。月感電や氷水型への適応もある。\n\n**制約・比較上の注意：** 瞬間火力とローテーション同期、非モチーフ武器との差が制約。単体の平均DPSだけで汎用性を否定しない。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／スクロース、または凍結型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／4。参照：[C48]。","detail_line":556,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 扱いやすい範囲水付着と短いスキル出場が反応編成で有用。月感電や氷水型への適応もある。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 瞬間火力とローテーション同期、非モチーフ武器との差が制約。単体の平均DPSだけで汎用性を否定しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／スクロース、または凍結型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／4。参照：[C48]。\u003c/p>\n"},{"id":"c-4d9243b4ae","name":"タルタリヤ","group":"主","scores":[3.5,3,3],"score_strings":["3.5","3.0","3.0"],"total":"3.225","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"B","シアター重視":"B"},"source_line":1141,"element":"水","raw":"**判定：** 密集相手への断流と高速水付着で、自分と香菱の両方の火力を作る。蒸発爆発も初動に寄与。\n\n**制約・比較上の注意：** 敵を集められること、出場時間とクールタイム管理が前提。凍結編成の低い単体値だけで代表させない。\n\n**代表的な味方3枠：** 香菱／ベネット／楓原万葉。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／3。参照：[C49]。","detail_line":566,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 密集相手への断流と高速水付着で、自分と香菱の両方の火力を作る。蒸発爆発も初動に寄与。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 敵を集められること、出場時間とクールタイム管理が前提。凍結編成の低い単体値だけで代表させない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 香菱／ベネット／楓原万葉。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／3。参照：[C49]。\u003c/p>\n"},{"id":"c-fdd7f1ba65","name":"ディルック","group":"主","scores":[3.5,3.5,2.5],"score_strings":["3.5","3.5","2.5"],"total":"3.300","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1142,"element":"炎","raw":"**判定：** 高い落下倍率を活かした溶解・蒸発型なら、古い通常連打型より大きく改善する。\n\n**制約・比較上の注意：** 閑雲等を欠く場合は下がる。古い3.6ガイドだけでは落下型を説明できないため、閑雲側の資料と照合する。\n\n**代表的な味方3枠：** 閑雲／シトラリ／ベネット。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／2.5。参照：[C50]、[C51]。","detail_line":576,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 高い落下倍率を活かした溶解・蒸発型なら、古い通常連打型より大きく改善する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 閑雲等を欠く場合は下がる。古い3.6ガイドだけでは落下型を説明できないため、閑雲側の資料と照合する。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 閑雲／シトラリ／ベネット。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／2.5。参照：[C50]、[C51]。\u003c/p>\n"},{"id":"c-c020ef0b17","name":"刻晴","group":"主","scores":[3.5,3,3.5],"score_strings":["3.5","3.0","3.5"],"total":"3.325","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1143,"element":"雷","raw":"**判定：** 短い攻撃・交代・爆発無敵で状況に適応しやすく、付着回数を要求する相手にも対応する。\n\n**制約・比較上の注意：** 本人の火力は新しい上位勢より控えめ。味方の反応火力を含める一方、刻晴固有の利益も別途確認する。\n\n**代表的な味方3枠：** フィッシュル／ナヒーダ／楓原万葉、または月感電型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／3.5。参照：[C52]。","detail_line":586,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短い攻撃・交代・爆発無敵で状況に適応しやすく、付着回数を要求する相手にも対応する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 本人の火力は新しい上位勢より控えめ。味方の反応火力を含める一方、刻晴固有の利益も別途確認する。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フィッシュル／ナヒーダ／楓原万葉、または月感電型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／3.5。参照：[C52]。\u003c/p>\n"},{"id":"c-84d16a80a8","name":"荒瀧一斗","group":"主","scores":[3.5,3.5,2.5],"score_strings":["3.5","3.5","2.5"],"total":"3.300","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"B"},"source_line":1144,"element":"岩","raw":"**判定：** 重撃の範囲と中断耐性を活かす。現行では純岩だけでなく月結晶・複合型も検討対象。\n\n**制約・比較上の注意：** 月結晶編成でも本人の攻撃がすべて直接月反応化するわけではない。エネルギーと出場制約が残る。\n\n**代表的な味方3枠：** リンネア／コロンビーナ／イルーガ、またはシロネン型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／2.5。参照：[C53]、[C09]、[C14]。","detail_line":596,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 重撃の範囲と中断耐性を活かす。現行では純岩だけでなく月結晶・複合型も検討対象。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 月結晶編成でも本人の攻撃がすべて直接月反応化するわけではない。エネルギーと出場制約が残る。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> リンネア／コロンビーナ／イルーガ、またはシロネン型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／2.5。参照：[C53]、[C09]、[C14]。\u003c/p>\n"},{"id":"c-b9fbf84103","name":"ウェンティ","group":"主","scores":[3.5,3,4],"score_strings":["3.5","3.0","4.0"],"total":"3.425","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1145,"element":"風","raw":"**判定：** 魔導強化による風付与の前衛運用を含める。吸引可能な敵では集敵そのものがチームの有効火力を増やす。\n\n**制約・比較上の注意：** 吸引不能ボスと無凸・非モチーフ条件では評価を抑える。支援専任時の価値と混同しない。\n\n**代表的な味方3枠：** ドゥリン／ニコ／ファルザン。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／4。参照：[C54]。","detail_line":606,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 魔導強化による風付与の前衛運用を含める。吸引可能な敵では集敵そのものがチームの有効火力を増やす。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 吸引不能ボスと無凸・非モチーフ条件では評価を抑える。支援専任時の価値と混同しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ドゥリン／ニコ／ファルザン。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／4。参照：[C54]。\u003c/p>\n"},{"id":"c-0659eaa8e8","name":"放浪者","group":"主","scores":[3.5,3,3.5],"score_strings":["3.5","3.0","3.5"],"total":"3.325","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1146,"element":"風","raw":"**判定：** 射程と狙い先変更の容易さがあり、攻撃を分配しやすい。スキル主体で小戦闘にも入りやすい。\n\n**制約・比較上の注意：** 無凸の空中被弾と中断が重い。盾入りと火力最大型の性能を同一視しない。新支援の寄与は推論を含む。\n\n**代表的な味方3枠：** ファルザン／ニコ／ベネット、またはフリーナ型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／3.5。参照：[C55]、[C27]。","detail_line":616,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 射程と狙い先変更の容易さがあり、攻撃を分配しやすい。スキル主体で小戦闘にも入りやすい。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸の空中被弾と中断が重い。盾入りと火力最大型の性能を同一視しない。新支援の寄与は推論を含む。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ファルザン／ニコ／ベネット、またはフリーナ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／3.5。参照：[C55]、[C27]。\u003c/p>\n"},{"id":"c-1176f25c6a","name":"甘雨","group":"主","scores":[3.5,3,3],"score_strings":["3.5","3.0","3.0"],"total":"3.225","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"B","シアター重視":"B"},"source_line":1147,"element":"氷","raw":"**判定：** 溶解重撃と凍結・爆発型を選べ、射程と範囲が強み。攻撃可能時間を選んで撃てる。\n\n**制約・比較上の注意：** 重撃中断と準備時間が制約。強い氷サポーターが増えた事実だけで専用星反応アタッカーと同じ扱いにはしない。\n\n**代表的な味方3枠：** エミリエ／ドゥリン／ニコ、またはエスコフィエ型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／3。参照：[C56]。","detail_line":626,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 溶解重撃と凍結・爆発型を選べ、射程と範囲が強み。攻撃可能時間を選んで撃てる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 重撃中断と準備時間が制約。強い氷サポーターが増えた事実だけで専用星反応アタッカーと同じ扱いにはしない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> エミリエ／ドゥリン／ニコ、またはエスコフィエ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／3。参照：[C56]。\u003c/p>\n"},{"id":"c-7663823665","name":"宵宮","group":"主","scores":[3,3.5,3.5],"score_strings":["3.0","3.5","3.5"],"total":"3.275","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1148,"element":"炎","raw":"**判定：** 遠距離の通常連打で攻撃・反応を成立させやすい。盾と組み合わせた安定性、動く単体への射程が長所。\n\n**制約・比較上の注意：** 主に単体であり、攻撃列の中断は蒸発の対応にも影響。過負荷・控え範囲火力は検討するが本人の範囲とは分ける。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／ベネット、または過負荷型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3.5／3.5。参照：[C57]、[C09]。","detail_line":636,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 遠距離の通常連打で攻撃・反応を成立させやすい。盾と組み合わせた安定性、動く単体への射程が長所。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主に単体であり、攻撃列の中断は蒸発の対応にも影響。過負荷・控え範囲火力は検討するが本人の範囲とは分ける。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／ベネット、または過負荷型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3.5／3.5。参照：[C57]、[C09]。\u003c/p>\n"},{"id":"c-8e90ea7e0e","name":"ノエル","group":"主","scores":[3.5,3,4],"score_strings":["3.5","3.0","4.0"],"total":"3.425","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1149,"element":"岩","raw":"**判定：** 完凸の範囲攻撃、盾、全体回復を兼任し、現行の控え火力・月結晶を動かす。編成の防御枠を節約できる。\n\n**制約・比較上の注意：** 高HP単体を速く倒す能力とエネルギーは上位専任に劣る。旧来の岩単色だけで評価しない。\n\n**代表的な味方3枠：** コロンビーナ／リンネア／フィッシュルまたはフリーナ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／4。参照：[C58]。","detail_line":646,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸の範囲攻撃、盾、全体回復を兼任し、現行の控え火力・月結晶を動かす。編成の防御枠を節約できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 高HP単体を速く倒す能力とエネルギーは上位専任に劣る。旧来の岩単色だけで評価しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> コロンビーナ／リンネア／フィッシュルまたはフリーナ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／4。参照：[C58]。\u003c/p>\n"},{"id":"c-8cdfdea992","name":"セトス","group":"主","scores":[3,3,3.5],"score_strings":["3.0","3.0","3.5"],"total":"3.100","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"A"},"source_line":1150,"element":"雷","raw":"**判定：** 完凸で通常入力型と短時間の狙い撃ち型を選べる。熟知・反応を活かし、出場時間を調節できる。\n\n**制約・比較上の注意：** 二つの型でエネルギー消費と持続火力が異なる。最新反応型の順位は直接比較資料が少ない。\n\n**代表的な味方3枠：** フィッシュル／ナヒーダ／楓原万葉、または月感電型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3.5。参照：[C59]、[C09]。","detail_line":738,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸で通常入力型と短時間の狙い撃ち型を選べる。熟知・反応を活かし、出場時間を調節できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 二つの型でエネルギー消費と持続火力が異なる。最新反応型の順位は直接比較資料が少ない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フィッシュル／ナヒーダ／楓原万葉、または月感電型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3.5。参照：[C59]、[C09]。\u003c/p>\n"},{"id":"c-ffb699e07b","name":"主人公・氷","group":"主","scores":[3.5,4,3],"score_strings":["3.5","4.0","3.0"],"total":"3.575","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1151,"element":"氷","raw":"**判定：** 星反応変換、特殊重撃、爆発に加え、専用配布武器と任務由来の能力強化を含めて評価する。\n\n**制約・比較上の注意：** 現行取得範囲の4凸で判定し、6凸の味方バフは使わない。上限はWikiの記載を採用し一次資料確認が残る。\n\n**代表的な味方3枠：** オデット／八重神子／ニコまたはアリョーシャ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／4／3。参照：[C60]、[C61]、[C62]。","detail_line":656,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 星反応変換、特殊重撃、爆発に加え、専用配布武器と任務由来の能力強化を含めて評価する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 現行取得範囲の4凸で判定し、6凸の味方バフは使わない。上限はWikiの記載を採用し一次資料確認が残る。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> オデット／八重神子／ニコまたはアリョーシャ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／4／3。参照：[C60]、[C61]、[C62]。\u003c/p>\n"},{"id":"c-e16d9bb973","name":"煙緋","group":"主","scores":[2.5,2.5,3.5],"score_strings":["2.5","2.5","3.5"],"total":"2.700","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1152,"element":"炎","raw":"**判定：** 射程と通常・重撃の反復で反応を起こせ、完凸ならスタミナと盾も補える。扱える相方は多い。\n\n**制約・比較上の注意：** 攻撃準備とスタミナ、爆発回転、本人火力の差が高HP相手で表面化する。盾サポート評価ではない。\n\n**代表的な味方3枠：** 行秋／ニコ／ベネット、または過負荷型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3.5。参照：[C63]、[C27]。","detail_line":748,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 射程と通常・重撃の反復で反応を起こせ、完凸ならスタミナと盾も補える。扱える相方は多い。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 攻撃準備とスタミナ、爆発回転、本人火力の差が高HP相手で表面化する。盾サポート評価ではない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 行秋／ニコ／ベネット、または過負荷型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3.5。参照：[C63]、[C27]。\u003c/p>\n"},{"id":"c-a241538683","name":"凝光","group":"主","scores":[3,3,3],"score_strings":["3.0","3.0","3.0"],"total":"3.000","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1153,"element":"岩","raw":"**判定：** 短い交代と遠距離攻撃を活かし、月結晶支援を含む編成も選べる。単体に火力をまとめられる。\n\n**制約・比較上の注意：** 狭い範囲と地形・遮蔽物の影響、現在の直接比較不足がある。月結晶型への再評価は推論の比率が高い。\n\n**代表的な味方3枠：** リンネア／コロンビーナ／イルーガ。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3。参照：[C64]、[C14]、[C09]。","detail_line":758,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短い交代と遠距離攻撃を活かし、月結晶支援を含む編成も選べる。単体に火力をまとめられる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 狭い範囲と地形・遮蔽物の影響、現在の直接比較不足がある。月結晶型への再評価は推論の比率が高い。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> リンネア／コロンビーナ／イルーガ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3。参照：[C64]、[C14]、[C09]。\u003c/p>\n"},{"id":"c-fddb75afc4","name":"鹿野院平蔵","group":"主","scores":[3,3,3.5],"score_strings":["3.0","3.0","3.5"],"total":"3.100","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"A"},"source_line":1154,"element":"風","raw":"**判定：** 短い高倍率スキルと能動的な拡散で、前衛兼反応役として戦える。交代も挟みやすい。\n\n**制約・比較上の注意：** 純風の個人火力とドライバー型は別。スクロースの全体支援や瑞希の専用星拡散火力をそのまま代替しない。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／フィッシュル、または激化拡散型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3.5。参照：[C65]、[C09]。","detail_line":768,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短い高倍率スキルと能動的な拡散で、前衛兼反応役として戦える。交代も挟みやすい。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 純風の個人火力とドライバー型は別。スクロースの全体支援や瑞希の専用星拡散火力をそのまま代替しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／フィッシュル、または激化拡散型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3.5。参照：[C65]、[C09]。\u003c/p>\n"},{"id":"c-81b912ebde","name":"カーヴェ","group":"主","scores":[2.5,2.5,3],"score_strings":["2.5","2.5","3.0"],"total":"2.600","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"C","幽境重視":"C","シアター重視":"B"},"source_line":1155,"element":"草","raw":"**判定：** 草付与と自分の開花被ダメージ回復を活かす前衛。ラウマ等の支援も受けられる。\n\n**制約・比較上の注意：** 本人の開花起爆が反応所有権を奪うわけではない。前衛を他の草キャラにした場合との差とエネルギーが制約。\n\n**代表的な味方3枠：** ラウマ／コロンビーナ／久岐忍、またはニィロウ型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3。参照：[C66]、[C11]。","detail_line":778,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 草付与と自分の開花被ダメージ回復を活かす前衛。ラウマ等の支援も受けられる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 本人の開花起爆が反応所有権を奪うわけではない。前衛を他の草キャラにした場合との差とエネルギーが制約。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ラウマ／コロンビーナ／久岐忍、またはニィロウ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3。参照：[C66]、[C11]。\u003c/p>\n"},{"id":"c-1efb01ce15","name":"エウルア","group":"主","scores":[2.5,2.5,2],"score_strings":["2.5","2.5","2.0"],"total":"2.400","tier":"C","confidence":"中","profiles":{"基準":"C","螺旋重視":"C","幽境重視":"C","シアター重視":"C"},"source_line":1156,"element":"物理","raw":"**判定：** 物理のまとまった爆発と範囲があり、現在の支援や星電導の物理耐性低下も利用できる。\n\n**制約・比較上の注意：** 遅れて出る主砲、無敵移行・増援・エネルギーが同時に効く。大きな一発の画像を平均攻略性能にはしない。\n\n**代表的な味方3枠：** 八重神子／オデット／ニコ、またはフリーナ・ミカ型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／2。参照：[C67]、[C02]。","detail_line":940,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 物理のまとまった爆発と範囲があり、現在の支援や星電導の物理耐性低下も利用できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 遅れて出る主砲、無敵移行・増援・エネルギーが同時に効く。大きな一発の画像を平均攻略性能にはしない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 八重神子／オデット／ニコ、またはフリーナ・ミカ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／2。参照：[C67]、[C02]。\u003c/p>\n"},{"id":"c-d7856bf9ff","name":"フレミネ","group":"主","scores":[2.5,3,2.5],"score_strings":["2.5","3.0","2.5"],"total":"2.675","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1157,"element":"氷／物理","raw":"**判定：** 完凸で氷スキル型と物理型を選べ、新しい水氷支援も受けられる。小刻みなスキルを反復できる。\n\n**制約・比較上の注意：** 氷砕きが成立しない相手、エネルギー、操作最適化で差が出る。従来の物理型だけには固定しない。\n\n**代表的な味方3枠：** フリーナ／エスコフィエ／ヴォジャニーツァ、または超電導型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／3／2.5。参照：[C68]。","detail_line":788,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸で氷スキル型と物理型を選べ、新しい水氷支援も受けられる。小刻みなスキルを反復できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 氷砕きが成立しない相手、エネルギー、操作最適化で差が出る。従来の物理型だけには固定しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／エスコフィエ／ヴォジャニーツァ、または超電導型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／3／2.5。参照：[C68]。\u003c/p>\n"},{"id":"c-2612fbc4fb","name":"ディシア","group":"主","scores":[2,2,2.5],"score_strings":["2.0","2.0","2.5"],"total":"2.100","tier":"C","confidence":"中","profiles":{"基準":"C","螺旋重視":"C","幽境重視":"C","シアター重視":"C"},"source_line":1158,"element":"炎","raw":"**判定：** 強化爆発中の中断への強さと耐久を活かす。支援の改善により前衛型を成立させる余地がある。\n\n**制約・比較上の注意：** 無凸の火力とエネルギー、通常攻撃連動との相性が制約。控えの耐久・燃焼役としての価値はこのTierに含めない。\n\n**代表的な味方3枠：** ニコ／フリーナ／ベネット、または過負荷型。\n\n**モード点（螺旋／幽境／シアター）：** 2／2／2.5。参照：[C69]、[C27]。","detail_line":950,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 強化爆発中の中断への強さと耐久を活かす。支援の改善により前衛型を成立させる余地がある。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸の火力とエネルギー、通常攻撃連動との相性が制約。控えの耐久・燃焼役としての価値はこのTierに含めない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニコ／フリーナ／ベネット、または過負荷型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2／2／2.5。参照：[C69]、[C27]。\u003c/p>\n"},{"id":"c-f5b819dd4e","name":"辛炎","group":"主","scores":[1.5,1.5,2],"score_strings":["1.5","1.5","2.0"],"total":"1.600","tier":"D","confidence":"低","profiles":{"基準":"D","螺旋重視":"D","幽境重視":"D","シアター重視":"D"},"source_line":1159,"element":"炎／物理","raw":"**判定：** 完凸の重撃・爆発型に加え、外部炎付与と落下を使う別型も検討できる。\n\n**制約・比較上の注意：** 物理・炎・盾の要求が噛み合いにくい。最新支援下の比較が不足し、最下位近辺の並びは確定しない。\n\n**代表的な味方3枠：** ベネット／閑雲／フリーナ、または物理型。\n\n**モード点（螺旋／幽境／シアター）：** 1.5／1.5／2。参照：[C70]、[C51]。","detail_line":992,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸の重撃・爆発型に加え、外部炎付与と落下を使う別型も検討できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 物理・炎・盾の要求が噛み合いにくい。最新支援下の比較が不足し、最下位近辺の並びは確定しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ベネット／閑雲／フリーナ、または物理型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 1.5／1.5／2。参照：[C70]、[C51]。\u003c/p>\n"},{"id":"c-17e6c1e858","name":"アンバー","group":"主","scores":[1.5,2,2],"score_strings":["1.5","2.0","2.0"],"total":"1.775","tier":"D","confidence":"低","profiles":{"基準":"D","螺旋重視":"D","幽境重視":"D","シアター重視":"D"},"source_line":1160,"element":"炎","raw":"**判定：** 手動起爆や溶解重撃で狙った瞬間の火力は作れる。弱点狙撃が機能する相手にも長所がある。\n\n**制約・比較上の注意：** 主力操作の条件と範囲・時間効率が現行の高HP戦で重い。希少な成功動画から一般化しない。\n\n**代表的な味方3枠：** シトラリ／ニコ／ベネット、または重撃・人形型。\n\n**モード点（螺旋／幽境／シアター）：** 1.5／2／2。参照：[C71]。","detail_line":1002,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 手動起爆や溶解重撃で狙った瞬間の火力は作れる。弱点狙撃が機能する相手にも長所がある。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主力操作の条件と範囲・時間効率が現行の高HP戦で重い。希少な成功動画から一般化しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シトラリ／ニコ／ベネット、または重撃・人形型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 1.5／2／2。参照：[C71]。\u003c/p>\n"},{"id":"c-edfb4f92c2","name":"アーロイ","group":"主","scores":[2,2,2],"score_strings":["2.0","2.0","2.0"],"total":"2.000","tier":"C","confidence":"低","profiles":{"基準":"C","螺旋重視":"C","幽境重視":"C","シアター重視":"C"},"source_line":1161,"element":"氷","raw":"**判定：** スキル・爆発の短時間ダメージと、条件付きの氷付与で攻撃役を担える。\n\n**制約・比較上の注意：** 通常攻撃型はコイル獲得・付与の再現性が課題。凸による改善も基準にできず、短出場型を含めても制約が大きい。\n\n**代表的な味方3枠：** シトラリ／ニコ／ベネット、または氷水型。\n\n**モード点（螺旋／幽境／シアター）：** 2／2／2。参照：[C72]。","detail_line":960,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> スキル・爆発の短時間ダメージと、条件付きの氷付与で攻撃役を担える。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 通常攻撃型はコイル獲得・付与の再現性が課題。凸による改善も基準にできず、短出場型を含めても制約が大きい。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シトラリ／ニコ／ベネット、または氷水型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2／2／2。参照：[C72]。\u003c/p>\n"},{"id":"c-f6c8ce0aae","name":"ナヒーダ","group":"派生","scores":[3.5,3.5,4],"score_strings":["3.5","3.5","4.0"],"total":"3.600","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1162,"element":"草","raw":"**判定：** 能動的な草付着と追撃・熟知支援で反応を動かす。本人だけの通常攻撃倍率では測れない前衛。\n\n**制約・比較上の注意：** 低耐久とウェーブごとの再マーキングに注意。控えでも発揮できる支援価値を前衛固有の加点として重複させない。\n\n**代表的な味方3枠：** 行秋／久岐忍／ラウマ、またはニィロウ型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／4。参照：[C73]、[C11]。","detail_line":666,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 能動的な草付着と追撃・熟知支援で反応を動かす。本人だけの通常攻撃倍率では測れない前衛。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 低耐久とウェーブごとの再マーキングに注意。控えでも発揮できる支援価値を前衛固有の加点として重複させない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 行秋／久岐忍／ラウマ、またはニィロウ型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／4。参照：[C73]、[C11]。\u003c/p>\n"},{"id":"c-d532f4254c","name":"スクロース","group":"派生","scores":[4,4,3.5],"score_strings":["4.0","4.0","3.5"],"total":"3.900","tier":"S","confidence":"中","profiles":{"基準":"S","螺旋重視":"S","幽境重視":"S","シアター重視":"A"},"source_line":1163,"element":"風","raw":"**判定：** 能動的な拡散・翠緑・熟知配布で高い控え火力を動かす。魔導相方と組む型も成立する。\n\n**制約・比較上の注意：** これは本人の直接ダメージが専任上位並みという意味ではない。前衛変更時の反応・支援差を根拠に評価。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／フィッシュル。\n\n**モード点（螺旋／幽境／シアター）：** 4／4／3.5。参照：[C74]、[C09]。","detail_line":394,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 能動的な拡散・翠緑・熟知配布で高い控え火力を動かす。魔導相方と組む型も成立する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> これは本人の直接ダメージが専任上位並みという意味ではない。前衛変更時の反応・支援差を根拠に評価。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／フィッシュル。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 4／4／3.5。参照：[C74]、[C09]。\u003c/p>\n"},{"id":"c-a51b99e8d4","name":"珊瑚宮心海","group":"派生","scores":[3.5,3,4.5],"score_strings":["3.5","3.0","4.5"],"total":"3.525","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"S"},"source_line":1164,"element":"水","raw":"**判定：** 前衛の水付着と全体回復を一人で担い、開花・水主体編成で生存しながら反応を継続できる。\n\n**制約・比較上の注意：** 会心不能を月反応で自動解決できるわけではない。高HPボスの速度は専任火力型に劣る。\n\n**代表的な味方3枠：** ニィロウ／ラウマ／ナヒーダ、またはフリーナ水主体型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3／4.5。参照：[C75]。","detail_line":676,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 前衛の水付着と全体回復を一人で担い、開花・水主体編成で生存しながら反応を継続できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 会心不能を月反応で自動解決できるわけではない。高HPボスの速度は専任火力型に劣る。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニィロウ／ラウマ／ナヒーダ、またはフリーナ水主体型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3／4.5。参照：[C75]。\u003c/p>\n"},{"id":"c-e65b63359c","name":"イファ","group":"派生","scores":[3.5,3.5,4],"score_strings":["3.5","3.5","4.0"],"total":"3.600","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1165,"element":"風","raw":"**判定：** 前衛拡散と全体回復をまとめ、月感電対応の支援もある。射程・移動で実戦の攻撃継続を助ける。\n\n**制約・比較上の注意：** 星拡散の瑞希と同じ固有火力は持たない。夜魂や反応条件を満たした型で評価する。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／オロルンまたはフィッシュル。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／4。参照：[C76]、[C09]。","detail_line":686,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 前衛拡散と全体回復をまとめ、月感電対応の支援もある。射程・移動で実戦の攻撃継続を助ける。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 星拡散の瑞希と同じ固有火力は持たない。夜魂や反応条件を満たした型で評価する。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／オロルンまたはフィッシュル。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／4。参照：[C76]、[C09]。\u003c/p>\n"},{"id":"c-703a4dda87","name":"モナ","group":"派生","scores":[3,3,3],"score_strings":["3.0","3.0","3.0"],"total":"3.000","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1166,"element":"水","raw":"**判定：** 魔導相方との水付着・デバフ維持により、控えの反応を動かす前衛型が成立する。\n\n**制約・比較上の注意：** 無凸なので2凸の熟知支援等は使わない。爆発一撃型、サポート専任、6凸重撃型を混ぜない。\n\n**代表的な味方3枠：** ドゥリン／ニコ／アルベド、または月感電型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3。参照：[C77]、[C27]。","detail_line":798,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 魔導相方との水付着・デバフ維持により、控えの反応を動かす前衛型が成立する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 無凸なので2凸の熟知支援等は使わない。爆発一撃型、サポート専任、6凸重撃型を混ぜない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ドゥリン／ニコ／アルベド、または月感電型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3。参照：[C77]、[C27]。\u003c/p>\n"},{"id":"c-b0be575e0a","name":"バーバラ","group":"派生","scores":[2.5,2.5,3.5],"score_strings":["2.5","2.5","3.5"],"total":"2.700","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1167,"element":"水","raw":"**判定：** 能動的な水付着と回復で開花系を動かせる。個人会心火力を求めない型なら高難度でも役割を持つ。\n\n**制約・比較上の注意：** スキルの自己水付着、射程と付着の管理が制約。会心蒸発型の最大値を標準運用にしない。\n\n**代表的な味方3枠：** ニィロウ／ラウマ／ナヒーダ、または超開花型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3.5。参照：[C78]、[C11]。","detail_line":808,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 能動的な水付着と回復で開花系を動かせる。個人会心火力を求めない型なら高難度でも役割を持つ。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> スキルの自己水付着、射程と付着の管理が制約。会心蒸発型の最大値を標準運用にしない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニィロウ／ラウマ／ナヒーダ、または超開花型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3.5。参照：[C78]、[C11]。\u003c/p>\n"},{"id":"c-5d59d24d96","name":"リサ","group":"派生","scores":[3,3,3],"score_strings":["3.0","3.0","3.0"],"total":"3.000","tier":"B","confidence":"中","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1168,"element":"雷","raw":"**判定：** 激化・燃焼混合や月感電で、元素付着と防御低下を活かす前衛。新しい控え火力との相性も検討。\n\n**制約・比較上の注意：** 長押しスキルの隙と爆発回転が実戦上の制約。敵防御を参照しない反応部分へ防御低下の価値を過大に加算しない。\n\n**代表的な味方3枠：** フィッシュル／ドゥリン／ナヒーダ、または月感電型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3。参照：[C79]。","detail_line":818,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 激化・燃焼混合や月感電で、元素付着と防御低下を活かす前衛。新しい控え火力との相性も検討。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 長押しスキルの隙と爆発回転が実戦上の制約。敵防御を参照しない反応部分へ防御低下の価値を過大に加算しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フィッシュル／ドゥリン／ナヒーダ、または月感電型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3。参照：[C79]。\u003c/p>\n"},{"id":"c-c48c0a3e98","name":"八重神子","group":"派生","scores":[3.5,3.5,3.5],"score_strings":["3.5","3.5","3.5"],"total":"3.500","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1169,"element":"雷","raw":"**判定：** 強化後の星電導の高い控え火力を持ち、通常・重撃で前衛運用もできる。相方へ交代しやすい。\n\n**制約・比較上の注意：** 主力は控えでも出せる。この位置は前衛型の攻略性能であり、サブDPSランキングではない。1凸は未採用。\n\n**代表的な味方3枠：** オデット／ニコ／フィッシュル、または激化型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3.5。参照：[C80]。","detail_line":696,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 強化後の星電導の高い控え火力を持ち、通常・重撃で前衛運用もできる。相方へ交代しやすい。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主力は控えでも出せる。この位置は前衛型の攻略性能であり、サブDPSランキングではない。1凸は未採用。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> オデット／ニコ／フィッシュル、または激化型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3.5。参照：[C80]。\u003c/p>\n"},{"id":"c-63961135c8","name":"リネット","group":"派生","scores":[3,3,3],"score_strings":["3.0","3.0","3.0"],"total":"3.000","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1170,"element":"風","raw":"**判定：** 完凸の風付与で能動的な拡散・反応ドライバーになる。挑発と交代のしやすさもある。\n\n**制約・比較上の注意：** 完凸未満では同じ前衛運用にならない。最新月反応型は旧ガイドと反応資料からの推論を含む。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／フィッシュル、または超開花型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3。参照：[C81]、[C09]。","detail_line":828,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸の風付与で能動的な拡散・反応ドライバーになる。挑発と交代のしやすさもある。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 完凸未満では同じ前衛運用にならない。最新月反応型は旧ガイドと反応資料からの推論を含む。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／フィッシュル、または超開花型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3。参照：[C81]、[C09]。\u003c/p>\n"},{"id":"c-9ad45e5e60","name":"ドリー","group":"派生","scores":[2.5,2.5,3],"score_strings":["2.5","2.5","3.0"],"total":"2.600","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"C","幽境重視":"C","シアター重視":"B"},"source_line":1171,"element":"雷","raw":"**判定：** 完凸の雷付与・回復と、雷怒等によるスキル反復で反応前衛を担う。\n\n**制約・比較上の注意：** 短い付与時間と回転・範囲の管理が必要。最新編成の横断比較が乏しく、前衛としての評価確度は低め。\n\n**代表的な味方3枠：** ナヒーダ／フリーナ／フィッシュル、または激化型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3。参照：[C82]。","detail_line":838,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸の雷付与・回復と、雷怒等によるスキル反復で反応前衛を担う。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 短い付与時間と回転・範囲の管理が必要。最新編成の横断比較が乏しく、前衛としての評価確度は低め。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ナヒーダ／フリーナ／フィッシュル、または激化型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3。参照：[C82]。\u003c/p>\n"},{"id":"c-913b20f3a0","name":"主人公・炎","group":"派生","scores":[2.5,2.5,3],"score_strings":["2.5","2.5","3.0"],"total":"2.600","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"C","幽境重視":"C","シアター重視":"B"},"source_line":1172,"element":"炎","raw":"**判定：** 完凸の炎転換と現行の旅人用武器・能力強化を使う前衛型。\n\n**制約・比較上の注意：** 本来の控え付着役からの派生。新武器込みの最新比較は不足し、古い5.5時点の火力評価を直接移植していない。\n\n**代表的な味方3枠：** シトラリ／ニコ／ベネット、または蒸発型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3。参照：[C83]、[C62]。","detail_line":848,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸の炎転換と現行の旅人用武器・能力強化を使う前衛型。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 本来の控え付着役からの派生。新武器込みの最新比較は不足し、古い5.5時点の火力評価を直接移植していない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> シトラリ／ニコ／ベネット、または蒸発型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3。参照：[C83]、[C62]。\u003c/p>\n"},{"id":"c-756085ba73","name":"主人公・岩","group":"派生","scores":[2.5,2.5,3],"score_strings":["2.5","2.5","3.0"],"total":"2.600","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"C","幽境重視":"C","シアター重視":"B"},"source_line":1173,"element":"岩","raw":"**判定：** 短いスキル・爆発を使い、月結晶編成で前衛の岩付着も提供する。旅人用配布武器も利用。\n\n**制約・比較上の注意：** 岩創造物による動線・狙いへの干渉と本人火力が制約。現行月結晶型の評価は支援側資料からの推論を含む。\n\n**代表的な味方3枠：** リンネア／コロンビーナ／イルーガ。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3。参照：[C84]、[C09]、[C62]。","detail_line":858,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短いスキル・爆発を使い、月結晶編成で前衛の岩付着も提供する。旅人用配布武器も利用。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 岩創造物による動線・狙いへの干渉と本人火力が制約。現行月結晶型の評価は支援側資料からの推論を含む。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> リンネア／コロンビーナ／イルーガ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3。参照：[C84]、[C09]、[C62]。\u003c/p>\n"},{"id":"c-66a22c45c0","name":"ドゥリン","group":"派生","scores":[3.5,3.5,3],"score_strings":["3.5","3.5","3.0"],"total":"3.400","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1174,"element":"炎","raw":"**判定：** 黒形態の反応火力を中心に、前衛に残って支援と炎付与通常・重撃を活かす運用が成立する。\n\n**制約・比較上の注意：** 評価は前衛型。ローエンと組んで控えから溶解する場合の強さを、そのまま本人の前衛型の点数にはしない。\n\n**代表的な味方3枠：** ベネット／ニコ／夜蘭、または氷付着型。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3。参照：[C85]。","detail_line":706,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 黒形態の反応火力を中心に、前衛に残って支援と炎付与通常・重撃を活かす運用が成立する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 評価は前衛型。ローエンと組んで控えから溶解する場合の強さを、そのまま本人の前衛型の点数にはしない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ベネット／ニコ／夜蘭、または氷付着型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3。参照：[C85]。\u003c/p>\n"},{"id":"c-c214cb2c68","name":"ラウマ","group":"派生","scores":[3.5,3.5,3],"score_strings":["3.5","3.5","3.0"],"total":"3.400","tier":"A","confidence":"中","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1175,"element":"草","raw":"**判定：** 無凸でも草通常攻撃で開花を動かす前衛運用がある。控えでも使える支援に追加の付着を重ねる。\n\n**制約・比較上の注意：** 主なダメージ所有者が水側になる編成もある。6凸の専用前衛火力を無凸に持ち込まない。\n\n**代表的な味方3枠：** ニィロウ／行秋／白朮またはヨォーヨ。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3。参照：[C11]。","detail_line":716,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 無凸でも草通常攻撃で開花を動かす前衛運用がある。控えでも使える支援に追加の付着を重ねる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主なダメージ所有者が水側になる編成もある。6凸の専用前衛火力を無凸に持ち込まない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ニィロウ／行秋／白朮またはヨォーヨ。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3。参照：[C11]。\u003c/p>\n"},{"id":"c-3d97c2b2ba","name":"リンネア","group":"派生","scores":[3.5,3.5,3],"score_strings":["3.5","3.5","3.0"],"total":"3.400","tier":"A","confidence":"低","profiles":{"基準":"A","螺旋重視":"A","幽境重視":"A","シアター重視":"A"},"source_line":1176,"element":"岩","raw":"**判定：** 月結晶の短時間大火力と、必要に応じた岩重撃付着を使う派生型。回復も兼ねる。\n\n**制約・比較上の注意：** 主役割は控え支援。短出場型の本人火力と長く居座る利益を区別し、通常攻撃を主火力とは評価しない。\n\n**代表的な味方3枠：** コロンビーナ／イルーガ／ゴロー。\n\n**モード点（螺旋／幽境／シアター）：** 3.5／3.5／3。参照：[C14]、[C09]。","detail_line":726,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 月結晶の短時間大火力と、必要に応じた岩重撃付着を使う派生型。回復も兼ねる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主役割は控え支援。短出場型の本人火力と長く居座る利益を区別し、通常攻撃を主火力とは評価しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> コロンビーナ／イルーガ／ゴロー。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3.5／3.5／3。参照：[C14]、[C09]。\u003c/p>\n"},{"id":"c-4aabf56411","name":"キャンディス","group":"派生","scores":[2.5,2.5,3],"score_strings":["2.5","2.5","3.0"],"total":"2.600","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"C","幽境重視":"C","シアター重視":"B"},"source_line":1177,"element":"水","raw":"**判定：** 自分の水付与と追加スキルで前衛運用でき、水氷支援や開花の反応役を担える。\n\n**制約・比較上の注意：** 自分では自身の6凸追撃を発動できない。前衛型の個人火力は低く、支援型の全価値を加算しない。\n\n**代表的な味方3枠：** フリーナ／エスコフィエ／ヴォジャニーツァ、または開花型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／3。参照：[C86]。","detail_line":868,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 自分の水付与と追加スキルで前衛運用でき、水氷支援や開花の反応役を担える。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 自分では自身の6凸追撃を発動できない。前衛型の個人火力は低く、支援型の全価値を加算しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／エスコフィエ／ヴォジャニーツァ、または開花型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／3。参照：[C86]。\u003c/p>\n"},{"id":"c-70fb45ecf3","name":"シロネン","group":"派生","scores":[2.5,2.5,2],"score_strings":["2.5","2.5","2.0"],"total":"2.400","tier":"C","confidence":"低","profiles":{"基準":"C","螺旋重視":"C","幽境重視":"C","シアター重視":"C"},"source_line":1178,"element":"岩","raw":"**判定：** 無凸にも岩攻撃を続ける分岐はある。月結晶支援を使う派生を評価範囲に入れた。\n\n**制約・比較上の注意：** 通常の支援型とは必要な元素構成が異なる。無凸の本人火力は低く、6凸の前衛性能は対象外。\n\n**代表的な味方3枠：** リンネア／イルーガ／コロンビーナ等、岩を多めにした型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／2。参照：[C87]、[C14]。","detail_line":970,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 無凸にも岩攻撃を続ける分岐はある。月結晶支援を使う派生を評価範囲に入れた。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 通常の支援型とは必要な元素構成が異なる。無凸の本人火力は低く、6凸の前衛性能は対象外。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> リンネア／イルーガ／コロンビーナ等、岩を多めにした型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／2。参照：[C87]、[C14]。\u003c/p>\n"},{"id":"c-8192e60202","name":"ガイア","group":"派生","scores":[3,2.5,3],"score_strings":["3.0","2.5","3.0"],"total":"2.825","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1179,"element":"氷","raw":"**判定：** 完凸の高頻度氷付着と爆発を活かし、前衛に残る氷水型や外部付与型を選べる。\n\n**制約・比較上の注意：** 主力は爆発なので居座る利益は限定的。低相性の重雲型だけで全運用を代表させないが、専任上位との差は残る。\n\n**代表的な味方3枠：** フリーナ／申鶴／エスコフィエ、または重雲型。\n\n**モード点（螺旋／幽境／シアター）：** 3／2.5／3。参照：[C88]。","detail_line":878,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 完凸の高頻度氷付着と爆発を活かし、前衛に残る氷水型や外部付与型を選べる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 主力は爆発なので居座る利益は限定的。低相性の重雲型だけで全運用を代表させないが、専任上位との差は残る。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／申鶴／エスコフィエ、または重雲型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／2.5／3。参照：[C88]。\u003c/p>\n"},{"id":"c-dafd6119e7","name":"ロサリア","group":"派生","scores":[3,3,2.5],"score_strings":["3.0","3.0","2.5"],"total":"2.900","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1180,"element":"氷／物理","raw":"**判定：** 溶解爆発を軸に、外部氷付与や物理通常を補う派生も持つ。短い交代で動ける。\n\n**制約・比較上の注意：** 設置範囲と、本人が前に出る場合の上積みが制約。控えの溶解サブDPSとしての評価とは分ける。\n\n**代表的な味方3枠：** フリーナ／エスコフィエ／重雲、または溶解短出場型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／2.5。参照：[C89]。","detail_line":888,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 溶解爆発を軸に、外部氷付与や物理通常を補う派生も持つ。短い交代で動ける。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 設置範囲と、本人が前に出る場合の上積みが制約。控えの溶解サブDPSとしての評価とは分ける。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> フリーナ／エスコフィエ／重雲、または溶解短出場型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／2.5。参照：[C89]。\u003c/p>\n"},{"id":"c-2f726074ea","name":"重雲","group":"派生","scores":[2.5,2.5,2.5],"score_strings":["2.5","2.5","2.5"],"total":"2.500","tier":"C","confidence":"低","profiles":{"基準":"C","螺旋重視":"C","幽境重視":"C","シアター重視":"C"},"source_line":1181,"element":"氷","raw":"**判定：** 氷付与と短い爆発で、氷通常型・反応爆発型の攻撃役になれる。\n\n**制約・比較上の注意：** 支援として付与を渡す価値と本人の前衛火力は別。低い通常火力、場の制約と現行比較不足がある。\n\n**代表的な味方3枠：** 申鶴／エスコフィエ／フリーナ、または溶解型。\n\n**モード点（螺旋／幽境／シアター）：** 2.5／2.5／2.5。参照：[C90]。","detail_line":980,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 氷付与と短い爆発で、氷通常型・反応爆発型の攻撃役になれる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 支援として付与を渡す価値と本人の前衛火力は別。低い通常火力、場の制約と現行比較不足がある。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> 申鶴／エスコフィエ／フリーナ、または溶解型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 2.5／2.5／2.5。参照：[C90]。\u003c/p>\n"},{"id":"c-1d2d6d617e","name":"フィッシュル","group":"派生","scores":[3,2.5,3],"score_strings":["3.0","2.5","3.0"],"total":"2.825","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1182,"element":"雷／物理","raw":"**判定：** 前衛の通常攻撃とオズを両立する派生。魔導強化は使用可能な相方がいる型で適用する。\n\n**制約・比較上の注意：** 控えでほぼ同じ主火力を出せるため、前衛としての固有利益は小さい。物理武器の旧評価だけで判定しない。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／スクロース、または物理型。\n\n**モード点（螺旋／幽境／シアター）：** 3／2.5／3。参照：[C91]、[C74]。","detail_line":898,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 前衛の通常攻撃とオズを両立する派生。魔導強化は使用可能な相方がいる型で適用する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 控えでほぼ同じ主火力を出せるため、前衛としての固有利益は小さい。物理武器の旧評価だけで判定しない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／スクロース、または物理型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／2.5／3。参照：[C91]、[C74]。\u003c/p>\n"},{"id":"c-0edc58e237","name":"鍾離","group":"派生","scores":[3,2.5,3.5],"score_strings":["3.0","2.5","3.5"],"total":"2.925","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1183,"element":"岩／物理","raw":"**判定：** 強い盾と近距離の全耐性低下を維持し、通常攻撃で追撃・反応編成を動かす。\n\n**制約・比較上の注意：** サポートとしての最上位評価ではない。本人の攻撃火力は低く、高HP戦は控え火力への依存が大きい。\n\n**代表的な味方3枠：** イネファ／コロンビーナ／シロネン、または物理型。\n\n**モード点（螺旋／幽境／シアター）：** 3／2.5／3.5。参照：[C92]、[C09]。","detail_line":908,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 強い盾と近距離の全耐性低下を維持し、通常攻撃で追撃・反応編成を動かす。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> サポートとしての最上位評価ではない。本人の攻撃火力は低く、高HP戦は控え火力への依存が大きい。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> イネファ／コロンビーナ／シロネン、または物理型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／2.5／3.5。参照：[C92]、[C09]。\u003c/p>\n"},{"id":"c-7e35e8c84d","name":"ベネット","group":"派生","scores":[3,2.5,2.5],"score_strings":["3.0","2.5","2.5"],"total":"2.725","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"B"},"source_line":1184,"element":"炎","raw":"**判定：** 短いスキルを連発して反応とエネルギーを作る前衛型を評価する。\n\n**制約・比較上の注意：** 基準は6凸。重雲の氷付与を使う5凸止めの順溶解型は別条件。支援役としての重要性は点数に入れない。\n\n**代表的な味方3枠：** キャンディス／香菱／行秋、または炎落下型。\n\n**モード点（螺旋／幽境／シアター）：** 3／2.5／2.5。参照：[C93]、[C86]。","detail_line":918,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 短いスキルを連発して反応とエネルギーを作る前衛型を評価する。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 基準は6凸。重雲の氷付与を使う5凸止めの順溶解型は別条件。支援役としての重要性は点数に入れない。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> キャンディス／香菱／行秋、または炎落下型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／2.5／2.5。参照：[C93]、[C86]。\u003c/p>\n"},{"id":"c-3b0ecbf388","name":"閑雲","group":"派生","scores":[3,3,3.5],"score_strings":["3.0","3.0","3.5"],"total":"3.100","tier":"B","confidence":"低","profiles":{"基準":"B","螺旋重視":"B","幽境重視":"B","シアター重視":"A"},"source_line":1185,"element":"風","raw":"**判定：** 無凸にも自己落下型と回復を兼ねる風ドライバー型がある。前衛として継続生存を確保できる。\n\n**制約・比較上の注意：** 6凸の連続スキル型は含めない。現行反応ドライバー型の判断は一般反応とキットからの推論が多い。\n\n**代表的な味方3枠：** ファルザン／フリーナ／ベネット、または月感電ドライバー型。\n\n**モード点（螺旋／幽境／シアター）：** 3／3／3.5。参照：[C51]、[C09]。","detail_line":928,"html":"\u003cp>\u003cstrong>判定：\u003c/strong> 無凸にも自己落下型と回復を兼ねる風ドライバー型がある。前衛として継続生存を確保できる。\u003c/p>\n\u003cp>\u003cstrong>制約・比較上の注意：\u003c/strong> 6凸の連続スキル型は含めない。現行反応ドライバー型の判断は一般反応とキットからの推論が多い。\u003c/p>\n\u003cp>\u003cstrong>代表的な味方3枠：\u003c/strong> ファルザン／フリーナ／ベネット、または月感電ドライバー型。\u003c/p>\n\u003cp>\u003cstrong>モード点（螺旋／幽境／シアター）：\u003c/strong> 3／3／3.5。参照：[C51]、[C09]。\u003c/p>\n"}],"weights":{"基準":["0.45","0.35","0.20"],"螺旋重視":["0.60","0.30","0.10"],"幽境重視":["0.30","0.60","0.10"],"シアター重視":["0.30","0.20","0.50"]},"changed_counts":{"基準":0,"螺旋重視":10,"幽境重視":14,"シアター重視":28},"representative_rows_verified":13,"notice":"提供資料の表示検証。ゲーム内容の独立した再検証は行っていません。"}</script>
+<script>
+const D=JSON.parse(document.getElementById('report-data').textContent);
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const query=new URLSearchParams(location.search);const view=['read','explore','story'].includes(query.get('view'))?query.get('view'):'explore';
+document.body.classList.add('variant-'+view);
+document.querySelector(`[data-view="${view}"]`).setAttribute('aria-current','page');
+$('.visual-title').textContent='Tierごとの運用数';
+$('#tier-distribution').innerHTML=['SS','S','A','B','C','D'].map(t=>{const n=D.records.filter(r=>r.tier===t).length;return `<div class="tier-line" style="grid-template-columns:2.5rem 1fr 2.5rem"><strong>${t}</strong><div><i style="width:${n/33*100}%" aria-hidden="true"></i></div><span style="font-size:.85rem;text-align:right">${n}件</span></div>`}).join('');
+if(view==='read'){$('#hero-title').innerHTML='結論から、<br>根拠の細部まで。';$('#hero-copy').textContent='元の議論の順序を保ち、77運用の評価とその限界を通して読む。目次から各章にも直接移動できます。';}
+else{
+ if(view==='explore'){$('#hero-title').innerHTML='77の運用を、<br>並べて読む。';$('#hero-copy').textContent='対象を絞り込み、評価の理由・制約・代表編成を比較する。';}
+ if(view==='story'){$('#hero-title').innerHTML='評価条件が、<br>結論を動かす。';$('#hero-copy').textContent='原文の感度分析を操作して、Tierの読み方を確かめる。';}
+ $('#'+view+'-view').hidden=false;
+ const wrapper=document.createElement('details');wrapper.className='source-toggle';wrapper.id='original-disclosure';const summary=document.createElement('summary');summary.textContent='提供資料の全文・出典を読む';wrapper.append(summary);$('#original-container').before(wrapper);wrapper.append($('#original-container'));
+}
+function revealOriginal(){const e=$('#original-disclosure');if(e)e.open=true;}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href="#original"]');if(a){revealOriginal();$('#detail-dialog').close();}});
+if(location.hash.startsWith('#src-')||location.hash==='#original')revealOriginal();
+const selected=new Set();const scoreLabels=['螺旋','幽境','シアター'];
+function scores(r){return r.scores.map((v,i)=>`<div class="score-row"><span>${scoreLabels[i]}</span><span class="score-rail" aria-hidden="true"><i style="left:${v/5*100}%"></i></span><strong>${v}</strong></div>`).join('');}
+function renderRecords(){
+ const q=$('#search').value.trim().normalize('NFKC').toLocaleLowerCase();const tier=$('#tier').value,group=$('#group').value,confidence=$('#confidence').value;
+ const rows=D.records.filter(r=>(!q||r.name.normalize('NFKC').toLocaleLowerCase().includes(q))&&(!tier||r.tier===tier)&&(!group||r.group===group)&&(!confidence||r.confidence===confidence));
+ $('#result-count').textContent=`${rows.length} / 77 運用`;
+ $('#records').innerHTML=rows.length?rows.map(r=>`<article class="record" data-id="${r.id}"><div class="record-top"><div><h3>${escapeHtml(r.name)}</h3><span class="meta">${escapeHtml(r.element)} · ${r.group==='主'?'主対象':'派生・ドライバー'} · 確度${r.confidence}</span></div><span class="band">${r.tier}</span></div><div aria-label="モード点（序数コード）">${scores(r)}</div><div class="record-actions"><button data-detail="${r.id}" aria-label="${escapeHtml(r.name)}の評価根拠">評価根拠 ↗</button><button data-select="${r.id}" aria-label="${escapeHtml(r.name)}を比較" aria-pressed="${selected.has(r.id)}">${selected.has(r.id)?'比較から外す':'比較に追加'}</button></div></article>`).join(''):'<p class="empty">該当する運用がありません。検索語や絞り込みを変更してください。</p>';
+}
+function renderCompare(){
+ $('#compare-panel').hidden=!selected.size;
+ $('#compare-columns').innerHTML=Array.from(selected).map(id=>{const r=D.records.find(r=>r.id===id);return `<article class="compare-item"><h3>${escapeHtml(r.name)} <span class="band">${r.tier}</span></h3>${scores(r)}<p class="meta">${r.group==='主'?'主対象':'派生・ドライバー'} / 確度${r.confidence}</p><button data-detail="${r.id}" aria-label="比較中の${escapeHtml(r.name)}の根拠">判定・制約・編成を読む</button><button data-remove="${r.id}" aria-label="${escapeHtml(r.name)}を比較から外す">外す</button></article>`}).join('');
+ $('#selection-status').textContent=`${selected.size} / 3件を比較中。比較欄は一覧の上にあります。`;
+}
+for(const s of ['#search','#tier','#group','#confidence'])$(s).addEventListener(s==='#search'?'input':'change',renderRecords);
+$('#reset').addEventListener('click',()=>{for(const s of ['#search','#tier','#group','#confidence'])$(s).value='';renderRecords();$('#search').focus()});
+$('#clear-compare').addEventListener('click',()=>{selected.clear();renderCompare();renderRecords();$('#search').focus()});
+document.addEventListener('click',e=>{
+ const detail=e.target.closest('[data-detail]');if(detail){const r=D.records.find(x=>x.id===detail.dataset.detail);$('#detail-title').textContent=r.name;$('#detail-meta').textContent=`基準Tier ${r.tier} / ${r.element} / 確度${r.confidence} / 原文 ${r.detail_line}行〜`;$('#detail-body').innerHTML=r.html;$('#detail-dialog').showModal();return;}
+ const button=e.target.closest('[data-select],[data-remove]');if(button){const id=button.dataset.select||button.dataset.remove;if(selected.has(id))selected.delete(id);else if(selected.size<3)selected.add(id);else{$('#selection-status').textContent='比較は3件までです。選択済みの運用を外してください。';return;}renderCompare();renderRecords();const focus=document.querySelector(`[data-select="${id}"]`);if(focus)focus.focus();else $('#search').focus();}
+});
+$('#close-detail').addEventListener('click',()=>$('#detail-dialog').close());
+let profile='基準';const names=['サンドローネ','ヴェスナ','フリンズ','ネフェル','兹白','マーヴィカ','スカーク','ヌヴィレット','ムアラニ','ファルカ','嘉明','チャスカ','珊瑚宮心海'];
+function renderStory(){
+ $('#profile-controls').innerHTML=Object.keys(D.weights).map(p=>`<button data-profile="${p}" aria-pressed="${profile===p}">${p}</button>`).join('');
+ const weights=D.weights[profile].map(x=>Math.round(Number(x)*100));$('#weights').innerHTML=weights.map(w=>`<span style="width:${w}%"></span>`).join('');$('#weights-text').textContent=scoreLabels.map((s,i)=>s+' '+weights[i]+'%').join(' / ');
+ $('#changed-count').textContent=profile==='基準'?'基準のTierを表示しています。':`基準から評価帯が変わる運用：${D.changed_counts[profile]} / 77`;
+ $('#shifts').innerHTML=names.map(n=>{const r=D.records.find(r=>r.name===n);return `<div class="shift-row ${r.tier!==r.profiles[profile]?'changed':''}"><button class="text-link-button" data-detail="${r.id}" aria-label="${escapeHtml(n)}の評価根拠">${escapeHtml(n)}</button><span class="band">${r.tier}</span><span aria-hidden="true">→</span><span class="band current-band">${r.profiles[profile]}</span></div>`}).join('');
+}
+$('#profile-controls').addEventListener('click',e=>{const b=e.target.closest('[data-profile]');if(b){profile=b.dataset.profile;renderStory();document.querySelector(`[data-profile="${profile}"]`).focus()}});
+renderRecords();renderCompare();renderStory();
+</script>
+</body></html>

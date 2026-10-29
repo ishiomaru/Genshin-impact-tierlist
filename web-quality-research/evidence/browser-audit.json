@@ -1,0 +1,294 @@
+{
+  "kind": "representation-feasibility-pilot",
+  "browser": "153.0.8010.0",
+  "platform": "linux",
+  "executed_at_utc": "2026-10-28T14:46:15.766Z",
+  "checks": [
+    {
+      "name": "read/1440: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440
+      }
+    },
+    {
+      "name": "read/1440: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "read/1440: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "explore/1440: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440
+      }
+    },
+    {
+      "name": "explore/1440: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/1440: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "explore/1440: search finds one record",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/1440: dialog opens, Escape closes, focus returns",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/1440: empty state, reset, tier/group/confidence filters",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/1440: compare three and reject fourth",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/1440: source disclosure link",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/1440: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "document": 1440
+      }
+    },
+    {
+      "name": "story/1440: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/1440: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "story/1440: 4 profiles and two diagnostic cases",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/1440: source disclosure link",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "read/768: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "read/768: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "read/768: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "explore/768: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "explore/768: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/768: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "explore/768: search finds one record",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/768: dialog opens, Escape closes, focus returns",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/768: empty state, reset, tier/group/confidence filters",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/768: compare three and reject fourth",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/768: source disclosure link",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/768: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "story/768: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/768: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "story/768: 4 profiles and two diagnostic cases",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/768: source disclosure link",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "read/390: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "read/390: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "read/390: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "explore/390: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "explore/390: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/390: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "explore/390: search finds one record",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/390: dialog opens, Escape closes, focus returns",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/390: empty state, reset, tier/group/confidence filters",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/390: compare three and reject fourth",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "explore/390: source disclosure link",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/390: no page-wide horizontal overflow",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "story/390: full original 77 detail headings retained",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/390: axe selected WCAG rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "story/390: 4 profiles and two diagnostic cases",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "story/390: source disclosure link",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "No JavaScript: original remains readable",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "No uncaught browser JavaScript errors",
+      "pass": true,
+      "detail": true
+    }
+  ],
+  "screenshots": "Temporary QA only; excluded from deliverables",
+  "limitations": [
+    "Not a Codex CLI generation experiment",
+    "No human preference or comprehension study",
+    "No field performance, Safari or screen-reader test"
+  ],
+  "passed": 50,
+  "failed": 0,
+  "axe_ran": true
+}
