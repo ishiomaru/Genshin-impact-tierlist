@@ -1,0 +1,29 @@
+{
+  "source_sha256": "3f37fae6c5c1b1c358c1a277f1b42b99ce66255805305608dffd6de024433543",
+  "records": 77,
+  "main": 53,
+  "derived": 24,
+  "score_cells": 231,
+  "weighted_totals": 77,
+  "detail_score_triples": 77,
+  "profile_examples": 13,
+  "changed": {
+    "balanced": 0,
+    "abyss": 10,
+    "onslaught": 14,
+    "theater": 28
+  },
+  "confidence": {
+    "高": 2,
+    "中": 57,
+    "低": 18
+  },
+  "tiers": {
+    "SS": 5,
+    "S": 12,
+    "A": 33,
+    "B": 20,
+    "C": 5,
+    "D": 2
+  }
+}

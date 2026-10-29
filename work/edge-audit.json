@@ -1,0 +1,497 @@
+{
+  "browser": "156.0.8078.48",
+  "base": "http://127.0.0.1:4173",
+  "checks": [
+    "all 77 portraits and hero decode from local production assets",
+    "production runtime makes no external network requests",
+    "keyboard Enter, 30 Tabs, Shift+Tab, Escape keep modal focus contained and restore it",
+    "fourth comparison is rejected without losing the first three",
+    "clipboard-denied state provides usable share URL without personal notes",
+    "comparison clear has a useful empty state",
+    "all five pages reflow without outer overflow at 768px",
+    "all five pages reflow without outer overflow at 390px",
+    "all five pages reflow without outer overflow at 320px",
+    "mobile side-by-side summary remains operable at 320px",
+    "malformed saved state is reported and preserved until a new save",
+    "storage-denied state reports failure and retains in-session edits",
+    "failed portrait falls back to identifying text instead of broken image",
+    "extended production checks have no exceptions or automated accessibility violations"
+  ],
+  "externalRequests": [],
+  "errors": [],
+  "accessibility": [
+    {
+      "page": "detail-320",
+      "violations": []
+    },
+    {
+      "page": "compare-320",
+      "violations": []
+    }
+  ],
+  "localPerformance": {
+    "lcp": 160,
+    "cls": 0.00041697530864197524,
+    "navigation": {
+      "name": "http://127.0.0.1:4173/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 49.29999999701977,
+      "navigationId": 3333,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.3999999985098839,
+      "domainLookupStart": 0.3999999985098839,
+      "domainLookupEnd": 0.3999999985098839,
+      "connectStart": 0.3999999985098839,
+      "secureConnectionStart": 0,
+      "connectEnd": 0.3999999985098839,
+      "requestStart": 4.399999998509884,
+      "responseStart": 6.5,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 6.5,
+      "responseEnd": 7.799999997019768,
+      "transferSize": 1101,
+      "encodedBodySize": 801,
+      "decodedBodySize": 801,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 14.799999997019768,
+      "domContentLoadedEventStart": 48.69999999552965,
+      "domContentLoadedEventEnd": 48.69999999552965,
+      "domComplete": 49.29999999701977,
+      "loadEventStart": 49.29999999701977,
+      "loadEventEnd": 49.29999999701977,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "low"
+      }
+    },
+    "resources": [
+      {
+        "name": "http://127.0.0.1:4173/assets/index-B0QOyZTs.js",
+        "duration": 25.399999998509884,
+        "transferSize": 104385
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/index-CGjpo6jp.css",
+        "duration": 18.799999997019768,
+        "transferSize": 15610
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/neuvillette-splash.webp",
+        "duration": 3.899999998509884,
+        "transferSize": 192466
+      },
+      {
+        "name": "http://127.0.0.1:4173/favicon.svg",
+        "duration": 3.9000000059604645,
+        "transferSize": 540
+      },
+      {
+        "name": "http://127.0.0.1:4173/fonts/noto-serif-jp-0.ttf",
+        "duration": 45.100000001490116,
+        "transferSize": 275672
+      },
+      {
+        "name": "http://127.0.0.1:4173/fonts/noto-serif-jp-1.ttf",
+        "duration": 45.29999999701977,
+        "transferSize": 275608
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_MarionetteNew.webp",
+        "duration": 9.100000001490116,
+        "transferSize": 12276
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Vesna.webp",
+        "duration": 9.300000004470348,
+        "transferSize": 13978
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Flins.webp",
+        "duration": 9.399999998509884,
+        "transferSize": 11102
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Nefer.webp",
+        "duration": 10.100000001490116,
+        "transferSize": 11434
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Zibai.webp",
+        "duration": 10,
+        "transferSize": 11988
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Mavuika.webp",
+        "duration": 11.200000002980232,
+        "transferSize": 13308
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_SkirkNew.webp",
+        "duration": 12,
+        "transferSize": 12988
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Neuvillette.webp",
+        "duration": 12.299999997019768,
+        "transferSize": 12286
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Arlecchino.webp",
+        "duration": 12.399999998509884,
+        "transferSize": 10526
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Mualani.webp",
+        "duration": 12.5,
+        "transferSize": 10496
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Varesa.webp",
+        "duration": 12.5,
+        "transferSize": 15060
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Wriothesley.webp",
+        "duration": 13.100000001490116,
+        "transferSize": 9684
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Mizuki.webp",
+        "duration": 15,
+        "transferSize": 13208
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Kinich.webp",
+        "duration": 15.199999995529652,
+        "transferSize": 10604
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Navia.webp",
+        "duration": 15.199999995529652,
+        "transferSize": 14024
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Sucrose.webp",
+        "duration": 15.699999995529652,
+        "transferSize": 11874
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Varka.webp",
+        "duration": 15.899999998509884,
+        "transferSize": 12910
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Klee.webp",
+        "duration": 16,
+        "transferSize": 12768
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Columbina.webp",
+        "duration": 16.900000005960464,
+        "transferSize": 13144
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Lohen.webp",
+        "duration": 18.80000000447035,
+        "transferSize": 12520
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Gaming.webp",
+        "duration": 19.100000001490116,
+        "transferSize": 10070
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Alhatham.webp",
+        "duration": 19.100000001490116,
+        "transferSize": 10608
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Clorinde.webp",
+        "duration": 19.30000000447035,
+        "transferSize": 11468
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Cyno.webp",
+        "duration": 19.30000000447035,
+        "transferSize": 10908
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Hutao.webp",
+        "duration": 19.700000002980232,
+        "transferSize": 11478
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Xiao.webp",
+        "duration": 22.5,
+        "transferSize": 11584
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Shougun.webp",
+        "duration": 22.600000001490116,
+        "transferSize": 11194
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Razor.webp",
+        "duration": 22.899999998509884,
+        "transferSize": 9706
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Tighnari.webp",
+        "duration": 22.899999998509884,
+        "transferSize": 11874
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Chasca.webp",
+        "duration": 22.899999998509884,
+        "transferSize": 13120
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Liney.webp",
+        "duration": 23.299999997019768,
+        "transferSize": 9278
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Ayaka.webp",
+        "duration": 24.899999998509884,
+        "transferSize": 9596
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Tartaglia.webp",
+        "duration": 25.100000001490116,
+        "transferSize": 11170
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Ayato.webp",
+        "duration": 25.299999997019768,
+        "transferSize": 11006
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Diluc.webp",
+        "duration": 25.299999997019768,
+        "transferSize": 11072
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Keqing.webp",
+        "duration": 25.299999997019768,
+        "transferSize": 12260
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Itto.webp",
+        "duration": 25.69999999552965,
+        "transferSize": 12684
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Venti.webp",
+        "duration": 29.399999998509884,
+        "transferSize": 10944
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Wanderer.webp",
+        "duration": 29.399999998509884,
+        "transferSize": 11914
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Ganyu.webp",
+        "duration": 29.599999994039536,
+        "transferSize": 10690
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Yoimiya.webp",
+        "duration": 29.600000001490116,
+        "transferSize": 13546
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Noel.webp",
+        "duration": 29.700000002980232,
+        "transferSize": 11826
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_PlayerBoy.webp",
+        "duration": 29.80000000447035,
+        "transferSize": 11086
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Nahida.webp",
+        "duration": 31.600000001490116,
+        "transferSize": 13708
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Kokomi.webp",
+        "duration": 31.700000002980232,
+        "transferSize": 10260
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Ifa.webp",
+        "duration": 7.800000004470348,
+        "transferSize": 13364
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Yae.webp",
+        "duration": 11.199999995529652,
+        "transferSize": 12412
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Durin.webp",
+        "duration": 11.099999994039536,
+        "transferSize": 12560
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Lauma.webp",
+        "duration": 11.299999997019768,
+        "transferSize": 12578
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Linnea.webp",
+        "duration": 11.5,
+        "transferSize": 13756
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Sethos.webp",
+        "duration": 11.5,
+        "transferSize": 10882
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Feiyan.webp",
+        "duration": 11.600000001490116,
+        "transferSize": 13920
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Ningguang.webp",
+        "duration": 16,
+        "transferSize": 11956
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Heizo.webp",
+        "duration": 16.19999999552965,
+        "transferSize": 9630
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Kaveh.webp",
+        "duration": 16.399999998509884,
+        "transferSize": 11792
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Freminet.webp",
+        "duration": 16.399999998509884,
+        "transferSize": 11068
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Mona.webp",
+        "duration": 16.80000000447035,
+        "transferSize": 14110
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Barbara.webp",
+        "duration": 17,
+        "transferSize": 15088
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Lisa.webp",
+        "duration": 18.899999998509884,
+        "transferSize": 11748
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Linette.webp",
+        "duration": 19.100000001490116,
+        "transferSize": 10088
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Dori.webp",
+        "duration": 19.19999999552965,
+        "transferSize": 11938
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Candace.webp",
+        "duration": 19.299999997019768,
+        "transferSize": 11910
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Kaeya.webp",
+        "duration": 19.700000002980232,
+        "transferSize": 10130
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Rosaria.webp",
+        "duration": 20.100000001490116,
+        "transferSize": 10102
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Fischl.webp",
+        "duration": 21.100000001490116,
+        "transferSize": 11558
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Zhongli.webp",
+        "duration": 21.899999998509884,
+        "transferSize": 9924
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Bennett.webp",
+        "duration": 22.100000001490116,
+        "transferSize": 10274
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Liuyun.webp",
+        "duration": 22.299999997019768,
+        "transferSize": 10806
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Eula.webp",
+        "duration": 22.599999994039536,
+        "transferSize": 12556
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Dehya.webp",
+        "duration": 22.900000005960464,
+        "transferSize": 11526
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Aloy.webp",
+        "duration": 23.100000001490116,
+        "transferSize": 9674
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Xilonen.webp",
+        "duration": 23.399999998509884,
+        "transferSize": 14306
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Chongyun.webp",
+        "duration": 23.69999999552965,
+        "transferSize": 10936
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Xinyan.webp",
+        "duration": 24.19999999552965,
+        "transferSize": 10982
+      },
+      {
+        "name": "http://127.0.0.1:4173/assets/UI_AvatarIcon_Ambor.webp",
+        "duration": 24.399999998509884,
+        "transferSize": 9598
+      }
+    ],
+    "note": "One unthrottled local Chrome run, not field performance or a CWV conformance claim."
+  }
+}

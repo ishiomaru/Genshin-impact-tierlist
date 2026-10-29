@@ -1,0 +1,30 @@
+export type Character = {
+  id: string;
+  name: string;
+  group: string;
+  scores: number[];
+  tier: string;
+  confidence: string;
+  total: string;
+  profiles: Record<string, string>;
+  sourceLine: number;
+  detailLine: number;
+  element: string;
+  role: string;
+  verdict: string;
+  caveat: string;
+  team: string;
+  portrait?: string;
+  rarity?: number;
+  assetUrl?: string;
+  references: { id: string; title: string; url: string }[];
+};
+export type Page = 'atlas' | 'compare' | 'saved' | 'method' | 'report';
+export type Route = {
+  page: string;
+  profile: string;
+  compare: string[];
+  focus?: string;
+  query?: string;
+};
+export type Library = { version: 1; saved: string[]; notes: Record<string, string> };

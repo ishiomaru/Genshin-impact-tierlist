@@ -1,0 +1,387 @@
+{
+  "サンドローネ": {
+    "portrait": "/assets/UI_AvatarIcon_MarionetteNew.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/06/29/4ee285b198b7bb8dba2a0a63aa9ffc9f_7866102664638374858.png"
+  },
+  "ヴェスナ": {
+    "portrait": "/assets/UI_AvatarIcon_Vesna.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/08/17/623ff6a96cc1c9ebe8c5fcc57eabaf9c_8414553061614722407.png"
+  },
+  "フリンズ": {
+    "portrait": "/assets/UI_AvatarIcon_Flins.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/09/29/35428890/f6feccecc61d2bf772461f057dfb41cd_5944664216414192017.png"
+  },
+  "ネフェル": {
+    "portrait": "/assets/UI_AvatarIcon_Nefer.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/10/21/7557acebcb72b4d9912bcb0e6c92306a_3655566527985254987.png"
+  },
+  "兹白": {
+    "portrait": "/assets/UI_AvatarIcon_Zibai.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/01/29/72161f01ff431c9f099710f92c811454_1654176825175164246.png"
+  },
+  "マーヴィカ": {
+    "portrait": "/assets/UI_AvatarIcon_Mavuika.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/12/30/2f098b1f15854fd9dafc54998795a59e_864981592196815761.png"
+  },
+  "スカーク": {
+    "portrait": "/assets/UI_AvatarIcon_SkirkNew.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/06/16/48dba0c10560a3ef573f17d97408b5a0_2527001828446746987.png"
+  },
+  "ヌヴィレット": {
+    "portrait": "/assets/UI_AvatarIcon_Neuvillette.webp",
+    "rarity": 5,
+    "assetUrl": "https://enka.network/ui/UI_AvatarIcon_Neuvillette.png"
+  },
+  "アルレッキーノ": {
+    "portrait": "/assets/UI_AvatarIcon_Arlecchino.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/04/22/35428890/672e65470bfd14b664596c2a7f7eaaf8_7046130387894981792.png"
+  },
+  "ムアラニ": {
+    "portrait": "/assets/UI_AvatarIcon_Mualani.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/08/26/f4c75caad42923eb91ee760aa2eb473a_7439123622315070718.png"
+  },
+  "ヴァレサ": {
+    "portrait": "/assets/UI_AvatarIcon_Varesa.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/03/25/a54efe1bb7e82a589b9af44683a696ca_8635138146175164187.png"
+  },
+  "リオセスリ": {
+    "portrait": "/assets/UI_AvatarIcon_Wriothesley.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/10/15/35428890/31a0eb2dec5d69ca8dd7616572136b8b_8886987124386670150.png"
+  },
+  "夢見月瑞希": {
+    "portrait": "/assets/UI_AvatarIcon_Mizuki.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/02/08/11662c12fb353d88bd2b20a2726c9f1c_8013472600677983943.png"
+  },
+  "キィニチ": {
+    "portrait": "/assets/UI_AvatarIcon_Kinich.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/09/12/0099e74b4d0c919f6feab4bade3ab748_5795733017114624391.png"
+  },
+  "ナヴィア": {
+    "portrait": "/assets/UI_AvatarIcon_Navia.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2023/12/18/35428890/3fc7580c01a9e622692402889706c4db_8301615651200775487.png"
+  },
+  "クレー": {
+    "portrait": "/assets/UI_AvatarIcon_Klee.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Klee.png"
+  },
+  "ファルカ": {
+    "portrait": "/assets/UI_AvatarIcon_Varka.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/02/21/553feb81c3bbc5e3bc69a765e157c33f_8250978205515428490.png"
+  },
+  "コロンビーナ": {
+    "portrait": "/assets/UI_AvatarIcon_Columbina.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/01/13/80fa97679c8d1828fdd96c6aa9638632_4327573591148809640.png"
+  },
+  "ローエン": {
+    "portrait": "/assets/UI_AvatarIcon_Lohen.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/06/05/7fced903c930ab16fd333755c1aef7e9_9169127423158726160.png"
+  },
+  "嘉明": {
+    "portrait": "/assets/UI_AvatarIcon_Gaming.webp",
+    "rarity": 4,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/01/29/35428890/b041ad23a9d6245efac952a9379c5114_8939761424130236195.png"
+  },
+  "アルハイゼン": {
+    "portrait": "/assets/UI_AvatarIcon_Alhatham.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Alhatham.png"
+  },
+  "クロリンデ": {
+    "portrait": "/assets/UI_AvatarIcon_Clorinde.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/06/04/35428890/770a66030815971c697ab81bc5436329_1296341861352728851.png"
+  },
+  "セノ": {
+    "portrait": "/assets/UI_AvatarIcon_Cyno.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Cyno.png"
+  },
+  "胡桃": {
+    "portrait": "/assets/UI_AvatarIcon_Hutao.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Hutao.png"
+  },
+  "魈": {
+    "portrait": "/assets/UI_AvatarIcon_Xiao.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xiao.png"
+  },
+  "雷電将軍": {
+    "portrait": "/assets/UI_AvatarIcon_Shougun.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Shougun.png"
+  },
+  "レザー": {
+    "portrait": "/assets/UI_AvatarIcon_Razor.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Razor.png"
+  },
+  "ティナリ": {
+    "portrait": "/assets/UI_AvatarIcon_Tighnari.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Tighnari.png"
+  },
+  "チャスカ": {
+    "portrait": "/assets/UI_AvatarIcon_Chasca.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/11/18/abe1192cc7aad45f6b273478dd5fa88a_4799372826012752249.png"
+  },
+  "リネ": {
+    "portrait": "/assets/UI_AvatarIcon_Liney.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/08/11/35428890/e343d4442cc3b8e243f0d528bb715f75_1232011243947476013.png"
+  },
+  "神里綾華": {
+    "portrait": "/assets/UI_AvatarIcon_Ayaka.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ayaka.png"
+  },
+  "神里綾人": {
+    "portrait": "/assets/UI_AvatarIcon_Ayato.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ayato.png"
+  },
+  "タルタリヤ": {
+    "portrait": "/assets/UI_AvatarIcon_Tartaglia.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Tartaglia.png"
+  },
+  "ディルック": {
+    "portrait": "/assets/UI_AvatarIcon_Diluc.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Diluc.png"
+  },
+  "刻晴": {
+    "portrait": "/assets/UI_AvatarIcon_Keqing.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Keqing.png"
+  },
+  "荒瀧一斗": {
+    "portrait": "/assets/UI_AvatarIcon_Itto.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Itto.png"
+  },
+  "ウェンティ": {
+    "portrait": "/assets/UI_AvatarIcon_Venti.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Venti.png"
+  },
+  "放浪者": {
+    "portrait": "/assets/UI_AvatarIcon_Wanderer.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Wanderer.png"
+  },
+  "甘雨": {
+    "portrait": "/assets/UI_AvatarIcon_Ganyu.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ganyu.png"
+  },
+  "宵宮": {
+    "portrait": "/assets/UI_AvatarIcon_Yoimiya.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Yoimiya.png"
+  },
+  "ノエル": {
+    "portrait": "/assets/UI_AvatarIcon_Noel.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Noel.png"
+  },
+  "セトス": {
+    "portrait": "/assets/UI_AvatarIcon_Sethos.webp",
+    "rarity": 4,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/06/04/35428890/cdb7abfcb86138e5b618946a5466d442_6414132746291261116.png"
+  },
+  "主人公・氷": {
+    "portrait": "/assets/UI_AvatarIcon_PlayerBoy.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_PlayerBoy.png"
+  },
+  "煙緋": {
+    "portrait": "/assets/UI_AvatarIcon_Feiyan.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Feiyan.png"
+  },
+  "凝光": {
+    "portrait": "/assets/UI_AvatarIcon_Ningguang.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ningguang.png"
+  },
+  "鹿野院平蔵": {
+    "portrait": "/assets/UI_AvatarIcon_Heizo.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Heizo.png"
+  },
+  "カーヴェ": {
+    "portrait": "/assets/UI_AvatarIcon_Kaveh.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Kaveh.png"
+  },
+  "エウルア": {
+    "portrait": "/assets/UI_AvatarIcon_Eula.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Eula.png"
+  },
+  "フレミネ": {
+    "portrait": "/assets/UI_AvatarIcon_Freminet.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/09/03/35428890/8e44111a378f4e5379b8e7444e8c2daa_4713775899437074849.png"
+  },
+  "ディシア": {
+    "portrait": "/assets/UI_AvatarIcon_Dehya.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Dehya.png"
+  },
+  "辛炎": {
+    "portrait": "/assets/UI_AvatarIcon_Xinyan.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Xinyan.png"
+  },
+  "アンバー": {
+    "portrait": "/assets/UI_AvatarIcon_Ambor.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Ambor.png"
+  },
+  "アーロイ": {
+    "portrait": "/assets/UI_AvatarIcon_Aloy.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Aloy.png"
+  },
+  "ナヒーダ": {
+    "portrait": "/assets/UI_AvatarIcon_Nahida.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Nahida.png"
+  },
+  "スクロース": {
+    "portrait": "/assets/UI_AvatarIcon_Sucrose.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Sucrose.png"
+  },
+  "珊瑚宮心海": {
+    "portrait": "/assets/UI_AvatarIcon_Kokomi.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Kokomi.png"
+  },
+  "イファ": {
+    "portrait": "/assets/UI_AvatarIcon_Ifa.webp",
+    "rarity": 4,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/04/30/ce693d1e36aef5936b2d2db006605fc4_9036718103340803450.png"
+  },
+  "モナ": {
+    "portrait": "/assets/UI_AvatarIcon_Mona.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Mona.png"
+  },
+  "バーバラ": {
+    "portrait": "/assets/UI_AvatarIcon_Barbara.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Barbara.png"
+  },
+  "リサ": {
+    "portrait": "/assets/UI_AvatarIcon_Lisa.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Lisa.png"
+  },
+  "八重神子": {
+    "portrait": "/assets/UI_AvatarIcon_Yae.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Yae.png"
+  },
+  "リネット": {
+    "portrait": "/assets/UI_AvatarIcon_Linette.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-static.hoyoverse.com/hoyolab-wiki/2023/08/14/35428890/436e6f2b9b9006bfe511a98093259daf_7192025380861185061.png"
+  },
+  "ドリー": {
+    "portrait": "/assets/UI_AvatarIcon_Dori.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Dori.png"
+  },
+  "主人公・炎": {
+    "portrait": "/assets/UI_AvatarIcon_PlayerBoy.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_PlayerBoy.png"
+  },
+  "主人公・岩": {
+    "portrait": "/assets/UI_AvatarIcon_PlayerBoy.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_PlayerBoy.png"
+  },
+  "ドゥリン": {
+    "portrait": "/assets/UI_AvatarIcon_Durin.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/11/28/e3e2b8fcbff2f2f3cdcec6bbf04efa84_3327367670955368711.png"
+  },
+  "ラウマ": {
+    "portrait": "/assets/UI_AvatarIcon_Lauma.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/09/08/b06e9ff48d57de4856f1a05b1199aae1_8565150401481594895.png"
+  },
+  "リンネア": {
+    "portrait": "/assets/UI_AvatarIcon_Linnea.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/04/03/b73622caa3750012312c72437295ace3_6973976776946504804.png"
+  },
+  "キャンディス": {
+    "portrait": "/assets/UI_AvatarIcon_Candace.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Candace.png"
+  },
+  "シロネン": {
+    "portrait": "/assets/UI_AvatarIcon_Xilonen.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/09/25/b07074c2b9040516fd240b6b8d65c011_2487211347344319683.png"
+  },
+  "ガイア": {
+    "portrait": "/assets/UI_AvatarIcon_Kaeya.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Kaeya.png"
+  },
+  "ロサリア": {
+    "portrait": "/assets/UI_AvatarIcon_Rosaria.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Rosaria.png"
+  },
+  "重雲": {
+    "portrait": "/assets/UI_AvatarIcon_Chongyun.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Chongyun.png"
+  },
+  "フィッシュル": {
+    "portrait": "/assets/UI_AvatarIcon_Fischl.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Fischl.png"
+  },
+  "鍾離": {
+    "portrait": "/assets/UI_AvatarIcon_Zhongli.webp",
+    "rarity": 5,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Zhongli.png"
+  },
+  "ベネット": {
+    "portrait": "/assets/UI_AvatarIcon_Bennett.webp",
+    "rarity": 4,
+    "assetUrl": "https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_Bennett.png"
+  },
+  "閑雲": {
+    "portrait": "/assets/UI_AvatarIcon_Liuyun.webp",
+    "rarity": 5,
+    "assetUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/01/29/35428890/2c2be27f8876e9435ab8c8b933b8408c_7973851751945394462.png"
+  }
+}
