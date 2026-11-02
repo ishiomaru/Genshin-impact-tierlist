@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-29",
+  "browser": "156.0.8078.48",
+  "checks": [
+    "observed whether typed search survives reload",
+    "observed whether detail can be restored from URL",
+    "a: no outer overflow at 390px",
+    "a: no outer overflow at 320px",
+    "A: mode switching and low-constellation scope warning",
+    "b: no outer overflow at 390px",
+    "b: no outer overflow at 320px",
+    "B: conflicts, missing roster, resolution and three-team state",
+    "c: no outer overflow at 390px",
+    "c: no outer overflow at 320px",
+    "C: claim evidence and snapshot-bound note reload",
+    "C: different snapshot is not silently applied",
+    "plan: no outer overflow at 390px",
+    "plan: no outer overflow at 320px",
+    "A+B: compare, preview conflict, place recipe, resolve overlap and reload saved snapshot",
+    "A+B: return to another allocation slot and replace a missing-support recipe",
+    "C: save failure is explicit and text stays in the session",
+    "A+B: storage denial keeps tentative allocation without claiming persistence"
+  ],
+  "observations": {
+    "v1": [
+      {
+        "width": 1440,
+        "heroHeight": 338,
+        "searchY": 821.5625,
+        "firstCardY": 937.65625,
+        "chipFont": "10px",
+        "bodyOverflow": false
+      },
+      {
+        "width": 390,
+        "heroHeight": 365,
+        "searchY": 902.3125,
+        "firstCardY": 1004.65625,
+        "chipFont": "9px",
+        "bodyOverflow": false
+      },
+      {
+        "width": 320,
+        "heroHeight": 365,
+        "searchY": 941.65625,
+        "firstCardY": 1069,
+        "chipFont": "9px",
+        "bodyOverflow": false
+      }
+    ],
+    "searchReload": {
+      "beforeCount": 1,
+      "afterCount": 77,
+      "url": "http://127.0.0.1:5173/"
+    },
+    "detailReload": {
+      "url": "http://127.0.0.1:5173/",
+      "dialogVisible": false
+    },
+    "comparison-1440": {
+      "height": 2213,
+      "sharedSupportY": 1904.6875,
+      "firstCaveatY": 1219.234375
+    },
+    "comparison-390": {
+      "height": 4703,
+      "sharedSupportY": 4182.09375,
+      "firstCaveatY": 1679.84375
+    }
+  },
+  "screenshots": [
+    "v1-first-screen-1440",
+    "v1-first-screen-390",
+    "v1-first-screen-320",
+    "v1-nr-search",
+    "v1-mobile-comparison-summary",
+    "v1-mobile-support-note",
+    "a-desktop",
+    "a-390",
+    "a-320",
+    "a-outside-scope-320",
+    "b-desktop",
+    "b-390",
+    "b-320",
+    "b-conflict-missing-320",
+    "c-desktop",
+    "c-390",
+    "c-320",
+    "c-evidence-320",
+    "plan-desktop",
+    "plan-390",
+    "plan-320",
+    "plan-conflict-320",
+    "plan-resolved-320"
+  ],
+  "errors": [],
+  "accessibility": [
+    {
+      "concept": "a",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "concept": "b",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "concept": "c",
+      "width": 320,
+      "violations": []
+    },
+    {
+      "concept": "plan",
+      "width": 320,
+      "violations": []
+    }
+  ]
+}

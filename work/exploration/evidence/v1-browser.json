@@ -1,0 +1,70 @@
+{
+  "browser": "156.0.8078.48",
+  "base": "http://127.0.0.1:5173",
+  "checks": [
+    "77 operations visible on baseline atlas",
+    "螺旋を重視: 10 tier changes",
+    "幽境を重視: 14 tier changes",
+    "シアターを重視: 28 tier changes",
+    "changed-only filter matches 28 operations",
+    "derived scope has 24 operations",
+    "element filter water matches source",
+    "hiragana search works without losing input focus",
+    "empty state reset restores atlas",
+    "score table contains all 77 operations",
+    "dialog Escape restores trigger focus",
+    "saved operation and note survive reload",
+    "full report has 77 detail headings and navigates to selected source",
+    "my list filters saved operations",
+    "export downloads actual saved state and notes",
+    "three-way comparison preserves driver caveat",
+    "shared URL restores comparison and weights",
+    "share action executes",
+    "NR explanation and evidence conditions available",
+    "atlas no page overflow at 768px",
+    "detail fits at 768px",
+    "atlas no page overflow at 390px",
+    "detail fits at 390px",
+    "mobile comparison fits viewport",
+    "atlas no page overflow at 320px",
+    "detail fits at 320px",
+    "both prototypes have working condition switching and details",
+    "no JavaScript exceptions or missing local resources"
+  ],
+  "screenshots": [
+    "atlas-1440",
+    "atlas-full-1440",
+    "compare-1440",
+    "method-1440",
+    "atlas-768",
+    "detail-768",
+    "atlas-390",
+    "atlas-full-390",
+    "detail-390",
+    "compare-390",
+    "atlas-320",
+    "detail-320",
+    "prototype-a",
+    "prototype-b"
+  ],
+  "consoleErrors": [],
+  "localFailures": [],
+  "accessibility": [
+    {
+      "name": "atlas",
+      "violations": []
+    },
+    {
+      "name": "compare",
+      "violations": []
+    },
+    {
+      "name": "method",
+      "violations": []
+    },
+    {
+      "name": "report",
+      "violations": []
+    }
+  ]
+}

@@ -1,0 +1,619 @@
+{
+  "sourceSha256": "3f37fae6c5c1b1c358c1a277f1b42b99ce66255805305608dffd6de024433543",
+  "method": "Keep weights fixed. Change exactly one ordinal mode score by +0.5 or -0.5 within [0,5], include unchanged baseline. Recompute tiers. This is an arithmetic stress test, not probability, DPS, confidence interval, or proposed correction.",
+  "profiles": [
+    {
+      "profile": "balanced",
+      "weights": [
+        45,
+        35,
+        20
+      ],
+      "crossesBoundary": 59,
+      "total": 77,
+      "examples": [
+        {
+          "name": "サンドローネ",
+          "id": "c-97b02d02aa",
+          "scores": [
+            5,
+            5,
+            3
+          ],
+          "original": "SS",
+          "tiers": [
+            "SS",
+            "S"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "SS"
+            }
+          ]
+        },
+        {
+          "name": "ヌヴィレット",
+          "id": "c-f5bf6ebbbf",
+          "scores": [
+            4.5,
+            3.5,
+            5
+          ],
+          "original": "S",
+          "tiers": [
+            "SS",
+            "S"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            }
+          ]
+        },
+        {
+          "name": "スクロース",
+          "id": "c-d532f4254c",
+          "scores": [
+            4,
+            4,
+            3.5
+          ],
+          "original": "S",
+          "tiers": [
+            "S",
+            "A"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "S"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "abyss",
+      "weights": [
+        60,
+        30,
+        10
+      ],
+      "crossesBoundary": 72,
+      "total": 77,
+      "examples": [
+        {
+          "name": "サンドローネ",
+          "id": "c-97b02d02aa",
+          "scores": [
+            5,
+            5,
+            3
+          ],
+          "original": "SS",
+          "tiers": [
+            "SS"
+          ],
+          "crossesBoundary": false,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "SS"
+            }
+          ]
+        },
+        {
+          "name": "ヌヴィレット",
+          "id": "c-f5bf6ebbbf",
+          "scores": [
+            4.5,
+            3.5,
+            5
+          ],
+          "original": "S",
+          "tiers": [
+            "SS",
+            "S"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            }
+          ]
+        },
+        {
+          "name": "スクロース",
+          "id": "c-d532f4254c",
+          "scores": [
+            4,
+            4,
+            3.5
+          ],
+          "original": "S",
+          "tiers": [
+            "S",
+            "A"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "S"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "onslaught",
+      "weights": [
+        30,
+        60,
+        10
+      ],
+      "crossesBoundary": 72,
+      "total": 77,
+      "examples": [
+        {
+          "name": "サンドローネ",
+          "id": "c-97b02d02aa",
+          "scores": [
+            5,
+            5,
+            3
+          ],
+          "original": "SS",
+          "tiers": [
+            "SS"
+          ],
+          "crossesBoundary": false,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "SS"
+            }
+          ]
+        },
+        {
+          "name": "ヌヴィレット",
+          "id": "c-f5bf6ebbbf",
+          "scores": [
+            4.5,
+            3.5,
+            5
+          ],
+          "original": "S",
+          "tiers": [
+            "S",
+            "A"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            }
+          ]
+        },
+        {
+          "name": "スクロース",
+          "id": "c-d532f4254c",
+          "scores": [
+            4,
+            4,
+            3.5
+          ],
+          "original": "S",
+          "tiers": [
+            "S",
+            "A"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "S"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "theater",
+      "weights": [
+        30,
+        20,
+        50
+      ],
+      "crossesBoundary": 66,
+      "total": 77,
+      "examples": [
+        {
+          "name": "サンドローネ",
+          "id": "c-97b02d02aa",
+          "scores": [
+            5,
+            5,
+            3
+          ],
+          "original": "S",
+          "tiers": [
+            "S",
+            "A"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "S"
+            }
+          ]
+        },
+        {
+          "name": "ヌヴィレット",
+          "id": "c-f5bf6ebbbf",
+          "scores": [
+            4.5,
+            3.5,
+            5
+          ],
+          "original": "SS",
+          "tiers": [
+            "SS",
+            "S"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "SS"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "S"
+            }
+          ]
+        },
+        {
+          "name": "スクロース",
+          "id": "c-d532f4254c",
+          "scores": [
+            4,
+            4,
+            3.5
+          ],
+          "original": "A",
+          "tiers": [
+            "S",
+            "A"
+          ],
+          "crossesBoundary": true,
+          "cases": [
+            {
+              "axis": 0,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 0,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 1,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 1,
+              "delta": 0.5,
+              "tier": "S"
+            },
+            {
+              "axis": 2,
+              "delta": -0.5,
+              "tier": "A"
+            },
+            {
+              "axis": 2,
+              "delta": 0.5,
+              "tier": "S"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "lead": "サンドローネ",
+      "members": [
+        "サンドローネ",
+        "八重神子",
+        "オデット",
+        "エスコフィエ"
+      ],
+      "sourceLine": 232,
+      "origin": "original-example-manually-structured",
+      "unifiedDpsValidation": false
+    },
+    {
+      "lead": "ヌヴィレット",
+      "members": [
+        "ヌヴィレット",
+        "フリーナ",
+        "シロネン",
+        "楓原万葉"
+      ],
+      "sourceLine": 304,
+      "origin": "original-example-manually-structured",
+      "unifiedDpsValidation": false
+    },
+    {
+      "lead": "スクロース",
+      "members": [
+        "スクロース",
+        "イネファ",
+        "コロンビーナ",
+        "フィッシュル"
+      ],
+      "sourceLine": 394,
+      "origin": "original-example-manually-structured",
+      "unifiedDpsValidation": false
+    },
+    {
+      "lead": "ヴェスナ",
+      "members": [
+        "ヴェスナ",
+        "オデット",
+        "ヴォジャニーツァ",
+        "ファルザン"
+      ],
+      "sourceLine": 242,
+      "origin": "original-example-manually-structured",
+      "unifiedDpsValidation": false
+    },
+    {
+      "lead": "マーヴィカ",
+      "members": [
+        "マーヴィカ",
+        "シロネン",
+        "シトラリ",
+        "ベネット"
+      ],
+      "sourceLine": 284,
+      "origin": "original-example-manually-structured",
+      "unifiedDpsValidation": false
+    }
+  ],
+  "uniqueIndividualReferences": 93
+}
