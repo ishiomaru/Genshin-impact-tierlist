@@ -6,7 +6,7 @@ import re, json, hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'web-quality-research/source/report.md'
-text = SOURCE.read_text()
+text = SOURCE.read_text(encoding="utf-8")
 digest = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
 weights = {'balanced': [45,35,20], 'abyss': [60,30,10], 'onslaught': [30,60,10], 'theater': [30,20,50]}
 
@@ -32,7 +32,7 @@ for i,m in enumerate(blocks):
 rows = text.split('## 付録A.')[1].split('## 付録B.')[0]
 records=[]
 assets_path = ROOT / 'src/data/assets.json'
-assets = json.loads(assets_path.read_text()) if assets_path.exists() else {}
+assets = json.loads(assets_path.read_text(encoding="utf-8")) if assets_path.exists() else {}
 for line in rows.splitlines():
     cells = [c.strip() for c in line.strip('|').split('|')]
     if len(cells)!=8 or cells[1] not in ['主','派生']: continue
@@ -61,10 +61,10 @@ for line in text.split('## 7.')[1].split('## 8.')[0].splitlines():
         assert cells[1:]==list(by_name[cells[0]]['profiles'].values());examples+=1
 assert examples==13
 out=dict(sourceSha256=digest, weights=weights, records=records, changed=changed, references=list(refs.values()))
-(ROOT/'src/data/research.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+(ROOT/'src/data/research.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding="utf-8")
 summary=dict(source_sha256=digest,records=len(records),main=53,derived=24,score_cells=231,
     weighted_totals=77,detail_score_triples=77,profile_examples=examples,changed=changed,
     confidence={v:sum(r['confidence']==v for r in records) for v in ['高','中','低']},
     tiers={v:sum(r['tier']==v for r in records) for v in ['SS','S','A','B','C','D']})
-(ROOT/'work/data-audit.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+(ROOT/'work/data-audit.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding="utf-8")
 print(json.dumps(summary,ensure_ascii=False))
